@@ -3,7 +3,8 @@ const { Client } = require('pg');
 
 // change the DB_NAME string to whatever your group decides on
 const DB_NAME = 'NFL_Shop';
-// go vikings!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// go vikings!
+
 const DB_URL =
   process.env.DATABASE_URL || `postgres://localhost:5432/${DB_NAME}`;
 
