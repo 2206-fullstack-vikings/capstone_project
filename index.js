@@ -26,6 +26,8 @@ server.use((req, res, next) => {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
+//error handler may go here!!!!!!!
+
 // bring in the DB connection
 const { client } = require('./db');
 
