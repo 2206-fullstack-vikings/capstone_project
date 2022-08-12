@@ -6,7 +6,7 @@ const products = [
     division: "NFC North",
     jerseyNumber: 18,
     price: 400,
-    image: "placeholder"
+    image: "https://fanatics.frgimages.com/minnesota-vikings/mens-nike-justin-jefferson-purple-minnesota-vikings-legend-jersey_pi4571000_altimages_ff_4571622-6ab3a8a5f6ac3dfef931alt1_full.jpg?_hv=2&w=900"
   },
   {
     playerName: "Adam Thielen",
@@ -14,7 +14,7 @@ const products = [
     division: "NFC North",
     jerseyNumber: 19,
     price: 350,
-    image: "placeholder"
+    image: "https://fanatics.frgimages.com/minnesota-vikings/mens-nike-adam-thielen-purple-minnesota-vikings-game-jersey_pi4027000_altimages_ff_4027094-4038bf5c207126f2e7b5alt1_full.jpg?_hv=2&w=900"
   },
   {
     playerName: "Dalvin Cook",
@@ -22,7 +22,7 @@ const products = [
     division: "NFC North",
     jerseyNumber: 4,
     price: 350,
-    image: "placeholder"
+    image: "https://fanatics.frgimages.com/minnesota-vikings/mens-nike-dalvin-cook-purple-minnesota-vikings-game-jersey_pi4869000_altimages_ff_4869028-40846e1f39f6cfc7032balt1_full.jpg?_hv=2&w=900"
   },
   {
     playerName: "Harrison Smith",
@@ -30,7 +30,7 @@ const products = [
     division: "NFC North",
     jerseyNumber: 22,
     price: 350,
-    image: "placeholder"
+    image: "https://fanatics.frgimages.com/minnesota-vikings/mens-nike-harrison-smith-purple-minnesota-vikings-game-jersey_pi3892000_altimages_ff_3892907-53816fd0cc87d3cae074alt1_full.jpg?_hv=2&w=900"
   },
 
   //////////////////////////
@@ -41,7 +41,7 @@ const products = [
     division: "NFC North",
     jerseyNumber: 12,
     price: 1,
-    image: "placeholder"
+    image: "https://fanatics.frgimages.com/green-bay-packers/mens-nike-aaron-rodgers-green-green-bay-packers-captain-vapor-limited-jersey_pi4131000_altimages_ff_4131791-786c22eaa6f264fc1e12alt1_full.jpg?_hv=2&w=900"
   },
   {
     playerName: "Aaron Jones",
@@ -49,7 +49,7 @@ const products = [
     division: "NFC North",
     jerseyNumber: 33,
     price: 10,
-    image: "placeholder"
+    image: "https://fanatics.frgimages.com/green-bay-packers/mens-nike-aaron-jones-green-green-bay-packers-player-game-jersey_pi3435000_altimages_ff_3435566-7ad30f6a15526a127a88alt1_full.jpg?_hv=2&w=900"
   },
   {
     playerName: "Allen Lazard",
@@ -57,7 +57,7 @@ const products = [
     division: "NFC North",
     jerseyNumber: 13,
     price: 15,
-    image: "placeholder"
+    image: "https://fanatics.frgimages.com/green-bay-packers/mens-nike-allen-lazard-green-green-bay-packers-game-jersey_pi3892000_altimages_ff_3892600-8ae3b4d37d1ade135c18alt1_full.jpg?_hv=2&w=900"
   },
   {
     playerName: "Jordan Love",
@@ -65,7 +65,7 @@ const products = [
     division: "NFC North",
     jerseyNumber: 10,
     price: 30,
-    image: "placeholder"
+    image: "https://www.fanatics.com/nfl/green-bay-packers/jordan-love-green-bay-packers-nike-womens-game-jersey-green/o-3583+t-70261332+p-2532232943+z-8-2500079533?_ref=p-SRP:m-GRID:i-r3c0:po-9"
   },
 
   ////////////////////////////
@@ -76,7 +76,7 @@ const products = [
     division: "NFC North",
     jerseyNumber: 16,
     price: 60,
-    image: "placeholder"
+    image: "https://fanatics.frgimages.com/detroit-lions/mens-nike-jared-goff-blue-detroit-lions-vapor-limited-jersey_pi4308000_altimages_ff_4308861-8526b312ef0d55383fd4alt1_full.jpg?_hv=2&w=900"
   },
   {
     playerName: "D'Andre Swift",
@@ -84,7 +84,7 @@ const products = [
     division: "NFC North",
     jerseyNumber: 32,
     price: 80,
-    image: "placeholder"
+    image: "https://fanatics.frgimages.com/detroit-lions/mens-nike-dandre-swift-blue-detroit-lions-team-game-jersey_pi4122000_altimages_ff_4122788-0ccdd626a8d5de81235falt1_full.jpg?_hv=2&w=900"
   },
   {
     playerName: "Amon-Ra St. Brown",
@@ -92,7 +92,7 @@ const products = [
     division: "NFC North",
     jerseyNumber: 14,
     price: 60,
-    image: "placeholder"
+    image: "https://fanatics.frgimages.com/detroit-lions/mens-nike-amon-ra-st-brown-blue-detroit-lions-game-player-jersey_pi4386000_altimages_ff_4386618-582d80d44259159f3b67alt1_full.jpg?_hv=2&w=900"
   },
   {
     playerName: "Penei Sewell",
@@ -100,7 +100,7 @@ const products = [
     division: "NFC North",
     jerseyNumber: 58,
     price: 70,
-    image: "placeholder"
+    image: "https://fanatics.frgimages.com/detroit-lions/mens-nike-amon-ra-st-brown-blue-detroit-lions-game-player-jersey_pi4386000_altimages_ff_4386618-582d80d44259159f3b67alt1_full.jpg?_hv=2&w=900"
   },
 
   ////////////////////////////
@@ -111,15 +111,15 @@ const products = [
     division: "NFC North",
     jerseyNumber: 1,
     price: 60,
-    image: "placeholder"
+    image: "https://fanatics.frgimages.com/chicago-bears/mens-nike-justin-fields-navy-chicago-bears-vapor-limited-jersey_pi4340000_altimages_ff_4340915-9937636efa7455a8c2d6alt1_full.jpg?_hv=2&w=900"
   },
   {
-    playerName: "Elijah Hicks",
+    playerName: "Jaylon Johnson",
     teamName: "Chicago Bears",
     division: "NFC North",
-    jerseyNumber: 37,
+    jerseyNumber: 33,
     price: 40,
-    image: "placeholder"
+    image: "https://fanatics.frgimages.com/chicago-bears/mens-nike-jaylon-johnson-navy-chicago-bears-game-jersey_pi4020000_altimages_ff_4020592-d493e6a52432f6c27888alt1_full.jpg?_hv=2&w=900"
   },
   {
     playerName: "Darnell Mooney",
@@ -127,7 +127,7 @@ const products = [
     division: "NFC North",
     jerseyNumber: 11,
     price: 40,
-    image: "placeholder"
+    image: "https://fanatics.frgimages.com/chicago-bears/mens-nike-darnell-mooney-navy-chicago-bears-game-jersey_pi4020000_altimages_ff_4020579-ec6869d721f231808e07alt1_full.jpg?_hv=2&w=900"
   },
   {
     playerName: "David Montgomery",
@@ -135,7 +135,7 @@ const products = [
     division: "NFC North",
     jerseyNumber: 32,
     price: 50,
-    image: "placeholder"
+    image: "https://fanatics.frgimages.com/chicago-bears/mens-nike-david-montgomery-navy-chicago-bears-game-jersey_pi3892000_altimages_ff_3892478-77cebb879d47f18309f3alt1_full.jpg?_hv=2&w=900"
   },
 
   ///////////////////////// NFC West ////////////////////
@@ -145,18 +145,18 @@ const products = [
     division: "NFC West",
     jerseyNumber: 1,
     price: 100,
-    image: "placeholder"
+    image: "https://fanatics.frgimages.com/arizona-cardinals/mens-nike-kyler-murray-cardinal-arizona-cardinals-legend-player-jersey_pi3646000_altimages_ff_3646585-3674481371a02b562c55alt1_full.jpg?_hv=2&w=900"
+  },
+  {
+    playerName: "JJ Watt",
+    teamName: "Arizona Cardinals",
+    division: "NFC West",
+    jerseyNumber: 99,
+    price: 150,
+    image: "https://fanatics.frgimages.com/arizona-cardinals/mens-nike-jj-watt-cardinal-arizona-cardinals-legend-player-jersey_pi4273000_altimages_ff_4273572-4f4919995f53f98e2127alt1_full.jpg?_hv=2&w=900"
   },
   {
     playerName: "Zach Ertz",
-    teamName: "Arizona Cardinals",
-    division: "NFC West",
-    jerseyNumber: 86,
-    price: 90,
-    image: "placeholder"
-  },
-  {
-    playerName: "A.J. Green",
     teamName: "Arizona Cardinals",
     division: "NFC West",
     jerseyNumber: 18,
