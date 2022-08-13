@@ -3,11 +3,11 @@ import { Products, Selector, Cart } from "./";
 import "../style/HomePage.css"
 
 const HomePage =(props)=>{
-    const {allProducts, setAllProducts, testState}= props
+    const {allProducts, setAllProducts, email,setEmail}= props
     return (
         <div className='home_page'>
             <Selector/>
-            <Products allProducts={allProducts} testState={testState} setAllProducts={setAllProducts}/>
+            <Products allProducts={allProducts}  setAllProducts={setAllProducts}/>
             <Cart/>
         </div>
     )
