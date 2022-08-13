@@ -1,11 +1,12 @@
 import React, {useEffect, useState} from "react";
-import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import "../style/Products.css"
 
 
 const Products = (props)=>{
     const{allProducts, setAllProducts}=props;
     const{division, id, image, jerseyNumber, playerName, price, teamName}= allProducts
+    const navigate= useNavigate();
 
     
     return(
@@ -21,6 +22,7 @@ const Products = (props)=>{
                     <p>{eachProduct.division}</p>
                     <p>${eachProduct.price}</p>
                     <button className="cart_button">Add To Cart</button>
+                    <button onClick={()=>navigate(`/${eachProduct.id}`)}>See Details</button>
                 </div>
 
             );
