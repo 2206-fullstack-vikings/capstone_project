@@ -1,5 +1,7 @@
 import React ,{useState, useEffect} from "react";
 import {useParams} from 'react-router-dom';
+import "../style/SingleProductView.css"
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -9,21 +11,38 @@ const SingleProductView=(props)=>{
     const {allProducts}=props
     const [selectedProduct, setSelectedProduct]= useState({});
     const {id} = useParams();
-    console.log("this is the product id we are looking at", id)
-    console.log("these are all the products", allProducts)
+    const navigate= useNavigate()
+    
+    
+    
 
     useEffect(()=>{
         const findSelectedProduct = ()=>{
             let currentProduct = allProducts.find((product)=>{
+                console.log(product.id)
                 return product.id == id;
             })
-            console.log("singleproducttest", currentProduct)
+            
             setSelectedProduct(currentProduct)
+            
         }
-        findSelectedProduct
+        findSelectedProduct();
     }, [])
+
     return(
-    <p>does this work</p>
+        <div className="single_product_page">
+            <div>
+            <h2>{selectedProduct.playerName}</h2>
+            <img src={selectedProduct.image}/>
+            </div>
+            <div>
+                <p>{selectedProduct.teamName}</p>
+                <p>{selectedProduct.division}</p>
+                <p>{selectedProduct.jerseyNumber}</p>
+                <p>${selectedProduct.price}</p>
+                <button onClick={()=>navigate('/')}>Back</button>
+            </div>
+        </div>
     )
 }
 
