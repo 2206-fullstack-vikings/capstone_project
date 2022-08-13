@@ -1,4 +1,5 @@
 import React from "react";
+import "../style/Cart.css"
 
 
 const Cart =()=>{

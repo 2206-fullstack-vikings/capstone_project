@@ -6,8 +6,8 @@ const {
     getProductsByPlayerName, 
     getProductsByTeamName, 
     deleteProductById
-} = require("../db/products")
-const {getUserByUsername} = require("../db/users")
+} = require("../db/models/productsModel")
+const {getUserByUsername} = require("../db/models/usersModel")
 
 
 // GET /api/products
