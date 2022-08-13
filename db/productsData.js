@@ -65,7 +65,7 @@ const products = [
     division: "NFC North",
     jerseyNumber: 10,
     price: 30,
-    image: "https://www.fanatics.com/nfl/green-bay-packers/jordan-love-green-bay-packers-nike-womens-game-jersey-green/o-3583+t-70261332+p-2532232943+z-8-2500079533?_ref=p-SRP:m-GRID:i-r3c0:po-9"
+    image: "https://fanatics.com/nfl/green-bay-packers/jordan-love-green-bay-packers-nike-womens-game-jersey-green/o-3583+t-70261332+p-2532232943+z-8-2500079533?_ref=p-SRP:m-GRID:i-r3c0:po-9"
   },
 
   ////////////////////////////

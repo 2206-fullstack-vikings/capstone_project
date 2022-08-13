@@ -6,3 +6,4 @@ export {default as Cart} from './Cart'
 export {default as HomePage} from './Homepage'
 export {default as Admin} from './Admin'
 export {default as Login} from './Login'
+export {default as SingleProductView} from "./SingleProductView"
