@@ -17,4 +17,5 @@ apiRouter.get('/health', (req, res, next) => {
 const productsRouter = require('./products');
 apiRouter.use('/products', productsRouter);
 
+
 module.exports = apiRouter;
