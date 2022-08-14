@@ -1,0 +1,5 @@
+.item_selector{
+    display: flex;
+    flex-grow: 2;
+    align-self: flex-start;
+}
