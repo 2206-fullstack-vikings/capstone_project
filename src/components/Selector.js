@@ -2,13 +2,20 @@ import React from "react";
 import "../style/Selector.css"
 
 
-const Selector =()=>{
+const Selector =(props)=>{
+    const{allProducts}= props;
+
+    
     return (
         <div className='item_selector'>
-        <h3>This is where users will be able to narrow down selection
-
-        </h3>
-        <h6>From here you will be able to select from teams, divisions to narrow down selection</h6>
+        
+        <select name="Select a team">
+        {allProducts.map((eachProduct,idx)=>{
+        return(
+            <option value={eachProduct.teamName}>{eachProduct.teamName}</option>
+        )
+        })}
+        </select>
         </div>
     )
 }

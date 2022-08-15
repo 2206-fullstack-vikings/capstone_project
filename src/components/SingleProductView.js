@@ -1,3 +1,4 @@
+
 import React ,{useState, useEffect} from "react";
 import {useParams} from 'react-router-dom';
 import "../style/SingleProductView.css"
@@ -30,19 +31,22 @@ const SingleProductView=(props)=>{
     }, [])
 
     return(
-        <div className="single_product_page">
-            <div>
-            <h2>{selectedProduct.playerName}</h2>
-            <img src={selectedProduct.image}/>
+        
+            
+            <div className="single_product_page">
+                 <div className="single_product_name_picture">
+                    {/* <h2>{selectedProduct.playerName}</h2> */}
+                    <img src={selectedProduct.image}/>
+                </div>
+                <div className="single_product_info">
+                    <p>{selectedProduct.teamName} {selectedProduct.playerName} Jersey</p>
+                    {/* <p>{selectedProduct.division}</p>
+                    <p>{selectedProduct.jerseyNumber}</p> */}
+                    <p className="price">Price: ${selectedProduct.price}</p>
+                    <button>Add to Cart</button>
+                    <button className="back_button" onClick={()=>navigate('/')}>Back</button>
+                </div>
             </div>
-            <div>
-                <p>{selectedProduct.teamName}</p>
-                <p>{selectedProduct.division}</p>
-                <p>{selectedProduct.jerseyNumber}</p>
-                <p>${selectedProduct.price}</p>
-                <button onClick={()=>navigate('/')}>Back</button>
-            </div>
-        </div>
     )
 }
 
