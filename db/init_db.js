@@ -39,7 +39,7 @@ async function createTables() {
       division VARCHAR(255) NOT NULL,
       "jerseyNumber" INTEGER NOT NULL,
       price FLOAT DEFAULT 0,
-      image VARCHAR(255) NOT NULL
+      image TEXT NOT NULL
     );
   `)
   } catch(error) {
