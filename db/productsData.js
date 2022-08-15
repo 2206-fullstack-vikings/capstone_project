@@ -2,35 +2,39 @@ const products = [
   ///////////////////////// NFC North ////////////////////
   {
     playerName: "Justin Jefferson",
-    teamName: "Minnesota Vkings",
+    teamName: "Minnesota Vikings",
     division: "NFC North",
     jerseyNumber: 18,
     price: 400,
-    image: "https://fanatics.frgimages.com/minnesota-vikings/mens-nike-justin-jefferson-purple-minnesota-vikings-legend-jersey_pi4571000_altimages_ff_4571622-6ab3a8a5f6ac3dfef931alt1_full.jpg?_hv=2&w=900"
+    image:
+      "https://fanatics.frgimages.com/minnesota-vikings/mens-nike-justin-jefferson-purple-minnesota-vikings-legend-jersey_pi4571000_altimages_ff_4571622-6ab3a8a5f6ac3dfef931alt1_full.jpg?_hv=2&w=900",
   },
   {
     playerName: "Adam Thielen",
-    teamName: "Minnesota Vkings",
+    teamName: "Minnesota Vikings",
     division: "NFC North",
     jerseyNumber: 19,
     price: 350,
-    image: "https://fanatics.frgimages.com/minnesota-vikings/mens-nike-adam-thielen-purple-minnesota-vikings-game-jersey_pi4027000_altimages_ff_4027094-4038bf5c207126f2e7b5alt1_full.jpg?_hv=2&w=900"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_2997000/ff_2997538_full.jpg&w=340",
   },
   {
     playerName: "Dalvin Cook",
-    teamName: "Minnesota Vkings",
+    teamName: "Minnesota Vikings",
     division: "NFC North",
-    jerseyNumber: 4,
+    jerseyNumber: 33,
     price: 350,
-    image: "https://fanatics.frgimages.com/minnesota-vikings/mens-nike-dalvin-cook-purple-minnesota-vikings-game-jersey_pi4869000_altimages_ff_4869028-40846e1f39f6cfc7032balt1_full.jpg?_hv=2&w=900"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_2941000/ff_2941252_full.jpg&w=340",
   },
   {
     playerName: "Harrison Smith",
-    teamName: "Minnesota Vkings",
+    teamName: "Minnesota Vikings",
     division: "NFC North",
     jerseyNumber: 22,
     price: 350,
-    image: "https://fanatics.frgimages.com/minnesota-vikings/mens-nike-harrison-smith-purple-minnesota-vikings-game-jersey_pi3892000_altimages_ff_3892907-53816fd0cc87d3cae074alt1_full.jpg?_hv=2&w=900"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_2633000/ff_2633846_full.jpg&w=340",
   },
 
   //////////////////////////
@@ -41,7 +45,8 @@ const products = [
     division: "NFC North",
     jerseyNumber: 12,
     price: 1,
-    image: "https://fanatics.frgimages.com/green-bay-packers/mens-nike-aaron-rodgers-green-green-bay-packers-captain-vapor-limited-jersey_pi4131000_altimages_ff_4131791-786c22eaa6f264fc1e12alt1_full.jpg?_hv=2&w=900"
+    image:
+      "https://fanatics.frgimages.com/green-bay-packers/mens-nike-aaron-rodgers-green-green-bay-packers-captain-vapor-limited-jersey_pi4131000_altimages_ff_4131791-786c22eaa6f264fc1e12alt1_full.jpg?_hv=2&w=900",
   },
   {
     playerName: "Aaron Jones",
@@ -49,7 +54,8 @@ const products = [
     division: "NFC North",
     jerseyNumber: 33,
     price: 10,
-    image: "https://fanatics.frgimages.com/green-bay-packers/mens-nike-aaron-jones-green-green-bay-packers-player-game-jersey_pi3435000_altimages_ff_3435566-7ad30f6a15526a127a88alt1_full.jpg?_hv=2&w=900"
+    image:
+      "https://fanatics.frgimages.com/green-bay-packers/mens-nike-aaron-jones-green-green-bay-packers-player-game-jersey_pi3435000_altimages_ff_3435566-7ad30f6a15526a127a88alt1_full.jpg?_hv=2&w=900",
   },
   {
     playerName: "Allen Lazard",
@@ -57,7 +63,8 @@ const products = [
     division: "NFC North",
     jerseyNumber: 13,
     price: 15,
-    image: "https://fanatics.frgimages.com/green-bay-packers/mens-nike-allen-lazard-green-green-bay-packers-game-jersey_pi3892000_altimages_ff_3892600-8ae3b4d37d1ade135c18alt1_full.jpg?_hv=2&w=900"
+    image:
+      "https://fanatics.frgimages.com/green-bay-packers/mens-nike-allen-lazard-green-green-bay-packers-game-jersey_pi3892000_altimages_ff_3892600-8ae3b4d37d1ade135c18alt1_full.jpg?_hv=2&w=900",
   },
   {
     playerName: "Jordan Love",
@@ -65,7 +72,8 @@ const products = [
     division: "NFC North",
     jerseyNumber: 10,
     price: 30,
-    image: "https://fanatics.com/nfl/green-bay-packers/jordan-love-green-bay-packers-nike-womens-game-jersey-green/o-3583+t-70261332+p-2532232943+z-8-2500079533?_ref=p-SRP:m-GRID:i-r3c0:po-9"
+    image:
+      "https://fanatics.frgimages.com/green-bay-packers/mens-nike-jordan-love-green-green-bay-packers-player-game-jersey_pi3919000_altimages_ff_3919132-9ce8a9b889a8941e5a4ealt1_full.jpg?_hv=2&w=900",
   },
 
   ////////////////////////////
@@ -76,7 +84,8 @@ const products = [
     division: "NFC North",
     jerseyNumber: 16,
     price: 60,
-    image: "https://fanatics.frgimages.com/detroit-lions/mens-nike-jared-goff-blue-detroit-lions-vapor-limited-jersey_pi4308000_altimages_ff_4308861-8526b312ef0d55383fd4alt1_full.jpg?_hv=2&w=900"
+    image:
+      "https://fanatics.frgimages.com/detroit-lions/mens-nike-jared-goff-blue-detroit-lions-vapor-limited-jersey_pi4308000_altimages_ff_4308861-8526b312ef0d55383fd4alt1_full.jpg?_hv=2&w=900",
   },
   {
     playerName: "D'Andre Swift",
@@ -84,7 +93,8 @@ const products = [
     division: "NFC North",
     jerseyNumber: 32,
     price: 80,
-    image: "https://fanatics.frgimages.com/detroit-lions/mens-nike-dandre-swift-blue-detroit-lions-team-game-jersey_pi4122000_altimages_ff_4122788-0ccdd626a8d5de81235falt1_full.jpg?_hv=2&w=900"
+    image:
+      "https://fanatics.frgimages.com/detroit-lions/mens-nike-dandre-swift-blue-detroit-lions-team-game-jersey_pi4122000_altimages_ff_4122788-0ccdd626a8d5de81235falt1_full.jpg?_hv=2&w=900",
   },
   {
     playerName: "Amon-Ra St. Brown",
@@ -92,7 +102,8 @@ const products = [
     division: "NFC North",
     jerseyNumber: 14,
     price: 60,
-    image: "https://fanatics.frgimages.com/detroit-lions/mens-nike-amon-ra-st-brown-blue-detroit-lions-game-player-jersey_pi4386000_altimages_ff_4386618-582d80d44259159f3b67alt1_full.jpg?_hv=2&w=900"
+    image:
+      "https://fanatics.frgimages.com/detroit-lions/mens-nike-amon-ra-st-brown-blue-detroit-lions-game-player-jersey_pi4386000_altimages_ff_4386618-582d80d44259159f3b67alt1_full.jpg?_hv=2&w=900",
   },
   {
     playerName: "Penei Sewell",
@@ -100,7 +111,8 @@ const products = [
     division: "NFC North",
     jerseyNumber: 58,
     price: 70,
-    image: "https://fanatics.frgimages.com/detroit-lions/mens-nike-amon-ra-st-brown-blue-detroit-lions-game-player-jersey_pi4386000_altimages_ff_4386618-582d80d44259159f3b67alt1_full.jpg?_hv=2&w=900"
+    image:
+      "https://fanatics.frgimages.com/detroit-lions/mens-nike-amon-ra-st-brown-blue-detroit-lions-game-player-jersey_pi4386000_altimages_ff_4386618-582d80d44259159f3b67alt1_full.jpg?_hv=2&w=900",
   },
 
   ////////////////////////////
@@ -111,7 +123,8 @@ const products = [
     division: "NFC North",
     jerseyNumber: 1,
     price: 60,
-    image: "https://fanatics.frgimages.com/chicago-bears/mens-nike-justin-fields-navy-chicago-bears-vapor-limited-jersey_pi4340000_altimages_ff_4340915-9937636efa7455a8c2d6alt1_full.jpg?_hv=2&w=900"
+    image:
+      "https://fanatics.frgimages.com/chicago-bears/mens-nike-justin-fields-navy-chicago-bears-vapor-limited-jersey_pi4340000_altimages_ff_4340915-9937636efa7455a8c2d6alt1_full.jpg?_hv=2&w=900",
   },
   {
     playerName: "Jaylon Johnson",
@@ -119,7 +132,8 @@ const products = [
     division: "NFC North",
     jerseyNumber: 33,
     price: 40,
-    image: "https://fanatics.frgimages.com/chicago-bears/mens-nike-jaylon-johnson-navy-chicago-bears-game-jersey_pi4020000_altimages_ff_4020592-d493e6a52432f6c27888alt1_full.jpg?_hv=2&w=900"
+    image:
+      "https://fanatics.frgimages.com/chicago-bears/mens-nike-jaylon-johnson-navy-chicago-bears-game-jersey_pi4020000_altimages_ff_4020592-d493e6a52432f6c27888alt1_full.jpg?_hv=2&w=900",
   },
   {
     playerName: "Darnell Mooney",
@@ -127,7 +141,8 @@ const products = [
     division: "NFC North",
     jerseyNumber: 11,
     price: 40,
-    image: "https://fanatics.frgimages.com/chicago-bears/mens-nike-darnell-mooney-navy-chicago-bears-game-jersey_pi4020000_altimages_ff_4020579-ec6869d721f231808e07alt1_full.jpg?_hv=2&w=900"
+    image:
+      "https://fanatics.frgimages.com/chicago-bears/mens-nike-darnell-mooney-navy-chicago-bears-game-jersey_pi4020000_altimages_ff_4020579-ec6869d721f231808e07alt1_full.jpg?_hv=2&w=900",
   },
   {
     playerName: "David Montgomery",
@@ -135,7 +150,8 @@ const products = [
     division: "NFC North",
     jerseyNumber: 32,
     price: 50,
-    image: "https://fanatics.frgimages.com/chicago-bears/mens-nike-david-montgomery-navy-chicago-bears-game-jersey_pi3892000_altimages_ff_3892478-77cebb879d47f18309f3alt1_full.jpg?_hv=2&w=900"
+    image:
+      "https://fanatics.frgimages.com/chicago-bears/mens-nike-david-montgomery-navy-chicago-bears-game-jersey_pi3892000_altimages_ff_3892478-77cebb879d47f18309f3alt1_full.jpg?_hv=2&w=900",
   },
 
   ///////////////////////// NFC West ////////////////////
@@ -145,7 +161,8 @@ const products = [
     division: "NFC West",
     jerseyNumber: 1,
     price: 100,
-    image: "https://fanatics.frgimages.com/arizona-cardinals/mens-nike-kyler-murray-cardinal-arizona-cardinals-legend-player-jersey_pi3646000_altimages_ff_3646585-3674481371a02b562c55alt1_full.jpg?_hv=2&w=900"
+    image:
+      "https://fanatics.frgimages.com/arizona-cardinals/mens-nike-kyler-murray-cardinal-arizona-cardinals-legend-player-jersey_pi3646000_altimages_ff_3646585-3674481371a02b562c55alt1_full.jpg?_hv=2&w=900",
   },
   {
     playerName: "JJ Watt",
@@ -153,15 +170,17 @@ const products = [
     division: "NFC West",
     jerseyNumber: 99,
     price: 150,
-    image: "https://fanatics.frgimages.com/arizona-cardinals/mens-nike-jj-watt-cardinal-arizona-cardinals-legend-player-jersey_pi4273000_altimages_ff_4273572-4f4919995f53f98e2127alt1_full.jpg?_hv=2&w=900"
+    image:
+      "https://fanatics.frgimages.com/arizona-cardinals/mens-nike-jj-watt-cardinal-arizona-cardinals-legend-player-jersey_pi4273000_altimages_ff_4273572-4f4919995f53f98e2127alt1_full.jpg?_hv=2&w=900",
   },
   {
-    playerName: "Zach Ertz",
+    playerName: "AJ Green",
     teamName: "Arizona Cardinals",
     division: "NFC West",
     jerseyNumber: 18,
     price: 150,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/arizona-cardinals/mens-nike-aj-green-cardinal-arizona-cardinals-game-jersey_pi4273000_altimages_ff_4273558-e45d7cdc45bc7e6c7ffealt1_full.jpg?_hv=2&w=900",
   },
   {
     playerName: "DeAndre Hopkins",
@@ -169,7 +188,8 @@ const products = [
     division: "NFC West",
     jerseyNumber: 10,
     price: 200,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/arizona-cardinals/mens-nike-deandre-hopkins-cardinal-arizona-cardinals-player-game-jersey_pi3878000_altimages_ff_3878094-484cf4b1aa07e5eaa0fbalt1_full.jpg?_hv=2&w=900",
   },
 
   /////////////////////////////////
@@ -180,7 +200,8 @@ const products = [
     division: "NFC West",
     jerseyNumber: 99,
     price: 200,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/los-angeles-rams/mens-nike-aaron-donald-royal-los-angeles-rams-vapor-limited-jersey_pi3689000_altimages_ff_3689249-6c0ff5d115714e10b16balt1_full.jpg?_hv=2&w=900",
   },
   {
     playerName: "Cooper Kupp",
@@ -188,7 +209,8 @@ const products = [
     division: "NFC West",
     jerseyNumber: 10,
     price: 110,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/los-angeles-rams/mens-nike-cooper-kupp-royal-los-angeles-rams-vapor-limited-jersey_pi3928000_altimages_ff_3928792-d84fee38859bee65451calt1_full.jpg?_hv=2&w=900",
   },
   {
     playerName: "Matthew Stafford",
@@ -196,7 +218,8 @@ const products = [
     division: "NFC West",
     jerseyNumber: 9,
     price: 90,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4308000/ff_4308864-b848835a6d32901392da_full.jpg&w=340",
   },
   {
     playerName: "Jalen Ramsey",
@@ -204,7 +227,8 @@ const products = [
     division: "NFC West",
     jerseyNumber: 5,
     price: 100,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4571000/ff_4571478-e85f9778da10c8898758_full.jpg&w=340",
   },
 
   /////////////////////////////////
@@ -215,7 +239,8 @@ const products = [
     division: "NFC West",
     jerseyNumber: 85,
     price: 200,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4482000/ff_4482355-a365d38f99c89e3d59b1_full.jpg&w=340",
   },
   {
     playerName: "Trey Lance",
@@ -223,7 +248,8 @@ const products = [
     division: "NFC West",
     jerseyNumber: 5,
     price: 100,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4482000/ff_4482356-30eddac71d706731640c_full.jpg&w=340",
   },
   {
     playerName: "Nick Bosa",
@@ -231,7 +257,8 @@ const products = [
     division: "NFC West",
     jerseyNumber: 97,
     price: 200,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4482000/ff_4482358-aa38d915b69b9d98d9e5_full.jpg&w=340",
   },
   {
     playerName: "Deebo Samuel",
@@ -239,7 +266,8 @@ const products = [
     division: "NFC West",
     jerseyNumber: 19,
     price: 90,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4825000/ff_4825888-dd276af450c5b7679b43_full.jpg&w=340",
   },
 
   /////////////////////////////////
@@ -250,7 +278,8 @@ const products = [
     division: "NFC West",
     jerseyNumber: 14,
     price: 150,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4057000/ff_4057175-461168478b4326907d05_full.jpg&w=340",
   },
   {
     playerName: "Tyler Lockett",
@@ -258,23 +287,26 @@ const products = [
     division: "NFC West",
     jerseyNumber: 16,
     price: 60,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3892000/ff_3892415-c685a1ede1005cc37603_full.jpg&w=340",
   },
   {
-    playerName: "Rashaad Penny",
+    playerName: "Kenneth Walker III",
     teamName: "Seattle Seahawks",
     division: "NFC West",
-    jerseyNumber: 20,
+    jerseyNumber: 0,
     price: 60,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4889000/ff_4889871-b3841da35664f139035c_full.jpg&w=340",
   },
   {
-    playerName: "Jacob Eason",
+    playerName: "Drew Lock",
     teamName: "Seattle Seahawks",
     division: "NFC West",
-    jerseyNumber: 17,
-    price: 50,
-    image: "placeholder"
+    jerseyNumber: 2,
+    price: 40,
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4899000/ff_4899190-ea55707586fe0682e497_full.jpg&w=340",
   },
 
   ///////////////////////// NFC West ////////////////////
@@ -284,7 +316,8 @@ const products = [
     division: "AFC East",
     jerseyNumber: 17,
     price: 150,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3139000/ff_3139211_full.jpg&w=340",
   },
   {
     playerName: "Stefon Diggs",
@@ -292,7 +325,8 @@ const products = [
     division: "AFC East",
     jerseyNumber: 14,
     price: 250,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3922000/ff_3922409-f417251aa5c3f4779dc0_full.jpg&w=340",
   },
   {
     playerName: "Von Miller",
@@ -300,15 +334,17 @@ const products = [
     division: "AFC East",
     jerseyNumber: 40,
     price: 140,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4794000/ff_4794664-55b78766d8b9c58a6b7c_full.jpg&w=340",
   },
   {
-    playerName: "Shaq Lawson",
+    playerName: "Carlos Hyde",
     teamName: "Buffalo Bills",
     division: "AFC East",
-    jerseyNumber: 90,
+    jerseyNumber: 23,
     price: 110,
-    image: "placeholder"
+    image:
+      "https://www.fanatics.com/nfl/buffalo-bills/next-day-jerseys/o-2416+t-03605712+c-786905314+z-9-3008290627?_s=gppc&utm_campaign=NFL+-+Buffalo+Bills+-+GKs+-+US+-+EN|14730835391&utm_medium=ppc&ks_id=6250_kw111578536&utm_term=buffalo%20bills%20jerseys&matchtype={bidmatchtype}&utm_source=g&target=kwd-112226912&pcrid={adid}&adposition=&gclid=EAIaIQobChMI1oDC-u_B-QIVyW1vBB0pnQEkEAAYASAAEgJka_D_BwE",
   },
 
   //////////////////////////////////////
@@ -319,31 +355,35 @@ const products = [
     division: "AFC East",
     jerseyNumber: 5,
     price: 250,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/miami-dolphins/mens-nike-teddy-bridgewater-aqua-miami-dolphins-game-jersey_pi4789000_altimages_ff_4789065-5a791e9e42f82ea2976ealt1_full.jpg?_hv=2&w=900",
   },
   {
     playerName: "Tyreek Hill",
     teamName: "Miami Dolphins",
     division: "AFC East",
     jerseyNumber: 10,
-    price: 50,
-    image: "placeholder"
+    price: 40,
+    image:
+      "https://fanatics.frgimages.com/miami-dolphins/mens-nike-tyreek-hill-aqua-miami-dolphins-game-jersey_pi4803000_altimages_ff_4803714-164e48bbebd1fcc163acalt1_full.jpg?_hv=2&w=900",
   },
   {
-    playerName: "Eric Rowe",
+    playerName: "Tua Tagovailoa",
     teamName: "Miami Dolphins",
     division: "AFC East",
-    jerseyNumber: 21,
-    price: 100,
-    image: "placeholder"
+    jerseyNumber: 1,
+    price: 130,
+    image:
+      "https://fanatics.frgimages.com/miami-dolphins/mens-nike-tua-tagovailoa-aqua-miami-dolphins-vapor-limited-jersey_pi3924000_altimages_ff_3924387-a8026de180bb2e72958falt1_full.jpg?_hv=2&w=900",
   },
   {
-    playerName: "Mohamed Sanu",
+    playerName: "Xavien Howard",
     teamName: "Miami Dolphins",
     division: "AFC East",
-    jerseyNumber: 16,
+    jerseyNumber: 25,
     price: 100,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/miami-dolphins/mens-nike-xavien-howard-aqua-miami-dolphins-player-game-jersey_pi3441000_altimages_ff_3441350-d49efb2fe819ef386ec5alt1_full.jpg?_hv=2&w=900",
   },
 
   //////////////////////////////////////////////
@@ -354,7 +394,8 @@ const products = [
     division: "AFC East",
     jerseyNumber: 1,
     price: 150,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4868000/ff_4868452-88ba993308d942ba67af_full.jpg&w=340",
   },
   {
     playerName: "Zach Wilson",
@@ -362,7 +403,8 @@ const products = [
     division: "AFC East",
     jerseyNumber: 1,
     price: 200,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4340000/ff_4340957-4ea1d50f41288b3f1489_full.jpg&w=340",
   },
   {
     playerName: "Tyler Conklin",
@@ -370,15 +412,17 @@ const products = [
     division: "AFC East",
     jerseyNumber: 83,
     price: 200,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/new-york-jets/mens-nike-tyler-conklin-gotham-green-new-york-jets-game-jersey_pi4899000_altimages_ff_4899205-bebdf685dd6e0d350a02alt1_full.jpg?_hv=2&w=900",
   },
   {
-    playerName: "Joe Flacco",
+    playerName: "Quinnen Williams",
     teamName: "New York Jets",
     division: "AFC East",
-    jerseyNumber: 19,
+    jerseyNumber: 95,
     price: 100,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/new-york-jets/mens-nike-quinnen-williams-gotham-green-new-york-jets-game-jersey_pi3892000_altimages_ff_3892986-89ea58582e2d6e6fb322alt1_full.jpg?_hv=2&w=900",
   },
 
   //////////////////////////////////////////////
@@ -389,15 +433,17 @@ const products = [
     division: "AFC East",
     jerseyNumber: 10,
     price: 5,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/new-england-patriots/mens-nike-mac-jones-navy-new-england-patriots-legend-jersey_pi4340000_altimages_ff_4340958-6008d50fe675f8c79018alt1_full.jpg?_hv=2&w=900",
   },
   {
-    playerName: "Nelson Agholor",
+    playerName: "Matthew Judon",
     teamName: "New England Patriots",
     division: "AFC East",
-    jerseyNumber: 15,
+    jerseyNumber: 9,
     price: 10,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/new-england-patriots/mens-nike-matthew-judon-navy-new-england-patriots-game-player-jersey_pi4457000_altimages_ff_4457960-68c3ec75777cb67b6b2ealt1_full.jpg?_hv=2&w=900",
   },
   {
     playerName: "Jabrill Peppers",
@@ -405,7 +451,8 @@ const products = [
     division: "AFC East",
     jerseyNumber: 3,
     price: 10,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4899000/ff_4899207-2aee5eb84de48cc2f49a_full.jpg&w=340",
   },
   {
     playerName: "Malcolm Butler",
@@ -413,7 +460,8 @@ const products = [
     division: "AFC East",
     jerseyNumber: 4,
     price: 50,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4806000/ff_4806955-07defe61a2ac98a58def_full.jpg&w=340",
   },
   ////////////////////////////////
 
@@ -423,7 +471,8 @@ const products = [
     division: "NFC South",
     jerseyNumber: "41",
     price: 300,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_2799000/ff_2799381_full.jpg&w=340",
   },
   {
     playerName: "Michael Thomas",
@@ -431,7 +480,8 @@ const products = [
     division: "NFC South",
     jerseyNumber: 13,
     price: 300,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_2633000/ff_2633513_full.jpg&w=340",
   },
   {
     playerName: "Tyrann Mathieu",
@@ -439,7 +489,8 @@ const products = [
     division: "NFC South",
     jerseyNumber: 32,
     price: 300,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4888000/ff_4888566-c573945b3a5029caefad_full.jpg&w=340",
   },
   {
     playerName: "Cam Jordan",
@@ -447,7 +498,8 @@ const products = [
     division: "NFC South",
     jerseyNumber: 94,
     price: 300,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3326000/ff_3326086-297f438f854e22addf3b_full.jpg&w=340",
   },
   {
     playerName: "Baker Mayfield",
@@ -455,7 +507,8 @@ const products = [
     division: "NFC South",
     jerseyNumber: 6,
     price: 150,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4990000/ff_4990641-4ed5ae4dabcb180ba519_full.jpg&w=340",
   },
   {
     playerName: "Christian McCaffery",
@@ -463,23 +516,26 @@ const products = [
     division: "NFC South",
     jerseyNumber: 22,
     price: 175,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/carolina-panthers/mens-nike-christian-mccaffrey-blue-carolina-panthers-alternate-vapor-elite-player-jersey_pi4131000_altimages_ff_4131773-5f265a04acdddfa3a458alt1_full.jpg?_hv=2&w=900",
   },
   {
-    playerName: "Xavier Woods",
+    playerName: "Jaycee Horn",
     teamName: "Carolina Panthers",
     division: "NFC South",
-    jerseyNumber: 20,
+    jerseyNumber: 8,
     price: 125,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4408000/ff_4408926-b67f79f061c48689b4d0_full.jpg&w=340",
   },
   {
-    playerName: "Donte Jackson",
+    playerName: "D.J. Moore",
     teamName: "Carolina Panthers",
     division: "NFC South",
-    jerseyNumber: 26,
+    jerseyNumber: 2,
     price: 125,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4571000/ff_4571617-c850b9febbe431f2027a_full.jpg&w=340",
   },
   {
     playerName: "Tom Brady",
@@ -487,15 +543,17 @@ const products = [
     division: "NFC South",
     jerseyNumber: 12,
     price: 12,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3878000/ff_3878090-22089ad43b30f453a2ad_full.jpg&w=340",
   },
   {
-    playerName: "Leonard Fournette",
+    playerName: "Mike Evans",
     teamName: "Tampa Bay Buccaneers",
     division: "NFC South",
-    jerseyNumber: 7,
+    jerseyNumber: 13,
     price: 85,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3689000/ff_3689231-ece4405c9b2ccafa31a5_full.jpg&w=340",
   },
   {
     playerName: "Vita Vea",
@@ -503,15 +561,17 @@ const products = [
     division: "NFC South",
     jerseyNumber: 50,
     price: 125,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3896000/ff_3896065-c2c719a78555bd2ff584_full.jpg&w=340",
   },
   {
-    playerName: "Devon White",
+    playerName: "Devin White",
     teamName: "Tampa Bay Buccaneers",
     division: "NFC South",
     jerseyNumber: 45,
     price: 150,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3689000/ff_3689232-fa15aaed4e758f5b4b80_full.jpg&w=340",
   },
   {
     playerName: "Marcus Mariota",
@@ -519,15 +579,17 @@ const products = [
     division: "NFC South",
     jerseyNumber: 1,
     price: 10,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4806000/ff_4806954-59388f5fe421c2029fad_full.jpg&w=340",
   },
   {
-    playerName: "Cordarrelle Patterson",
+    playerName: "Kyle Pitts",
     teamName: "Atlanta Falcons",
     division: "NFC South",
-    jerseyNumber: 84,
+    jerseyNumber: 8,
     price: 15,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4340000/ff_4340925-6fa8e725664b438a558a_full.jpg&w=340",
   },
   {
     playerName: "Deion Jones",
@@ -535,15 +597,17 @@ const products = [
     division: "NFC South",
     jerseyNumber: 45,
     price: 15,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3898000/ff_3898602-22ccfc69710f9a8e6195_full.jpg&w=340",
   },
   {
-    playerName: "Casey Hayward",
+    playerName: "Troy Anderson",
     teamName: "Atlanta Falcons",
     division: "NFC South",
-    jerseyNumber: 32,
+    jerseyNumber: 44,
     price: 10,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4952000/ff_4952823-daccaef1640bd978af7d_full.jpg&w=340",
   },
   {
     playerName: "Dak Prescott",
@@ -551,7 +615,8 @@ const products = [
     division: "NFC East",
     jerseyNumber: 4,
     price: 30,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_2581000/ff_2581640_full.jpg&w=340",
   },
   {
     playerName: "Ezekiel Elliott",
@@ -559,15 +624,17 @@ const products = [
     division: "NFC East",
     jerseyNumber: 23,
     price: 30,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3687000/ff_3687688-2c6abe4880b82f49809b_full.jpg&w=340",
   },
   {
-    playerName: "Anthony Barr",
+    playerName: "Trevon Diggs",
     teamName: "Dallas Cowboys",
     division: "NFC East",
-    jerseyNumber: 51,
+    jerseyNumber: 7,
     price: 200,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4550000/ff_4550149-9d910a3fc42065d05744_full.jpg&w=340",
   },
   {
     playerName: "Micah Parsons",
@@ -575,7 +642,8 @@ const products = [
     division: "NFC East",
     jerseyNumber: 11,
     price: 200,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4324000/ff_4324520-878a96da3b5a1649c626_full.jpg&w=340",
   },
   {
     playerName: "Daniel Jones",
@@ -583,7 +651,8 @@ const products = [
     division: "NFC East",
     jerseyNumber: 8,
     price: 100,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3533000/ff_3533164-57fbca7dc57c4222d1e4_full.jpg&w=340",
   },
   {
     playerName: "Saquon Barkley",
@@ -591,23 +660,26 @@ const products = [
     division: "NFC East",
     jerseyNumber: 26,
     price: 175,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/new-york-giants/mens-nike-saquon-barkley-new-york-giants-game-player-jersey_pi3139000_altimages_ff_3139222alt1_full.jpg?_hv=2&w=900",
   },
   {
-    playerName: "Darren Evans",
+    playerName: "Kadarius Toney",
     teamName: "New York Giants",
     division: "NFC East",
-    jerseyNumber: 37,
+    jerseyNumber: 89,
     price: 100,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4458000/ff_4458156-ef55afa75923a6ab0e75_full.jpg&w=340",
   },
   {
-    playerName: "Cor'Dale Flott",
+    playerName: "Kayvon Thibodeaux",
     teamName: "New York Giants",
     division: "NFC East",
-    jerseyNumber: 28,
+    jerseyNumber: 5,
     price: 200,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/new-york-giants/mens-nike-kayvon-thibodeauxroyal-new-york-giants-2022-nfl-draft-first-round-pick-game-jersey_pi4868000_altimages_ff_4868449-ba66d5ce90807a819511alt1_full.jpg?_hv=2&w=900",
   },
   {
     playerName: "Jalen Hurts",
@@ -615,7 +687,8 @@ const products = [
     division: "NFC East",
     jerseyNumber: 1,
     price: 200,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4424000/ff_4424189-ad606d2ff91601d3142a_full.jpg&w=340",
   },
   {
     playerName: "A.J. Brown",
@@ -623,7 +696,8 @@ const products = [
     division: "NFC East",
     jerseyNumber: 11,
     price: 200,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4885000/ff_4885630-8999e7ed3e674ec30b03_full.jpg&w=340",
   },
   {
     playerName: "Fletcher Cox",
@@ -631,15 +705,17 @@ const products = [
     division: "NFC East",
     jerseyNumber: 91,
     price: 200,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_852000/ff_852639_xl.jpg&w=340",
   },
   {
-    playerName: "Patrick Johnson",
+    playerName: "Darius Slay Jr.",
     teamName: "Philadelphia Eagles",
     division: "NFC East",
-    jerseyNumber: 48,
+    jerseyNumber: 2,
     price: 200,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/philadelphia-eagles/mens-nike-darius-slay-jr-midnight-green-philadelphia-eagles-game-jersey_pi4319000_altimages_ff_4319111-3bfe2b699084ed45266aalt1_full.jpg?_hv=2&w=900",
   },
   {
     playerName: "Taylor Heinicke",
@@ -647,15 +723,17 @@ const products = [
     division: "NFC East",
     jerseyNumber: 4,
     price: 200,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4482000/ff_4482811-c30c8bbda2e6f042a27d_full.jpg&w=340",
   },
   {
-    playerName: "Logan Thomas",
+    playerName: "Terry McLaurin",
     teamName: "Washington Commanders",
     division: "NFC East",
-    jerseyNumber: 82,
+    jerseyNumber: 17,
     price: 200,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4482000/ff_4482389-e5b1560b4a19f4e2ec69_full.jpg&w=340",
   },
   {
     playerName: "Chase Young",
@@ -663,23 +741,26 @@ const products = [
     division: "NFC East",
     jerseyNumber: 99,
     price: 200,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4482000/ff_4482388-41ea5a4c704005263b58_full.jpg&w=340",
   },
   {
-    playerName: "Camaron Cheeseman",
+    playerName: "Jahan Dotson",
     teamName: "Washington Commanders",
     division: "NFC East",
-    jerseyNumber: 54,
+    jerseyNumber: 1,
     price: 200,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/washington-commanders/mens-nike-jahan-dotson-burgundy-washington-commanders-2022-nfl-draft-first-round-pick-game-jersey_pi4868000_altimages_ff_4868478-e6764b921ba27440a831alt1_full.jpg?_hv=2&w=900",
   },
   {
-    playerName: "Kyle Allen",
+    playerName: "Pharaoh Brown",
     teamName: "Houston Texans",
     division: "AFC South",
-    jerseyNumber: 3,
+    jerseyNumber: 85,
     price: 200,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4448000/ff_4448432-3e91cad7b65754a1d6a4_full.jpg&w=340",
   },
   {
     playerName: "Marlon Mack",
@@ -687,15 +768,17 @@ const products = [
     division: "AFC South",
     jerseyNumber: 2,
     price: 200,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4873000/ff_4873713-778e402f4788a967ddf4_full.jpg&w=340",
   },
   {
-    playerName: "Jordan Jenkins",
+    playerName: "Steven Nelson",
     teamName: "Houston Texans",
     division: "AFC South",
-    jerseyNumber: 50,
+    jerseyNumber: 31,
     price: 200,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/houston-texans/mens-nike-steven-nelson-navy-houston-texans-game-jersey_pi4873000_altimages_ff_4873716-753950a20d680d4e81a5alt1_full.jpg?_hv=2&w=900",
   },
   {
     playerName: "Garret Wallow",
@@ -703,7 +786,8 @@ const products = [
     division: "AFC South",
     jerseyNumber: 32,
     price: 200,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/houston-texans/mens-nike-garret-wallow-navy-houston-texans-game-jersey_pi4448000_altimages_ff_4448415-7898255699bc8b407e90alt1_full.jpg?_hv=2&w=900",
   },
   {
     playerName: "Trevor Lawrence",
@@ -711,7 +795,8 @@ const products = [
     division: "AFC South",
     jerseyNumber: 16,
     price: 200,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4340000/ff_4340955-09aaa01928e2857f6f37_full.jpg&w=340",
   },
   {
     playerName: "Dan Arnold",
@@ -719,15 +804,17 @@ const products = [
     division: "AFC South",
     jerseyNumber: 85,
     price: 200,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4509000/ff_4509104-628a3e1b8e362b36ff9e_full.jpg&w=340",
   },
   {
-    playerName: "DaVon Hamilton",
+    playerName: "Travon Walker",
     teamName: "Jacksonville Jaguars",
     division: "AFC South",
     jerseyNumber: 52,
     price: 200,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4868000/ff_4868710-b58c67af19070c7ed5e2_full.jpg&w=340",
   },
   {
     playerName: "Chris Claybrooks",
@@ -735,7 +822,8 @@ const products = [
     division: "AFC South",
     jerseyNumber: 27,
     price: 200,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4448000/ff_4448736-55fd9ae09a30c4bd4819_full.jpg&w=340",
   },
   {
     playerName: "Matt Ryan",
@@ -743,7 +831,8 @@ const products = [
     division: "AFC South",
     jerseyNumber: 2,
     price: 200,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4799000/ff_4799725-6fa1d0eef6fee4b0b72e_full.jpg&w=340",
   },
   {
     playerName: "Nick Foles",
@@ -751,7 +840,8 @@ const products = [
     division: "AFC South",
     jerseyNumber: 9,
     price: 200,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_5044000/ff_5044265-7f5f961360085a555f6f_full.jpg&w=340",
   },
   {
     playerName: "DeForest Buckner",
@@ -759,7 +849,8 @@ const products = [
     division: "AFC South",
     jerseyNumber: 99,
     price: 200,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4448000/ff_4448501-179a623e8d2d26a72f28_full.jpg&w=340",
   },
   {
     playerName: "Stephon Gilmore",
@@ -767,7 +858,8 @@ const products = [
     division: "AFC South",
     jerseyNumber: 5,
     price: 200,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4923000/ff_4923784-e6c395d9efa63018665e_full.jpg&w=340",
   },
   {
     playerName: "Ryan Tannehill",
@@ -775,7 +867,8 @@ const products = [
     division: "AFC South",
     jerseyNumber: 17,
     price: 200,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3780000/ff_3780974-221db372732ecd4f3b49_full.jpg&w=340",
   },
   {
     playerName: "Malik Willis",
@@ -783,7 +876,8 @@ const products = [
     division: "AFC South",
     jerseyNumber: 7,
     price: 200,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4889000/ff_4889875-bbe807853aab039bf4f4_full.jpg&w=340",
   },
   {
     playerName: "Bud Dupree",
@@ -791,15 +885,17 @@ const products = [
     division: "AFC South",
     jerseyNumber: 48,
     price: 200,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4459000/ff_4459061-b88ef00b4108ca7f654c_full.jpg&w=340",
   },
   {
-    playerName: "Kristian Fulton",
+    playerName: "Derrick Henry",
     teamName: "Tennessee Titans",
     division: "AFC South",
-    jerseyNumber: 26,
+    jerseyNumber: 22,
     price: 200,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3036000/ff_3036808_full.jpg&w=340",
   },
 
   ///////////////////////////////
@@ -810,7 +906,8 @@ const products = [
     division: "AFC North",
     jerseyNumber: 24,
     price: 400,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3687000/ff_3687719-7f19bfe9b84505922f5a_full.jpg&w=340",
   },
   {
     playerName: "Myles Garrett",
@@ -818,7 +915,8 @@ const products = [
     division: "AFC North",
     jerseyNumber: 95,
     price: 300,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3687000/ff_3687716-6bed30f8d71c70283de9_full.jpg&w=340",
   },
   {
     playerName: "Denzel Ward",
@@ -826,7 +924,8 @@ const products = [
     division: "AFC North",
     jerseyNumber: 21,
     price: 300,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3687000/ff_3687718-c37d05302858f9cb00d3_full.jpg&w=340",
   },
   {
     playerName: "Amari Cooper",
@@ -834,7 +933,8 @@ const products = [
     division: "AFC North",
     jerseyNumber: 2,
     price: 300,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4791000/ff_4791897-9a2848b81f805580bbe4_full.jpg&w=340",
   },
   {
     playerName: "TJ Watt",
@@ -842,7 +942,8 @@ const products = [
     division: "AFC North",
     jerseyNumber: 99,
     price: 1,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_2941000/ff_2941255_full.jpg&w=340",
   },
   {
     playerName: "Najee Harris",
@@ -850,7 +951,8 @@ const products = [
     division: "AFC North",
     jerseyNumber: 22,
     price: 1,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4340000/ff_4340960-3801b74ae63e288ff42b_full.jpg&w=340",
   },
   {
     playerName: "Chase Claypool",
@@ -858,15 +960,17 @@ const products = [
     division: "AFC North",
     jerseyNumber: 11,
     price: 1,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3911000/ff_3911804-a1739d3d7398bbb7d396_full.jpg&w=340",
   },
   {
-    playerName: "Troy Palamalu",
+    playerName: "Minkah Fitzpatrick",
     teamName: "Pittsburg Steelers",
     division: "AFC North",
-    jerseyNumber: 43,
+    jerseyNumber: 39,
     price: 10,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3751000/ff_3751503-0271d71c8be08d71f621_full.jpg&w=340",
   },
   {
     playerName: "Ja'Marr Chase",
@@ -874,7 +978,8 @@ const products = [
     division: "AFC North",
     jerseyNumber: 1,
     price: 10,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4301000/ff_4301163-7f16287e1cf383f41bed_full.jpg&w=340",
   },
   {
     playerName: "Joe Burrow",
@@ -882,15 +987,17 @@ const products = [
     division: "AFC North",
     jerseyNumber: 9,
     price: 10,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4057000/ff_4057705-18b3159f0a18ce2c421a_full.jpg&w=340",
   },
   {
-    playerName: "Evan McPherson",
+    playerName: "Joe Mixon",
     teamName: "Cincinatti Bengals",
     division: "AFC North",
-    jerseyNumber: 2,
+    jerseyNumber: 28,
     price: 10,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4057000/ff_4057151-c2216116504895c54f7a_full.jpg&w=340",
   },
   {
     playerName: "Tee Higgins",
@@ -898,7 +1005,8 @@ const products = [
     division: "AFC North",
     jerseyNumber: 85,
     price: 10,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4057000/ff_4057702-023d3437675b41b4a569_full.jpg&w=340",
   },
   {
     playerName: "Lamar Jackson",
@@ -906,7 +1014,8 @@ const products = [
     division: "AFC North",
     jerseyNumber: 8,
     price: 10,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3139000/ff_3139242_full.jpg&w=340",
   },
   {
     playerName: "Justin Tucker",
@@ -914,7 +1023,8 @@ const products = [
     division: "AFC North",
     jerseyNumber: 9,
     price: 10,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_1611000/ff_1611462_full.jpg&w=340",
   },
   {
     playerName: "Mark Andrews",
@@ -922,7 +1032,8 @@ const products = [
     division: "AFC North",
     jerseyNumber: 89,
     price: 10,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3692000/ff_3692939-8c34846ff38d1d2c0e6b_full.jpg&w=340",
   },
   {
     playerName: "J.K. Dobbins",
@@ -930,7 +1041,8 @@ const products = [
     division: "AFC North",
     jerseyNumber: 27,
     price: 10,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3911000/ff_3911851-1adebcf5ecc70e85f950_full.jpg&w=340",
   },
   {
     playerName: "Russell Wilson",
@@ -938,7 +1050,8 @@ const products = [
     division: "AFC West",
     jerseyNumber: 3,
     price: 1,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4788000/ff_4788672-e5b756b189beb8c5583b_full.jpg&w=340",
   },
   {
     playerName: "Justin Simmons",
@@ -946,7 +1059,8 @@ const products = [
     division: "AFC West",
     jerseyNumber: 3,
     price: 50,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4482000/ff_4482381-2d3d7acee22aadb9ba7e_full.jpg&w=340",
   },
   {
     playerName: "Peyton Manning",
@@ -954,7 +1068,8 @@ const products = [
     division: "AFC West",
     jerseyNumber: 18,
     price: 100,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4401000/ff_4401453-ba936b0925c2f9581f55_full.jpg&w=340",
   },
   {
     playerName: "John Elway",
@@ -962,7 +1077,8 @@ const products = [
     division: "AFC West",
     jerseyNumber: 7,
     price: 80,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3974000/ff_3974161-9c50067d6c52bb187bdf_full.jpg&w=340",
   },
   {
     playerName: "Patrick Mahomes",
@@ -970,7 +1086,8 @@ const products = [
     division: "AFC West",
     jerseyNumber: 15,
     price: 100,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_2941000/ff_2941227_full.jpg&w=340",
   },
   {
     playerName: "JuJu Smith-Schuster",
@@ -978,7 +1095,8 @@ const products = [
     division: "AFC West",
     jerseyNumber: 9,
     price: 3,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4811000/ff_4811111-6df3b728eba5627890e4_full.jpg&w=340",
   },
   {
     playerName: "Travis Kelce",
@@ -986,7 +1104,8 @@ const products = [
     division: "AFC West",
     jerseyNumber: 87,
     price: 200,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_2633000/ff_2633422_full.jpg&w=340",
   },
   {
     playerName: "Nick Bolton",
@@ -994,7 +1113,8 @@ const products = [
     division: "AFC West",
     jerseyNumber: 32,
     price: 50,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4906000/ff_4906255-775f676182951f9273da_full.jpg&w=340",
   },
   {
     playerName: "Davante Adams",
@@ -1002,7 +1122,8 @@ const products = [
     division: "AFC West",
     jerseyNumber: 17,
     price: 150,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4796000/ff_4796949-96e737903683a627077f_full.jpg&w=340",
   },
   {
     playerName: "Hunter Renfrow",
@@ -1010,7 +1131,8 @@ const products = [
     division: "AFC West",
     jerseyNumber: 13,
     price: 150,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3892000/ff_3892884-6668258f9a6e134f89b7_full.jpg&w=340",
   },
   {
     playerName: "Derek Carr",
@@ -1018,7 +1140,8 @@ const products = [
     division: "AFC West",
     jerseyNumber: 4,
     price: 100,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_1937000/ff_1937603_xl.jpg&w=340",
   },
   {
     playerName: "Darren Waller",
@@ -1026,7 +1149,8 @@ const products = [
     division: "AFC West",
     jerseyNumber: 83,
     price: 80,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4085000/ff_4085640-a80da48060e1d0a8aac4_full.jpg&w=340",
   },
   {
     playerName: "Justin Herbert",
@@ -1034,7 +1158,8 @@ const products = [
     division: "AFC West",
     jerseyNumber: 10,
     price: 100,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3924000/ff_3924392-cb444d760b268372ef65_full.jpg&w=340",
   },
   {
     playerName: "Khalil Mack",
@@ -1042,7 +1167,8 @@ const products = [
     division: "AFC West",
     jerseyNumber: 52,
     price: 100,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4788000/ff_4788673-d47ab7a9ab07dcfed137_full.jpg&w=340",
   },
   {
     playerName: "Joey Bosa",
@@ -1050,7 +1176,8 @@ const products = [
     division: "AFC West",
     jerseyNumber: 97,
     price: 200,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3909000/ff_3909866-63ff291edf1417814944_full.jpg&w=340",
   },
   {
     playerName: "Keenan Allen",
@@ -1058,10 +1185,11 @@ const products = [
     division: "AFC West",
     jerseyNumber: 13,
     price: 100,
-    image: "placeholder"
+    image:
+      "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_3909000/ff_3909868-b91ecf3ee95f8aec5406_full.jpg&w=340",
   },
 ];
 
-module.exports = { products };
 
+module.exports = { products };
 
