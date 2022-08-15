@@ -42,7 +42,7 @@ import axios from 'axios';
   event.preventDefault();
   try {
     const response = await axios.post("http://localhost:3000/api/users/login", {
-      userName: userName,
+      username: userName,
       password: userPassword,
     });
   } catch (error) {
