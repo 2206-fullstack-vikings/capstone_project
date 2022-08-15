@@ -1190,5 +1190,10 @@ const products = [
   },
 ];
 
+<<<<<<< HEAD
+=======
+
+module.exports = { products };
+>>>>>>> main
 
 module.exports = { products };
