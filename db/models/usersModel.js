@@ -17,23 +17,24 @@ async function getUsers() {
     return allUsers
 }
 
-async function getUser( {username, password} ) {
+async function getUser(username, password ) {
   try {
-    
+      console.log("this is our password", password)
       const {rows:[user]}= await client.query(`
         SELECT *
         FROM users
         WHERE username=$1;
         
       `,[username])
-        return user;
+      console.log('this is out user', user);
+      return user;
 
   } catch (error) {
     console.log(error)
   }
   }
 
-
+getUser('choker', 'iNeedToGo');
 
 async function createUsers ({name, username, password, email, admin}) {
   const {rows: [ newUser ]} = await client.query(`
