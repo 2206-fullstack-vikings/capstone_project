@@ -1,4 +1,6 @@
+import axios from "axios";
 import React from "react";
+import {logInUser, registerNewUser} from "../axios-services"
 
 const Login = (props) => {
   const {
@@ -12,27 +14,26 @@ const Login = (props) => {
     setEmail,
     name,
     setName,
-    location, 
-    setLocation
+    location,
+    setLocation,
+    currentUser,
+    setCurrentUser,
+    confirmPassword,
+    setConfirmPassword
   } = props;
 
   
-  try {
-    const logedIn = async () => {};
-  } catch (error) {
-    console.log(error);
-  }
 
   return (
     <div className="login_page">
-      <form className="login">
+      <form className="login" onSubmit={logInUser}>
         <h3> Please log in to continue</h3>
         <label>Username</label>
         <br />
         <input
           type="text"
           required
-          onChange={(event) => setUserLogin(event.target.value)}
+          onChange={(event) => setUserName(event.target.value)}
         ></input>
         <br />
         <label>Password</label>
@@ -45,18 +46,22 @@ const Login = (props) => {
         <br />
         <button typeof="submit">Log In</button>
       </form>
-      <form className="register">
+      <form className="register" onSubmit={registerNewUser}>
         <h3>Please register to have access to site</h3>
         <label>Name</label>
         <br />
-        <input type="text" required onChange={(event) => setName(event.target.value)} />
+        <input
+          type="text"
+          required
+          onChange={(event) => setName(event.target.value)}
+        />
         <br />
         <label>Username</label>
         <br />
         <input
           type="text"
           required
-          onChange={(event) => setUserLogin(event.target.value)}
+          onChange={(event) => setUserName(event.target.value)}
         />
         <br />
         <label>Password</label>
@@ -66,19 +71,31 @@ const Login = (props) => {
           required
           onChange={(event) => setUserPassword(event.target.value)}
         />
-        <br/>
+        <br />
+        <label> Confirm Password</label>
+        <br />
+        <input
+          type="password"
+          required
+          onChange={(event) => setConfirmPassword(event.target.value)}
+        />
+        <br />
         <label>Email</label>
-        <br/>
-        <input type="text" 
-        required
-        onChange={(event)=>setEmail(event.target.value)} />
-        <br/>
+        <br />
+        <input
+          type="text"
+          required
+          onChange={(event) => setEmail(event.target.value)}
+        />
+        <br />
         <label>Location</label>
-        <br/>
-        <input type="text" 
-        required
-        onChange={(event)=>setLocation(event.target.value)}/>
-        <br/>
+        <br />
+        <input
+          type="text"
+          required
+          onChange={(event) => setLocation(event.target.value)}
+        />
+        <br />
 
         <button typeof="submit">Register Account</button>
       </form>

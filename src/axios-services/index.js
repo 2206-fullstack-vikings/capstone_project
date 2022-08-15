@@ -18,22 +18,52 @@ import axios from 'axios';
   }
 */
 
-export async function getAPIHealth() {
-  try {
-    const { data } = await axios.get('/api/health');
-    return data;
-  } catch (err) {
-    console.error(err);
-    return { healthy: false };
-  }
-}
+// export async function getAPIHealth() {
+//   try {
+//     const { data } = await axios.get('/api/health');
+//     return data;
+//   } catch (err) {
+//     console.error(err);
+//     return { healthy: false };
+//   }
+// }
 
-export const getAllProducts = async () =>{
-  try {
-       const response = await axios.get(`/api/products`)
+// export const getAllProducts = async () =>{
+//   try {
+//        const response = await axios.get(`/api/products`)
 
-  } catch (error) {
-   console.error(error)
-  }
+//   } catch (error) {
+//    console.error(error)
+//   }
        
-}
+// }
+
+ export const logInUser = async (event) => {
+  event.preventDefault();
+  try {
+    const response = await axios.post("http://localhost:3000/api/users/login", {
+      userName: userName,
+      password: userPassword,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const registerNewUser = async (event) => {
+  event.preventDefault();
+  if(userPassword !== confirmPassword) alert("Passwords Do Not Match");
+  
+  try {
+    const response = await axios.post("http://localhost:3000/api/users/register", {
+      name: name,
+      userName: userName,
+      password: userPassword,
+      email: email,
+      location: location
+
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
