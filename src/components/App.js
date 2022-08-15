@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import axios from "axios";
@@ -26,6 +27,7 @@ const App = () => {
   const [email, setEmail]= useState("");
   const [name, setName]=useState("");
   const [location, setLocation]=useState("")
+  const [confirmPassword, setConfirmPassword]=useState("");
 
 
 
@@ -78,7 +80,12 @@ const App = () => {
             name={name}
             setName={setName}
             location={location}
-            setLocation={setLocation}/>}/>
+            setLocation={setLocation}
+            currentUser={currentUser}
+            setCurrentUser={setCurrentUser}
+            confirmPassword={confirmPassword}
+            setConfirmPassword={setConfirmPassword}
+            /> }/>
       <Route path="/:id" element={<SingleProductView allProducts={allProducts}/>}/>
      
       </Routes>
@@ -90,3 +97,4 @@ const App = () => {
 };
 
 export default App;
+

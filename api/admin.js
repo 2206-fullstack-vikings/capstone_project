@@ -1,7 +1,7 @@
 const express = require("express");
 const adminRouter = express.Router();
 const {
-  createProduct,
+  insertProduct,
   deleteProductById
 } = require("../db/products");
 const { getUserByUsername } = require("../db/users");
@@ -46,7 +46,7 @@ adminRouter.post("/", async (req, res, next) => {
   try {
     const user = await getUserByUsername(username);
     if (user.admin) {
-      const product = await createProduct(productData);
+      const product = await insertProduct(productData);
     } else {
       next(
         product
