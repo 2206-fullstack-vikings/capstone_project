@@ -1,14 +1,16 @@
 const express = require('express');
 const usersRouter = express.Router();
 const jwt = require('jsonwebtoken');
+const {SECRET}= process.env;
 const bcrypt = require('bcrypt');
-const { getUserByUsername, createUser, getUser} = require("../db/models/usersModel");
+const { getUser, createUser, getUsers} = require("../db/models/usersModel");
 
 usersRouter.use(express.json());
 //GET api/users
 usersRouter.get("/", async (req, res, next) => {
     try {
         const users = await getUsers();
+
         res.send({
             users: users,
         })
@@ -59,6 +61,7 @@ usersRouter.post("/register", async (req, res, next) => {
 // POST /api/users/login
 usersRouter.post("/login", async (req, res, next) => {
     const { username, password } = req.body;
+    console.log("this is our username",username);
     if (!username || !password) {
       next({
         error: "error",
@@ -68,19 +71,30 @@ usersRouter.post("/login", async (req, res, next) => {
     }
   
     try {
-      const user = await getUser(username, password);
+      const user = await getUser({username,password});
       
-          if (await bcrypt.compare(password, user.password)) {
-            res.send({
-              message: "you're logged in!",
-              token: token,
-              user: user
-            });
-          } else {
-              next({
-                  message: "nope",
-              })
-          }
+        if(!user){
+          next({
+            name: "bad information",
+            message: "User does not exist, Please create account"
+          })
+        } else{
+          const token = jwt.sign({id: user.id, username: user.username}, SECRET);
+          
+            res.send({ token, message: "you're logged in!",  user});
+        }
+      
+          // if (await bcrypt.compare(password, user.password)) {
+          //   res.send({
+          //     message: "you're logged in!",
+          //     token: token,
+          //     user: user
+          //   });
+          // } else {
+          //     next({
+          //         message: "nope",
+          //     })
+          // }
     } catch (error) {
       console.log(error);
       next(error);

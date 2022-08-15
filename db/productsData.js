@@ -338,13 +338,13 @@ const products = [
       "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4794000/ff_4794664-55b78766d8b9c58a6b7c_full.jpg&w=340",
   },
   {
-    playerName: "Carlos Hyde",
+    playerName: "Micah Hyde",
     teamName: "Buffalo Bills",
     division: "AFC East",
     jerseyNumber: 23,
     price: 110,
     image:
-      "https://www.fanatics.com/nfl/buffalo-bills/next-day-jerseys/o-2416+t-03605712+c-786905314+z-9-3008290627?_s=gppc&utm_campaign=NFL+-+Buffalo+Bills+-+GKs+-+US+-+EN|14730835391&utm_medium=ppc&ks_id=6250_kw111578536&utm_term=buffalo%20bills%20jerseys&matchtype={bidmatchtype}&utm_source=g&target=kwd-112226912&pcrid={adid}&adposition=&gclid=EAIaIQobChMI1oDC-u_B-QIVyW1vBB0pnQEkEAAYASAAEgJka_D_BwE",
+      "https://fanatics.frgimages.com/buffalo-bills/mens-nike-micah-hyde-royal-buffalo-bills-game-player-jersey_pi3892000_altimages_ff_3892796-b86666ae3881e5f9fca0alt1_full.jpg?_hv=2&w=900",
   },
 
   //////////////////////////////////////
