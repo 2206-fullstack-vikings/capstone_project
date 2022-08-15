@@ -1,6 +1,6 @@
 const express = require('express');
 const usersRouter = express.Router();
-const jwt = require('jsonwebtoken');
+const jwt = require("jsonwebtoken");
 const {SECRET}= process.env;
 const bcrypt = require('bcrypt');
 const { getUser, createUser, getUsers} = require("../db/models/usersModel");
@@ -12,7 +12,7 @@ usersRouter.get("/", async (req, res, next) => {
         const users = await getUsers();
 
         res.send({
-            users: users,
+             users
         })
     } catch(error) {
         console.log(error);
@@ -21,11 +21,12 @@ usersRouter.get("/", async (req, res, next) => {
 
 // POST /api/users/register
 usersRouter.post("/register", async (req, res, next) => {
-    const { username, password } = req.body;
+    const { name, username, password, email } = req.body;
+    
     try {
-      const _user = await getUserByUsername(username);
-    //   const salt = await bcrypt.genSalt();
-      const hashedPassword = await bcrypt.hash(password, 10);
+      const _user = await getUser({username, password});
+      
+     
       if (password.length < 8) {
           res.send({
             error: "error",
@@ -40,18 +41,17 @@ usersRouter.post("/register", async (req, res, next) => {
             name: "name",
            });
       }
-      const user = await createUser({
-        username,
-        hashedPassword
-      });
-      const token = jwt.sign({id: hashedPassword, username: username}, "neverTell");
+
+      
+      const user = await createUser({ name, username, password, email });
+     
+      
+      const token = jwt.sign({id: user.id, username: user.username}, process.env.JWT_SECRET, {expiresIn:"1h"});
     res.send({
         message: "thank you for signing up",
-        token: token,
-        user: {
-            id: user.id,
-            username: user.username
-        }
+        token,
+        user
+        
       });
     } catch ({ name, message }) {
       next({ name, message });
@@ -61,25 +61,31 @@ usersRouter.post("/register", async (req, res, next) => {
 // POST /api/users/login
 usersRouter.post("/login", async (req, res, next) => {
     const { username, password } = req.body;
-    console.log("this is our username",username);
+    
+    
     if (!username || !password) {
+      
       next({
-        error: "error",
+        
         name: "MissingCredentialsError",
         message: "Please supply both a username and password",
       });
     }
   
     try {
-      const user = await getUser({username,password});
+      
+      const user = await getUser({username, password});
       
         if(!user){
+          
           next({
             name: "bad information",
-            message: "User does not exist, Please create account"
+            message: "Incorrect username and password"
           })
-        } else{
-          const token = jwt.sign({id: user.id, username: user.username}, SECRET);
+        }
+         else {
+         
+          const token = jwt.sign({id: user.id, username: user.username}, process.env.JWT_SECRET, {expiresIn:"1h"});
           
             res.send({ token, message: "you're logged in!",  user});
         }
@@ -96,7 +102,7 @@ usersRouter.post("/login", async (req, res, next) => {
           //     })
           // }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       next(error);
     }
   })
