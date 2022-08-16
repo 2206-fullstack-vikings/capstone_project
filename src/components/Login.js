@@ -19,6 +19,7 @@ const Login = (props) => {
     setConfirmPassword,
   } = props;
 
+  console.log(currentUser)
   const logInUser = async (event) => {
     event.preventDefault();
     try {
@@ -32,6 +33,8 @@ const Login = (props) => {
       
       window.localStorage.setItem("token", response.data.token);
       setUserToken(response.data.token);
+      setCurrentUser(response.data.user)
+      
     } catch (error) {
       console.log(error);
     }
@@ -61,10 +64,24 @@ const Login = (props) => {
     }
   };
 
+  const signOutUser = async (event)=>{
+    setCurrentUser({});
+    setUserToken("");
+    setName("");
+    setUserName("");
+    setUserPassword("");
+    setEmail("");
+    setConfirmPassword("");
+
+  }
+
   return (
     <div className="login_page">
       {userToken ? (
-        <h2>Welcome back {userName}! Have fun shopping!!</h2>
+        <>
+        <h2>Welcome back {currentUser.name}! Have fun shopping!!</h2>
+        <button onClick={signOutUser}>Sign Out</button>
+        </>
       ) : (
         <form className="login" onSubmit={logInUser}>
           <h3> Please log in to continue</h3>
