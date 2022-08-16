@@ -95,11 +95,9 @@ async function populateInitialData() {
    const allProducts = await Promise.all(products.map(insertProduct));
 
    const allusers = await Promise.all(users.map(createUser));
-<<<<<<< HEAD
-   console.log('this is all users', allusers);
-=======
+  //  console.log('this is all users', allusers);
 
->>>>>>> main
+
    
 
    
