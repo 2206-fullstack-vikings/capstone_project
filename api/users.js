@@ -1,4 +1,5 @@
 const express = require('express');
+
 const usersRouter = express.Router();
 const jwt = require("jsonwebtoken");
 const {SECRET}= process.env;
@@ -107,5 +108,15 @@ usersRouter.post("/login", async (req, res, next) => {
     }
   })
 
+  // app.use((error, req, res, next) => {
+   
+  //   if (error.type == 'redirect')
+  //       res.redirect('/error')
   
+  //    else if (error.type == 'time-out') // arbitrary condition check
+  //       res.status(408).send(error)
+  //   else
+  //       res.status(500).send(error)
+  // })
+
 module.exports = usersRouter;

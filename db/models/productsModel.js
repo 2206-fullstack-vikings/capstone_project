@@ -8,6 +8,15 @@ const getAllProducts = async () => {
     return allProducts
 }
 
+const getProductById = async ({id}) => {
+    const { rows: [product]} = await client.query(`
+        SELECT * 
+        FROM products
+        WHERE id = $1
+        RETURNING *;
+    `, [id])
+    return product;
+}
 
 
 async function insertProduct ({playerName, teamName, division, jerseyNumber, price, image}) {
@@ -19,4 +28,4 @@ async function insertProduct ({playerName, teamName, division, jerseyNumber, pri
     return newProduct
 }
 
-module.exports = { insertProduct, getAllProducts };
+module.exports = { insertProduct, getAllProducts, getProductById };

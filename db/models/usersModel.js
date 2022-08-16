@@ -19,7 +19,7 @@ async function getUsers() {
 
 async function getUser({ username, password }) {
   try {
-    
+      console.log("this is our password", password)
       const {rows:[user]}= await client.query(`
         SELECT *
         FROM users
@@ -37,7 +37,7 @@ async function getUser({ username, password }) {
   }
   }
 
-
+getUser('choker', 'iNeedToGo');
 
 async function createUser ({name, username, password, email, admin}) {
   
@@ -46,5 +46,6 @@ async function createUser ({name, username, password, email, admin}) {
       VALUES($1, $2, $3, $4, $5)
       RETURNING *;
   `, [name, username, password, email, admin])
+  console.log(newUser);
   return newUser;
 }
