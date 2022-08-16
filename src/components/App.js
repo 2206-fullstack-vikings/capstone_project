@@ -78,8 +78,6 @@ const App = () => {
             setEmail={setEmail}
             name={name}
             setName={setName}
-            location={location}
-            setLocation={setLocation}
             currentUser={currentUser}
             setCurrentUser={setCurrentUser}
             confirmPassword={confirmPassword}

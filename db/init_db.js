@@ -5,11 +5,12 @@ const {
 } = require('./');
 
 const {insertProduct, getAllProducts} = require('./models/productsModel')
-console.log("insertProduct dklmgijigewrijgrwhiogwer");
+const {createUser}= require('./models/usersModel')
+
 console.log(insertProduct);
 const { products } = require("./productsData");
 
-const { usersData } = require("./usersData");
+const { users } = require("./usersData");
 
 // console.log("productsData /////////////////////////");
 // console.log(products);
@@ -22,7 +23,10 @@ const { usersData } = require("./usersData");
 async function dropTables() {
   try {
     await client.query(`
+      DROP TABLE IF EXISTS "cartItems";
+      DROP TABLE IF EXISTS "userCarts";
       DROP TABLE IF EXISTS products;
+      DROP TABLE IF EXISTS users;
     `)
   } catch(error) {
     console.log(error)
@@ -40,6 +44,28 @@ async function createTables() {
       "jerseyNumber" INTEGER NOT NULL,
       price FLOAT DEFAULT 0,
       image TEXT NOT NULL
+    );
+
+    CREATE TABLE users(
+      id SERIAL PRIMARY KEY,
+      name VARCHAR(255) NOT NULL,
+      username VARCHAR(255) UNIQUE NOT NULL,
+      password VARCHAR(255) NOT NULL,
+      email VARCHAR(255) NOT NULL,
+      admin BOOLEAN DEFAULT false
+    );
+
+    CREATE TABLE "userCarts"(
+      id SERIAL PRIMARY KEY,
+      userid INTEGER REFERENCES users(id),
+      active BOOLEAN DEFAULT false
+    );
+
+    CREATE TABLE "cartItems"(
+      id SERIAL PRIMARY KEY,
+      "productId" INTEGER REFERENCES products(id),
+      "purchasePrice" FLOAT,
+      "userCartId" INTEGER REFERENCES "userCarts"(id)
     );
   `)
   } catch(error) {
@@ -68,9 +94,11 @@ async function populateInitialData() {
   try {
    const allProducts = await Promise.all(products.map(insertProduct));
 
-   const getProducts = await getAllProducts();
-   console.log("///////////////   getAllProducts /////////////////")
-   console.log(getProducts);
+   const allusers = await Promise.all(users.map(createUser));
+
+   
+
+   
   } catch (error) {
     throw error;
   }
