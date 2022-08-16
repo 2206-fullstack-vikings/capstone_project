@@ -5,7 +5,7 @@ const {
 } = require('./');
 
 const {insertProduct, getAllProducts} = require('./models/productsModel')
-const {createUsers}= require('./models/usersModel')
+const {createUser}= require('./models/usersModel')
 
 console.log(insertProduct);
 const { products } = require("./productsData");
@@ -94,8 +94,8 @@ async function populateInitialData() {
   try {
    const allProducts = await Promise.all(products.map(insertProduct));
 
-   const allusers = await Promise.all(users.map(createUsers));
-
+   const allusers = await Promise.all(users.map(createUser));
+   console.log('this is all users', allusers);
    
 
    

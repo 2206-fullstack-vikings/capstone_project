@@ -46,5 +46,6 @@ async function createUser ({name, username, password, email, admin}) {
       VALUES($1, $2, $3, $4, $5)
       RETURNING *;
   `, [name, username, password, email, admin])
+  console.log(newUser);
   return newUser;
 }
