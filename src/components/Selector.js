@@ -12,7 +12,7 @@ const Selector =(props)=>{
         <select name="Select a team">
         {allProducts.map((eachProduct,idx)=>{
         return(
-            <option value={eachProduct.teamName}>{eachProduct.teamName}</option>
+            <option key={idx} value={eachProduct.teamName}>{eachProduct.teamName}</option>
         )
         })}
         </select>

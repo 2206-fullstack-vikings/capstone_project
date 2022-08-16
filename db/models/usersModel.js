@@ -40,7 +40,7 @@ async function getUser({ username, password }) {
 getUser('choker', 'iNeedToGo');
 
 async function createUser ({name, username, password, email, admin}) {
-  console.log("I am getting to here")
+  
   const {rows: [ newUser ]} = await client.query(`
       INSERT INTO users(name, username, password, email, admin)
       VALUES($1, $2, $3, $4, $5)
