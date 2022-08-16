@@ -1,5 +1,4 @@
 const products = [
-  ///////////////////////// NFC North ////////////////////
   {
     playerName: "Justin Jefferson",
     teamName: "Minnesota Vikings",
@@ -36,8 +35,6 @@ const products = [
     image:
       "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_2633000/ff_2633846_full.jpg&w=340",
   },
-
-  //////////////////////////
 
   {
     playerName: "Aaron Rodgers",
@@ -76,8 +73,6 @@ const products = [
       "https://fanatics.frgimages.com/green-bay-packers/mens-nike-jordan-love-green-green-bay-packers-player-game-jersey_pi3919000_altimages_ff_3919132-9ce8a9b889a8941e5a4ealt1_full.jpg?_hv=2&w=900",
   },
 
-  ////////////////////////////
-
   {
     playerName: "Jared Goff",
     teamName: "Detroit Lions",
@@ -114,8 +109,6 @@ const products = [
     image:
       "https://fanatics.frgimages.com/detroit-lions/mens-nike-amon-ra-st-brown-blue-detroit-lions-game-player-jersey_pi4386000_altimages_ff_4386618-582d80d44259159f3b67alt1_full.jpg?_hv=2&w=900",
   },
-
-  ////////////////////////////
 
   {
     playerName: "Justin Fields",
@@ -192,8 +185,6 @@ const products = [
       "https://fanatics.frgimages.com/arizona-cardinals/mens-nike-deandre-hopkins-cardinal-arizona-cardinals-player-game-jersey_pi3878000_altimages_ff_3878094-484cf4b1aa07e5eaa0fbalt1_full.jpg?_hv=2&w=900",
   },
 
-  /////////////////////////////////
-
   {
     playerName: "Aaron Donald",
     teamName: "Los Angeles Rams",
@@ -230,8 +221,6 @@ const products = [
     image:
       "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4571000/ff_4571478-e85f9778da10c8898758_full.jpg&w=340",
   },
-
-  /////////////////////////////////
 
   {
     playerName: "George Kittle",
@@ -270,8 +259,6 @@ const products = [
       "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4825000/ff_4825888-dd276af450c5b7679b43_full.jpg&w=340",
   },
 
-  /////////////////////////////////
-
   {
     playerName: "DK Metcalf",
     teamName: "Seattle Seahawks",
@@ -309,7 +296,6 @@ const products = [
       "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4899000/ff_4899190-ea55707586fe0682e497_full.jpg&w=340",
   },
 
-  ///////////////////////// NFC West ////////////////////
   {
     playerName: "Josh Allen",
     teamName: "Buffalo Bills",
@@ -338,17 +324,14 @@ const products = [
       "https://fanatics.frgimages.com/FFImage/thumb.aspx?i=/productimages/_4794000/ff_4794664-55b78766d8b9c58a6b7c_full.jpg&w=340",
   },
   {
-    playerName: "Carlos Hyde",
+    playerName: "Micah Hyde",
     teamName: "Buffalo Bills",
     division: "AFC East",
     jerseyNumber: 23,
     price: 110,
     image:
-      "https://www.fanatics.com/nfl/buffalo-bills/next-day-jerseys/o-2416+t-03605712+c-786905314+z-9-3008290627?_s=gppc&utm_campaign=NFL+-+Buffalo+Bills+-+GKs+-+US+-+EN|14730835391&utm_medium=ppc&ks_id=6250_kw111578536&utm_term=buffalo%20bills%20jerseys&matchtype={bidmatchtype}&utm_source=g&target=kwd-112226912&pcrid={adid}&adposition=&gclid=EAIaIQobChMI1oDC-u_B-QIVyW1vBB0pnQEkEAAYASAAEgJka_D_BwE",
+      "https://fanatics.frgimages.com/buffalo-bills/mens-nike-micah-hyde-royal-buffalo-bills-game-player-jersey_pi3892000_altimages_ff_3892796-b86666ae3881e5f9fca0alt1_full.jpg?_hv=2&w=900",
   },
-
-  //////////////////////////////////////
-
   {
     playerName: "Teddy Bridgewater",
     teamName: "Miami Dolphins",
@@ -424,8 +407,6 @@ const products = [
     image:
       "https://fanatics.frgimages.com/new-york-jets/mens-nike-quinnen-williams-gotham-green-new-york-jets-game-jersey_pi3892000_altimages_ff_3892986-89ea58582e2d6e6fb322alt1_full.jpg?_hv=2&w=900",
   },
-
-  //////////////////////////////////////////////
 
   {
     playerName: "Mac Jones",
@@ -1190,10 +1171,5 @@ const products = [
   },
 ];
 
-<<<<<<< HEAD
-=======
-
-module.exports = { products };
->>>>>>> main
 
 module.exports = { products };
