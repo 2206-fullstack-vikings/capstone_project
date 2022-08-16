@@ -22,5 +22,8 @@ apiRouter.use('/products', productsRouter);
 const usersRouter = require('./users');
 apiRouter.use('/users', usersRouter);
 
+const cartRouter = require('./cart');
+apiRouter.use('/cart', cartRouter);
+
 
 module.exports = apiRouter;

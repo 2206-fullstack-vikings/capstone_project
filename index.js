@@ -3,6 +3,13 @@ require("dotenv").config()
 const express = require('express');
 const server = express();
 
+const session = require("express-session");
+server.use(session({
+  secret: "footballSession",
+  resave: false,
+  saveUninitialized: true
+}))
+
 // enable cross-origin resource sharing to proxy api requests
 // from localhost:3000 to localhost:4000 in local dev env
 const cors = require('cors');
