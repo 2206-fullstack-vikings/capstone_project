@@ -7,3 +7,5 @@ export {default as HomePage} from './Homepage'
 export {default as Admin} from './Admin'
 export {default as Login} from './Login'
 export {default as SingleProductView} from "./SingleProductView"
+export {default as OrderForm} from "./OrderForm"
+export {default as EditProduct} from "./EditProduct"

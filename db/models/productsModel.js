@@ -9,11 +9,11 @@ const getAllProducts = async () => {
 }
 
 const getProductById = async ({id}) => {
+    console.log("this is out ID", id);
     const { rows: [product]} = await client.query(`
         SELECT * 
         FROM products
         WHERE id = $1;
-       
     `, [id])
    
     return product;

@@ -16,6 +16,7 @@ const Title =()=>{
         <Link className="links" to='/'>HOME</Link>
         <Link className="links" to='/admin'>ADMIN</Link>
         <Link className="links" to='/login'>LOGIN/REGISTER</Link>
+        <Link className="links" to='/orderform'>CART</Link>
         </div>
         </header>
     )
