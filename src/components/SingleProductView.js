@@ -2,13 +2,14 @@ import React ,{useState, useEffect} from "react";
 import {useParams} from 'react-router-dom';
 import "../style/SingleProductView.css"
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 
 
 
 
 const SingleProductView=(props)=>{
-    const {allProducts}=props
+    const {allProducts, shoppingCart, setShoppingCart}=props
     const [selectedProduct, setSelectedProduct]= useState({});
     const {id} = useParams();
     const navigate= useNavigate()
@@ -19,7 +20,7 @@ const SingleProductView=(props)=>{
     useEffect(()=>{
         const findSelectedProduct = ()=>{
             let currentProduct = allProducts.find((product)=>{
-                console.log(product.id)
+                
                 return product.id == id;
             })
             
@@ -28,6 +29,19 @@ const SingleProductView=(props)=>{
         }
         findSelectedProduct();
     }, [])
+
+const addToCart = async (event) =>{
+
+        try {
+            const response= await axios.post(`http://localhost:3000/api/cart/${event}`)
+            const cartItems = response.data.items;
+            
+            setShoppingCart(cartItems);
+        } catch (error) {
+            console.error(error)
+        }
+}
+
 
     return(
         
@@ -42,7 +56,7 @@ const SingleProductView=(props)=>{
                     {/* <p>{selectedProduct.division}</p>
                     <p>{selectedProduct.jerseyNumber}</p> */}
                     <p className="price">Price: ${selectedProduct.price}</p>
-                    <button>Add to Cart</button>
+                    <button   onClick={()=>addToCart(selectedProduct.id)}>Add to Cart</button>
                     <button className="back_button" onClick={()=>navigate('/')}>Back</button>
                 </div>
             </div>

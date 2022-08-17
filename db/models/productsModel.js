@@ -12,11 +12,13 @@ const getProductById = async ({id}) => {
     const { rows: [product]} = await client.query(`
         SELECT * 
         FROM products
-        WHERE id = $1
-        RETURNING *;
+        WHERE id = $1;
+       
     `, [id])
+   
     return product;
 }
+
 
 
 async function insertProduct ({playerName, teamName, division, jerseyNumber, price, image}) {
