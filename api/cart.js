@@ -15,7 +15,6 @@ cartRouter.get("/", async (req, res, next) => {
 })
 
 cartRouter.post("/:productId", async (req, res, next) => {
-    
      const id =req.params.productId;
     
     const product =  await getProductById({id});

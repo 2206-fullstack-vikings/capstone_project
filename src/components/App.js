@@ -6,7 +6,7 @@ import axios from "axios";
 // you can think of that directory as a collection of api adapters
 // where each adapter fetches specific info from our express server's /api route
 import { getAPIHealth } from "../axios-services";
-import { Title, HomePage , Admin, Login, SingleProductView} from "./";
+import { Title, HomePage , Admin, Login, SingleProductView, OrderForm} from "./";
 import "../style/App.css";
 
 const App = () => {
@@ -72,7 +72,7 @@ const App = () => {
       <Routes>
       <Route path="/" element ={<HomePage allProducts={allProducts} testState={testState} setAllProducts={setAllProducts} shoppingCart={shoppingCart} 
             setShoppingCart={setShoppingCart} />}/>
-      <Route path="/admin" element={<Admin testState={testState}/>}/>
+      <Route path="/admin" element={<Admin testState={testState} currentUser={currentUser} allProducts={allProducts} setAllProducts={setAllProducts}/>}/>
       <Route path="/login" element={<Login userToken={userToken}
             setUserToken={setUserToken}
             userName={userName}
@@ -89,7 +89,8 @@ const App = () => {
             setConfirmPassword={setConfirmPassword}
             /> }/>
       <Route path="/:id" element={<SingleProductView allProducts={allProducts} shoppingCart={shoppingCart} setShoppingCart={setShoppingCart} />}/>
-     
+      <Route path="/orderform" element={<OrderForm shoppingCart={shoppingCart}/>}/>
+
       </Routes>
       
       
