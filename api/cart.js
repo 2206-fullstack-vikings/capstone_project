@@ -2,22 +2,27 @@ const express = require("express");
 const cartRouter = express.Router();
 const {getProductById} = require("../db/models/productsModel");
 
-cartRouter.get("/items", async (req, res, error) => {
+cartRouter.get("/", async (req, res, next) => {
     const {cart} = req.session;
     if (!cart) {
         res.send("No items to display");
     } else {
         res.send(cart);
     }
-    res.send(req.sessionID)
+   
+    
+    
 })
 
-cartRouter.post("/items", async (req, res, error) => {
-    const {id} = req.body;
-    const product = getProductById(id);
-    console.log("inside cart post router", id);
-    // const cartItem = {product.image, product.playerName, product.price}
-    res.send(product);
+cartRouter.post("/:productId", async (req, res, next) => {
+    
+     const id =req.params.productId;
+    
+    const product =  await getProductById({id});
+   const{playerName, price}=product
+   const cartItem ={id, playerName, price}
+   
+    
     const {cart} = req.session;
     if (cart) {
         const {items} = cart;
@@ -25,6 +30,7 @@ cartRouter.post("/items", async (req, res, error) => {
     } else {
         req.session.cart = {items: [cartItem]};
     }
+    res.send(cart)
 })
 
 module.exports = cartRouter
