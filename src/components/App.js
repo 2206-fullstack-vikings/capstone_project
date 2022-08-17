@@ -27,6 +27,7 @@ const App = () => {
   const [name, setName]=useState("");
   const [location, setLocation]=useState("")
   const [confirmPassword, setConfirmPassword]=useState("");
+  const [shoppingCart, setShoppingCart]= useState([]);
 
 
 
@@ -56,9 +57,12 @@ const App = () => {
             console.error(error)
         }
     };
+
+    
     fetchProducts() 
 },[])
   
+
 
 
   return (
@@ -66,7 +70,8 @@ const App = () => {
     <Title/>
     
       <Routes>
-      <Route path="/" element ={<HomePage allProducts={allProducts} testState={testState} setAllProducts={setAllProducts} />}/>
+      <Route path="/" element ={<HomePage allProducts={allProducts} testState={testState} setAllProducts={setAllProducts} shoppingCart={shoppingCart} 
+            setShoppingCart={setShoppingCart} />}/>
       <Route path="/admin" element={<Admin testState={testState}/>}/>
       <Route path="/login" element={<Login userToken={userToken}
             setUserToken={setUserToken}
@@ -83,7 +88,7 @@ const App = () => {
             confirmPassword={confirmPassword}
             setConfirmPassword={setConfirmPassword}
             /> }/>
-      <Route path="/:id" element={<SingleProductView allProducts={allProducts}/>}/>
+      <Route path="/:id" element={<SingleProductView allProducts={allProducts} shoppingCart={shoppingCart} setShoppingCart={setShoppingCart} />}/>
      
       </Routes>
       

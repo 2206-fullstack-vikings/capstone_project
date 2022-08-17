@@ -19,7 +19,7 @@ const Login = (props) => {
     setConfirmPassword,
   } = props;
 
-  console.log(currentUser)
+  
   const logInUser = async (event) => {
     event.preventDefault();
     try {
