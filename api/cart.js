@@ -14,15 +14,17 @@ cartRouter.get("/items", async (req, res, error) => {
 
 cartRouter.post("/items", async (req, res, error) => {
     const {id} = req.body;
-    const product = getProductById(id);
-    console.log("inside cart post router", id);
-    // const cartItem = {product.image, product.playerName, product.price}
+    const product = await getProductById(id);
+    const cartItem = {image: product.image, playerName: product.playerName, price: product.price}
+    console.log("cartItem", cartItem);
     res.send(product);
     const {cart} = req.session;
+    console.log('this is cart', cart);
     if (cart) {
         const {items} = cart;
         items.push(cartItem);
     } else {
+        console.log('else', req.session)
         req.session.cart = {items: [cartItem]};
     }
 })
