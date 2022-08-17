@@ -58,7 +58,7 @@ const Login = (props) => {
         console.log(response)
       window.localStorage.setItem("token", response.data.token);
       setUserToken(response.data.token);
-      
+      setCurrentUser(response.data.user);
     } catch (error) {
       console.log(error);
     }

@@ -24,12 +24,11 @@ cartRouter.post("/:productId", async (req, res, next) => {
    
     
     const {cart} = req.session;
-    console.log('this is cart', cart);
+    // console.log('this is cart', cart);
     if (cart) {
         const {items} = cart;
         items.push(cartItem);
     } else {
-        console.log('else', req.session)
         req.session.cart = {items: [cartItem]};
     }
     res.send(cart)
