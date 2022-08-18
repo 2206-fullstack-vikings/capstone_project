@@ -17,6 +17,16 @@ const [formType, setFormType] = useState("");
 const [currentProduct, setCurrentProduct] = useState("");
 const [buttonValue, setButtonValue] = useState("")
 
+// function getTeamColors(team) {
+//     if ( team === "Vikings") {
+//         return [{background: "purple"}, {text: "white"}, {button: "yellow"}, {buttonColor: "black"}]
+//     } if ( team === "Saints") {
+//         return [{background: "gold"}, {text: "white"}, {button: "yellow"}, {buttonColor: "black"}]
+//     } else {
+
+//     }
+// }
+
 function editProduct(product) {
 setCurrentProduct(product)
     // if ( !formToggle ) {
@@ -74,6 +84,9 @@ setCurrentProduct(product)
             {currentUser.admin && !formToggle ? 
             <div className="products_main">  
                 {allProducts.map((eachProduct,idx)=>{
+                    // let buttonColor = "";
+                    // let backgroundColor = "";
+                    // let textColor = "";
                     return <div key={idx} className="single_product">
                     <img src={eachProduct.image} alt="NFL Property"  height="200px" width="200px"/>
                     <p>{eachProduct.playerName}</p>
