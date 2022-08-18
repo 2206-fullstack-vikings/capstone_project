@@ -36,8 +36,8 @@ const addToCart = async (event) =>{
             const response= await axios.post(`http://localhost:3000/api/cart/${event}`)
             const cartItems = response.data.items;
         
-            setShoppingCart(cartItems);
-            console.log(shoppingCart);
+            
+            
         } catch (error) {
             console.error(error)
         }

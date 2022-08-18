@@ -89,7 +89,7 @@ const App = () => {
             setConfirmPassword={setConfirmPassword}
             /> }/>
       <Route path="/:id" element={<SingleProductView allProducts={allProducts} shoppingCart={shoppingCart} setShoppingCart={setShoppingCart} />}/>
-      <Route path="/orderform" element={<OrderForm shoppingCart={shoppingCart}/>}/>
+      <Route path="/orderform" element={<OrderForm shoppingCart={shoppingCart} setShoppingCart={setShoppingCart} />}/>
 
       </Routes>
       

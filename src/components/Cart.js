@@ -5,7 +5,7 @@ import "../style/Cart.css"
 
 const Cart =(props)=>{
     const {shoppingCart, setShoppingCart}= props;
-console.log(shoppingCart)
+
 
 
 
