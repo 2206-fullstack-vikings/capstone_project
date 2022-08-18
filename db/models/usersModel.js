@@ -39,13 +39,13 @@ async function getUser({ username, password }) {
 
 getUser('choker', 'iNeedToGo');
 
-async function createUser ({name, username, password, email, admin}) {
+async function createUser ({name, username, hashedPassword, email, admin}) {
   
   const {rows: [ newUser ]} = await client.query(`
       INSERT INTO users(name, username, password, email, admin)
       VALUES($1, $2, $3, $4, $5)
       RETURNING *;
-  `, [name, username, password, email, admin])
+  `, [name, username, hashedPassword, email, admin])
   console.log(newUser);
   return newUser;
 }

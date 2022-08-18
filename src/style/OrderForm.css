@@ -1,0 +1,16 @@
+.cart_page{
+    display: flex;
+    flex-direction: column;
+    border:solid 1px red;
+    max-height: 400px;
+    overflow: auto;
+    margin-left: 150px;
+    
+}
+.cart_image{
+    height:100px;
+}
+.cart_item{
+    display: flex;
+    justify-content:  space-around;
+}

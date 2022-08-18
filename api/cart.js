@@ -18,17 +18,18 @@ cartRouter.post("/:productId", async (req, res, next) => {
      const id =req.params.productId;
     
     const product =  await getProductById({id});
-   const{playerName, price}=product
-   const cartItem ={id, playerName, price}
+   const{playerName, price,image}=product
+   const cartItem ={image, playerName, price}
    
     
     const {cart} = req.session;
-    // console.log('this is cart', cart);
+   
     if (cart) {
         const {items} = cart;
         items.push(cartItem);
     } else {
         req.session.cart = {items: [cartItem]};
+        
     }
     res.send(cart)
 })
