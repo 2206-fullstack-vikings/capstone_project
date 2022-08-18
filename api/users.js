@@ -43,7 +43,7 @@ usersRouter.post("/register", async (req, res, next) => {
       });
     }
 
-    const user = await createUser({ name, username, hashedPassword, email });
+    const user = await createUser({ name, username, password, email, admin:false });
 
     const token = jwt.sign(
       { id: user.id, username: user.username },
@@ -73,7 +73,7 @@ usersRouter.post("/login", async (req, res, next) => {
 
   try {
     const user = await getUser({ username, password });
-    if (await bcrypt.compare(password, user.password)) {
+    if (await bcrypt.compare(password, user.hashedPassword)) {
       const token = jwt.sign(
         { id: user.id, username: user.username },
         process.env.JWT_SECRET,
