@@ -86,8 +86,9 @@ setCurrentProduct(product)
                     }}>Delete Product</button>
                     <button value={eachProduct.id} onClick={() => {
                         // setButtonValue(event.target.value)
-
-                        editProduct({id: eachProduct.id, name: eachProduct.playerName, })
+                        editProduct({id: eachProduct.id, playerName: eachProduct.playerName, jerseyNumber: eachProduct.jerseyNumber, teamName: eachProduct.teamName, division: eachProduct.divison, price: eachProduct.price, image: eachProduct.image});
+                        console.log("currentProduct");
+                        console.log(currentProduct);
                             //     let singleProduct = await axios.get(`http://localhost:3000/api/products/${buttonValue}`)
                             // console.log(singleProduct)
 
