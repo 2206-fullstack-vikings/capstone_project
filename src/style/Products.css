@@ -11,12 +11,22 @@
     flex-direction: column;
     flex-basis: auto;
     background-color: lightgray;
-    
+    align-items: center;
     
 }
-
+.image-container {
+    background-color: white;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+image {
+    margin: 0 auto;
+}
 .cart_button{
     background-color: navy;
     color:white;
+    width: 100%;
     
 }

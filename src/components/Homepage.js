@@ -7,7 +7,7 @@ const HomePage =(props)=>{
     return (
         <div className='home_page'>
             <Selector allProducts={allProducts}/>
-            <Products allProducts={allProducts}  setAllProducts={setAllProducts}/>
+            <Products allProducts={allProducts}  setAllProducts={setAllProducts} setShoppingCart={setShoppingCart}/>
             <Cart shoppingCart={shoppingCart} setShoppingCart={setShoppingCart} />
         </div>
     )
