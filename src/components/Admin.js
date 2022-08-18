@@ -1,26 +1,105 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
+import "../style/Products.css"
+import EditProduct from "./EditProduct";
 
 const Admin = (props)=>{
 const {setCurrentUser, currentUser, allProducts, setAllProducts} = props;
 
-const [playerName, setPlayerName]= useState("");
-const [teamName, setTeamName]= useState("");
-const [division, setDivision]= useState("");
-const [jerseyNumber, setJerseyNumber]= useState("");
-const [price, setPrice]= useState("");
-const [image, setImage]= useState("");
+// const [playerName, setPlayerName]= useState("");
+// const [teamName, setTeamName]= useState("");
+// const [division, setDivision]= useState("");
+// const [jerseyNumber, setJerseyNumber]= useState("");
+// const [price, setPrice]= useState("");
+// const [image, setImage]= useState("");
+const [formToggle, setFormToggle] = useState(false);
+const [formType, setFormType] = useState("");
+const [currentProduct, setCurrentProduct] = useState("");
+const [buttonValue, setButtonValue] = useState("")
 
+function editProduct() {
 
+    // if ( !formToggle ) {
+    //     setFormToggle(true);
+    // } else {
+    //     setFormToggle(false);
+    // }
+    // let currentProduct = allProducts.filter((item) => { 
+    //     console.log("itemId");
+    //     console.log(item.id);
+    //     console.log("buttonValue");
+    //     console.log(buttonValue)
+    //     item.id === buttonValue });
+                // console.log(buttonValue)
+//  console.log(allProducts)
+        for ( let i=0; i< allProducts.length; i++) {
+                console.log("currentProductijdidijdhijh");
+                    console.log(allProducts[i].id);
+                    console.log("ththiewijhjeiwoBUBUTUUTTUTUIOONNIJVIJJLJLAIJOJOOFJJIO");
+                    console.log(buttonValue);
+            if ( allProducts[i].id === buttonValue) {
+                
+                setCurrentProduct(allProducts[i]);
+             
+                return;
+            }
+        }
+
+       
+
+}
+
+// const styleJerseys = {
+//     display:"flex",
+//     flexDirection:"row",
+// }
+
+// const adminBody = {
+//     width:"100%",
+//     height:"100%",
+//     backgroundColor:"blue"
+// }
 
 
 
 
     return(
-        <div className='admin_page'>
-            {currentUser.admin ? 
-            <div>  
-                <form className='edit_product' onSubmit={editProduct}>placeholder
+        <div >
+            {
+                formToggle ? <EditProduct formToggle = {formToggle} setFormToggle = {setFormToggle} formType = {formType} setFormType = {setFormType} currentProduct = {currentProduct} setCurrentProduct = {setCurrentProduct}/>: null
+            }
+            {currentUser.admin && !formToggle ? 
+            <div className="products_main">  
+                {allProducts.map((eachProduct,idx)=>{
+                    return <div key={idx} className="single_product">
+                    <img src={eachProduct.image} alt="NFL Property"  height="200px" width="200px"/>
+                    <p>{eachProduct.playerName}</p>
+                    <p>#{eachProduct.jerseyNumber}</p>
+                    <p>{eachProduct.teamName}</p>
+                    <p>{eachProduct.division}</p>
+                    <p>${eachProduct.price}</p>
+                    <button value={eachProduct.id} onClick={() => {
+                        
+                    }}>Delete Product</button>
+                    <button value={eachProduct.id} onClick={(event) => {
+                        setButtonValue(event.target.value)
+
+                        editProduct()
+                            //     let singleProduct = await axios.get(`http://localhost:3000/api/products/${buttonValue}`)
+                            // console.log(singleProduct)
+
+                        // editProduct()
+                        // console.log(allProducts)
+                        // let singleProductEdit = allProducts.find((product)=> {
+                        //     product.id === event.target.value
+                        // })
+                        //   console.log("event.target.value")
+                        // console.log(event.target.value)
+                        // console.log(singleProductEdit)
+                    }}>Edit Product</button>
+                </div>
+                })}
+                {/* <form className='edit_product' onSubmit={editProduct}>placeholder
                     <h3>Edit Product</h3>
                     <label>Player Name</label>
                     <br />
@@ -66,7 +145,7 @@ const [image, setImage]= useState("");
                 </form>
                 
                 <form className="remove_product">placeholder</form>
-                <form className="add_product">placeholder</form>
+                <form className="add_product">placeholder</form> */}
             </div> : 
             <h1>You need to be an admin to view</h1>
             }   
