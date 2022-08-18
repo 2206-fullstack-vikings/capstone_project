@@ -17,33 +17,36 @@ const [formType, setFormType] = useState("");
 const [currentProduct, setCurrentProduct] = useState("");
 const [buttonValue, setButtonValue] = useState("")
 
-function editProduct() {
-
+function editProduct(product) {
+setCurrentProduct(product)
     // if ( !formToggle ) {
     //     setFormToggle(true);
     // } else {
     //     setFormToggle(false);
     // }
-    // let currentProduct = allProducts.filter((item) => { 
-    //     console.log("itemId");
-    //     console.log(item.id);
-    //     console.log("buttonValue");
-    //     console.log(buttonValue)
-    //     item.id === buttonValue });
-                // console.log(buttonValue)
-//  console.log(allProducts)
-        for ( let i=0; i< allProducts.length; i++) {
-                console.log("currentProductijdidijdhijh");
-                    console.log(allProducts[i].id);
-                    console.log("ththiewijhjeiwoBUBUTUUTTUTUIOONNIJVIJJLJLAIJOJOOFJJIO");
-                    console.log(buttonValue);
-            if ( allProducts[i].id === buttonValue) {
+//     let currentProduct = allProducts.filter((product) => { 
+//         console.log("itemId");
+//         console.log(product.id);
+//         console.log("buttonValue");
+//         console.log(buttonValue)
+//         if (item.id === buttonValue ) {
+//             return item
+//         }
+//      });
+// console.log("currentProduct")
+// console.log(currentProduct)
+        // for ( let i=0; i< allProducts.length; i++) {
+        //         console.log("currentProductijdidijdhijh");
+        //             console.log(allProducts[i].id);
+        //             console.log("ththiewijhjeiwoBUBUTUUTTUTUIOONNIJVIJJLJLAIJOJOOFJJIO");
+        //             console.log(buttonValue);
+        //     if ( allProducts[i].id === buttonValue) {
                 
-                setCurrentProduct(allProducts[i]);
+        //         setCurrentProduct(allProducts[i]);
              
-                return;
-            }
-        }
+        //         return;
+        //     }
+        // }
 
        
 
@@ -81,10 +84,10 @@ function editProduct() {
                     <button value={eachProduct.id} onClick={() => {
                         
                     }}>Delete Product</button>
-                    <button value={eachProduct.id} onClick={(event) => {
-                        setButtonValue(event.target.value)
+                    <button value={eachProduct.id} onClick={() => {
+                        // setButtonValue(event.target.value)
 
-                        editProduct()
+                        editProduct({id: eachProduct.id, name: eachProduct.playerName, })
                             //     let singleProduct = await axios.get(`http://localhost:3000/api/products/${buttonValue}`)
                             // console.log(singleProduct)
 
