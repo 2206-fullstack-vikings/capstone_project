@@ -23,7 +23,7 @@ const { users } = require("./usersData");
 async function dropTables() {
   try {
     await client.query(`
-      DROP TABLE IF EXISTS "cartItems";
+      DROP TABLE IF EXISTS orders;
       DROP TABLE IF EXISTS "userCarts";
       DROP TABLE IF EXISTS products;
       DROP TABLE IF EXISTS users;
@@ -52,6 +52,7 @@ async function createTables() {
       username VARCHAR(255) UNIQUE NOT NULL,
       "hashedPassword" VARCHAR(255) NOT NULL,
       email VARCHAR(255) UNIQUE NOT NULL,
+      location VARCHAR(255) NOT NULL,
       admin BOOLEAN DEFAULT false
     );
 
@@ -61,11 +62,14 @@ async function createTables() {
      
     );
 
-    CREATE TABLE "cartItems"(
+    CREATE TABLE orders(
       id SERIAL PRIMARY KEY,
+      "cartId" INTEGER REFERENCES "userCarts"(id),
+      "userId" INTEGER REFERENCES users(id),
       "productId" INTEGER REFERENCES products(id),
       "purchasePrice" FLOAT,
-      "userCartId" INTEGER REFERENCES "userCarts"(id)
+      CONSTRAINT id_constraint UNIQUE("cartId", "userId", "productId", "purchasePrice")
+     
     );
   `)
   } catch(error) {
