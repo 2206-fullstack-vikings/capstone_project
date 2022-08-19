@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "../style/Admin.css"
 import axios from "axios";
 
 const EditProduct = ({ formToggle, setFormToggle, formType, currentProduct, setCurrentProduct, allProducts, setAllProducts }) => {
@@ -26,13 +27,11 @@ const EditProduct = ({ formToggle, setFormToggle, formType, currentProduct, setC
 
     async function addProduct(object) {
         try {
-            const response = await axios.post("http://localhost:3000/api/products",
-            {
-                newProduct: object
-            }
+                const response = await axios.post("http://localhost:3000/api/products",
+                {
+                    newProduct: object
+                }
             )
-                        console.log("this is the response");
-                            console.log(response);
         } catch(error) {
             console.log(error)
         }
@@ -44,8 +43,8 @@ const EditProduct = ({ formToggle, setFormToggle, formType, currentProduct, setC
     return (
         <div>
             {
-                formType === "edit" ? <div>
-                    <form className='edit_product'>placeholder
+                formType === "edit" ? <div className="formContainer">
+                    <form className='editProductForm'>placeholder
                         <h3>Edit Product</h3>
                         <label>Player Name</label>
                         <br />

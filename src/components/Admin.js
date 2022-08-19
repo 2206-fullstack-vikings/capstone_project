@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
-import "../style/Products.css"
+import "../style/Admin.css"
 import EditProduct from "./EditProduct";
-import { UNSAFE_NavigationContext } from "react-router-dom";
+// import { UNSAFE_NavigationContext } from "react-router-dom";
 
 const Admin = (props)=>{
 const {setCurrentUser, currentUser, allProducts, setAllProducts} = props;
@@ -19,15 +19,24 @@ const [currentProduct, setCurrentProduct] = useState("");
 const [buttonValue, setButtonValue] = useState("");
 
 
-// function getTeamColors(team) {
-//     if ( team === "Vikings") {
-//         return [{background: "purple"}, {text: "white"}, {button: "yellow"}, {buttonColor: "black"}]
-//     } if ( team === "Saints") {
-//         return [{background: "gold"}, {text: "white"}, {button: "yellow"}, {buttonColor: "black"}]
-//     } else {
-
-//     }
-// }
+function getTeamColors(team) {
+    if ( team === "Minnesota Vikings") {
+        return {background: "whitePS", text: "purple", buttonT: "buttonPYT", buttonB: "buttonPYB"}
+    } 
+    
+    // if ( team === "Detroit Lions") {
+    //     return [{background: "white"}, {text: "lightblue"}, {buttonText: "lightblue"}, {buttonColor: "gray"}]
+    // } 
+    else if ( team === "Green Bay Packers") {
+        return {background: "white", text: "green", buttonT: "buttonGYT", buttonB: "buttonGYB" }
+    } 
+    // if ( team === "Chicago Bears") {
+    //     return [{background: "gold"}, {text: "white"}, {button: "yellow"}, {buttonColor: "black"}]
+    // } 
+    else {
+         return {background: "white", text: "buttonGrayGB", buttonT: "buttonBGT", buttonB: "buttonBGB"}
+    }
+}
 
 async function deleteProduct(productId) {
     try {
@@ -71,18 +80,27 @@ async function deleteProduct(productId) {
                 formToggle ? <EditProduct formToggle = {formToggle} setFormToggle = {setFormToggle} formType = {formType} setFormType = {setFormType} currentProduct = {currentProduct} setCurrentProduct = {setCurrentProduct} allProducts = {allProducts} setAllProducts = {setAllProducts} />: null
             }
             {currentUser.admin && !formToggle ? 
-            <div className="products_main">  
-            <button onClick={()=>{
-                        setFormToggle(true);
-                        setFormType("new");
-                        setCurrentProduct({id: "", playerName: "", jerseyNumber: "", teamName: "", division: "", price: "", image: ""})
-            }}>Add New Product</button>
+            <div className="admin_main">  
+                <div className="admin_new_container">
+                    <button onClick={()=>{
+                            setFormToggle(true);
+                            setFormType("new");
+                            setCurrentProduct({id: "", playerName: "", jerseyNumber: "", teamName: "", division: "", price: "", image: ""})
+                    }} className="button_new">Add New Product</button>
+                </div>    
+         
                 {allProducts.map((eachProduct,idx)=>{
+                    let teamColors = getTeamColors(eachProduct.teamName);
+                    console.log("teamColors");
+                                        console.log(teamColors.teamColorsT)
+
                     // let buttonColor = "";
                     // let backgroundColor = "";
                     // let textColor = "";
-                    return <div key={idx} className="single_product">
-                    <img src={eachProduct.image} alt="NFL Property"  height="200px" width="200px"/>
+                    return <div key={idx} className="admin_product">
+                        <div className="image_container">
+                            <img src={eachProduct.image} alt="NFL Property" className="admin_image" />
+                        </div>
                     <p>{eachProduct.playerName}</p>
                     <p>#{eachProduct.jerseyNumber}</p>
                     <p>{eachProduct.teamName}</p>
@@ -91,76 +109,14 @@ async function deleteProduct(productId) {
                     <button value={eachProduct.id} onClick={() => {
                         deleteProduct(eachProduct.id);
                         fetchProducts();
-                    }}>Delete Product</button>
+                    }} className={teamColors.buttonT}>Delete Product</button>
                     <button value={eachProduct.id} onClick={() => {
-                        // setButtonValue(event.target.value)
                         setFormToggle(true);
                         setFormType("edit");
                         setCurrentProduct({id: eachProduct.id, playerName: eachProduct.playerName, jerseyNumber: eachProduct.jerseyNumber, teamName: eachProduct.teamName, division: eachProduct.division, price: eachProduct.price, image: eachProduct.image})
-                        // editProduct({id: eachProduct.id, playerName: eachProduct.playerName, jerseyNumber: eachProduct.jerseyNumber, teamName: eachProduct.teamName, division: eachProduct.division, price: eachProduct.price, image: eachProduct.image});
-                        console.log("currentProduct");
-                        console.log(currentProduct);
-                            //     let singleProduct = await axios.get(`http://localhost:3000/api/products/${buttonValue}`)
-                            // console.log(singleProduct)
-
-                        // editProduct()
-                        // console.log(allProducts)
-                        // let singleProductEdit = allProducts.find((product)=> {
-                        //     product.id === event.target.value
-                        // })
-                        //   console.log("event.target.value")
-                        // console.log(event.target.value)
-                        // console.log(singleProductEdit)
-                    }}>Edit Product</button>
+                    }} className={teamColors.buttonB}>Edit Product</button>
                 </div>
                 })}
-                {/* <form className='edit_product' onSubmit={editProduct}>placeholder
-                    <h3>Edit Product</h3>
-                    <label>Player Name</label>
-                    <br />
-                    <input
-                        type="text"
-                        required
-                        onChange={(event) => setPlayerName(event.target.value)}
-                    ></input>
-                    <br />
-                    <label>Team Name</label>
-                    <br />
-                    <input
-                        type="text"
-                        required
-                        onChange={(event) => setTeamName(event.target.value)}
-                    ></input>
-                    <br />
-                    <label>Team Name</label>
-                    <br />
-                    <input
-                        type="text"
-                        required
-                        onChange={(event) => setTeamName(event.target.value)}
-                    ></input>
-                    <br />
-                    <label>Team Name</label>
-                    <br />
-                    <input
-                        type="text"
-                        required
-                        onChange={(event) => setTeamName(event.target.value)}
-                    ></input>
-                    <br />
-                    <label>Team Name</label>
-                    <br />
-                    <input
-                        type="text"
-                        required
-                        onChange={(event) => setTeamName(event.target.value)}
-                    ></input>
-                    <br />
-                    <button typeof="submit">Log In</button>
-                </form>
-                
-                <form className="remove_product">placeholder</form>
-                <form className="add_product">placeholder</form> */}
             </div> : 
             <h1>You need to be an admin to view</h1>
             }   
