@@ -4,6 +4,7 @@
     username: "Choker",
     password: "iNeedToGo",
     email: "packersSuck@gmail.com",
+    location: "Somewhere, Wisconson",
     admin: false,
   },
   {
@@ -11,6 +12,7 @@
     username: "seniorCitizen",
     password: "iNeedToRetire",
     email: "myBackHurts@gmail.com",
+    location: "Tampa, Florida",
     admin: false,
   },
   {
@@ -18,6 +20,7 @@
     username: "wanderer",
     password: "iAmAdequate",
     email: "whoDoesHePlayFor@gmail.com",
+    location: "Anywhere, Florida",
     admin: false,
   },
 
@@ -26,6 +29,7 @@
     username: "saints4life",
     password: "SuperBowlChamps",
     email: "whodat@gmail.com",
+    location: "Lafayette, Louisana",
     admin: true,
   },
   {
@@ -33,6 +37,7 @@
     username: "whodatking",
     password: "ihavehairplugs",
     email: "neworleanssaints@gmail.com",
+    location: "Lafayette, Louisana",
     admin: false,
   },
   {
@@ -40,6 +45,7 @@
     username: "PapaJohnKing",
     password: "ihavea5head",
     email: "coltsandbroncos@gmail.com",
+    location: "Laffayette, Louisana",
     admin: false,
   },
   {
@@ -47,6 +53,7 @@
     username: "broncoscountry",
     password: "LetRide!",
     email: "broncoscountryletsride@gmail.com",
+    location: "Laffayette, Louisana",
     admin: false,
   },
   {
@@ -54,6 +61,7 @@
     username: "qbcamp",
     password: "SerpentineSon!",
     email: "football@gmail.com",
+    location: "Laffayette, Louisana",
     admin: false,
   },
   {
@@ -61,7 +69,16 @@
     username: "idonotcare",
     password: "Ihatefootball$$",
     email: "idonotcare@gmail.com",
+    location: "Laffayette, Louisana",
     admin: false,
+  },
+  {
+    name: "Vikings",
+    username: "vikings",
+    password: "password",
+    email: "fsvikings@gmail.com",
+    location: "Cleveland, Ohio",
+    admin: true,
   },
 ];
 
