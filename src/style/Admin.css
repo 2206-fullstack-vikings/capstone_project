@@ -1,0 +1,111 @@
+
+.admin_main{
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+}
+
+.button_new_container {
+    display:flex;
+    width:100%;
+    height:2vw;
+}
+
+
+
+.admin_product{
+    border:1px black solid;
+    flex-grow: 1;
+    display: flex;
+    color:black;
+    flex-direction: column;
+    flex-basis: auto;
+    background-color: white;
+    align-items: center;  
+}
+
+.image-container {
+    background-color: white;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px black solid;
+}
+.admin_image {
+    margin: 0 auto;
+    height: 200px; 
+    width: 200px;
+}
+
+.buttonPYT{
+    background-color: yellow;
+    font-weight:bold;
+    color:rgb(85, 6, 112);
+    width: 80%;
+      margin-top:1.5vw;
+    margin-bottom:.5vw;
+}
+
+.buttonPYB{
+    background-color: rgb(85, 6, 112);
+    color:yellow;
+    width: 80%;
+    margin-top:.5vw;
+    margin-bottom:2vw;
+}
+
+.buttonGYT{
+    background-color: yellow;
+    font-weight:bold;
+    color:rgb(6, 94, 6);
+    width: 80%;
+    margin-top:1.5vw;
+    margin-bottom:.5vw;
+}
+
+.buttonGYB{
+    background-color: rgb(6, 94, 6);
+    color:yellow;
+    width: 80%;
+    margin-top:.5vw;
+    margin-bottom:2vw;
+}
+
+.buttonBG{
+    background-color: lightgray;
+    color:black;
+    width: 100%;
+    
+}
+
+
+.buttonBGT{
+    background-color: rgb(242, 236, 236);
+    font-weight:bold;
+    color:black;
+    width: 80%;
+    margin-top:1.5vw;
+    margin-bottom:.5vw;
+}
+
+.buttonBGB{
+    background-color: black;
+    color:white;
+    width: 80%;
+    margin-top:.5vw;
+    margin-bottom:2vw;
+}
+
+.formContainer {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    width:100%;
+}
+
+.editProductForm {
+    height: 80%;
+    width:80%;
+    background-color: lightgray;
+}

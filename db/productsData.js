@@ -112,7 +112,7 @@ const products = [
     jerseyNumber: 58,
     price: 70,
     image:
-      "https://fanatics.frgimages.com/detroit-lions/mens-nike-amon-ra-st-brown-blue-detroit-lions-game-player-jersey_pi4386000_altimages_ff_4386618-582d80d44259159f3b67alt1_full.jpg?_hv=2&w=900",
+      "https://fanatics.frgimages.com/detroit-lions/mens-nike-penei-sewell-blue-detroit-lions-game-jersey_pi4398000_altimages_ff_4398816-42b8eae1920ff5034260alt1_full.jpg?_hv=2&w=900",
   },
 
   ////////////////////////////
