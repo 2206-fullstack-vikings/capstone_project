@@ -5,7 +5,10 @@ const {
     getProductById, 
     getProductsByPlayerName, 
     getProductsByTeamName, 
-    deleteProductById
+    deleteProductById,
+    insertProduct,
+    deleteProduct,
+    editProduct
 } = require("../db/models/productsModel")
 const {getUserByUsername} = require("../db/models/usersModel")
 
@@ -58,6 +61,47 @@ productsRouter.get("/:division", async (req, res, next) => {
         res.send(productsByDivision);
     } catch (error) {
         console.error(error);
+    }
+})
+
+productsRouter.post("/", async (req, res, next) => {
+          console.log("this is req.body");
+        console.log(req.body);
+    try {
+        const productAdded = await insertProduct(req.body.newProduct);
+            console.log("productAdded");
+        console.log(productAdded)
+  
+        res.send("it worked")
+    } catch(error){
+        console.log(error)
+    }
+})
+
+productsRouter.patch("/:productId", async (req, res, next) => {
+    const { productId } = req.params;
+        console.log("req.body")
+    console.log(req.body)
+    try {
+        const productEdited = await editProduct({id: productId, playerName: req.body.product.playerName, teamName: req.body.product.teamName, division: req.body.product.division,jerseyNumber: req.body.product.jerseyNumber, price: req.body.product.price, image: req.body.product.image,});
+        console.log("productEdited");
+        console.log(productEdited);
+        console.log("req.body");
+        console.log(req.body.product)
+        res.send(productEdited)
+    } catch (error) {
+        console.log(error);
+    }
+})
+
+productsRouter.delete("/:productId", async (req, res, next) => {
+    const { productId } = req.params
+    try {
+    const deletedProduct = await deleteProduct(productId);
+
+    res.send(deletedProduct)
+    } catch (error){
+        console.log(error)
     }
 })
 
