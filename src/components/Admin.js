@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import axios from "axios";
 import "../style/Products.css"
 import EditProduct from "./EditProduct";
+import { UNSAFE_NavigationContext } from "react-router-dom";
 
 const Admin = (props)=>{
 const {setCurrentUser, currentUser, allProducts, setAllProducts} = props;
@@ -15,7 +16,8 @@ const {setCurrentUser, currentUser, allProducts, setAllProducts} = props;
 const [formToggle, setFormToggle] = useState(false);
 const [formType, setFormType] = useState("");
 const [currentProduct, setCurrentProduct] = useState("");
-const [buttonValue, setButtonValue] = useState("")
+const [buttonValue, setButtonValue] = useState("");
+
 
 // function getTeamColors(team) {
 //     if ( team === "Vikings") {
@@ -27,40 +29,27 @@ const [buttonValue, setButtonValue] = useState("")
 //     }
 // }
 
-function editProduct(product) {
-setCurrentProduct(product)
-    // if ( !formToggle ) {
-    //     setFormToggle(true);
-    // } else {
-    //     setFormToggle(false);
-    // }
-//     let currentProduct = allProducts.filter((product) => { 
-//         console.log("itemId");
-//         console.log(product.id);
-//         console.log("buttonValue");
-//         console.log(buttonValue)
-//         if (item.id === buttonValue ) {
-//             return item
-//         }
-//      });
-// console.log("currentProduct")
-// console.log(currentProduct)
-        // for ( let i=0; i< allProducts.length; i++) {
-        //         console.log("currentProductijdidijdhijh");
-        //             console.log(allProducts[i].id);
-        //             console.log("ththiewijhjeiwoBUBUTUUTTUTUIOONNIJVIJJLJLAIJOJOOFJJIO");
-        //             console.log(buttonValue);
-        //     if ( allProducts[i].id === buttonValue) {
-                
-        //         setCurrentProduct(allProducts[i]);
-             
-        //         return;
-        //     }
-        // }
-
-       
-
+async function deleteProduct(productId) {
+    try {
+        await axios.delete(`http://localhost:3000/api/products/${productId}`)
+    } catch(error) {
+        console.log(error)
+    }
 }
+
+   const fetchProducts = async ()=>{
+        try {
+            const response = await axios.get("http://localhost:3000/api/products")
+            const result = response.data
+            setAllProducts(result);
+                        console.log("result Edit Product line 20 /////////////////////");
+
+            console.log(result);
+        } catch (error) {
+            console.error(error)
+        }
+    };
+
 
 // const styleJerseys = {
 //     display:"flex",
@@ -79,10 +68,15 @@ setCurrentProduct(product)
     return(
         <div >
             {
-                formToggle ? <EditProduct formToggle = {formToggle} setFormToggle = {setFormToggle} formType = {formType} setFormType = {setFormType} currentProduct = {currentProduct} setCurrentProduct = {setCurrentProduct}/>: null
+                formToggle ? <EditProduct formToggle = {formToggle} setFormToggle = {setFormToggle} formType = {formType} setFormType = {setFormType} currentProduct = {currentProduct} setCurrentProduct = {setCurrentProduct} allProducts = {allProducts} setAllProducts = {setAllProducts} />: null
             }
             {currentUser.admin && !formToggle ? 
             <div className="products_main">  
+            <button onClick={()=>{
+                        setFormToggle(true);
+                        setFormType("new");
+                        setCurrentProduct({id: "", playerName: "", jerseyNumber: "", teamName: "", division: "", price: "", image: ""})
+            }}>Add New Product</button>
                 {allProducts.map((eachProduct,idx)=>{
                     // let buttonColor = "";
                     // let backgroundColor = "";
@@ -95,11 +89,15 @@ setCurrentProduct(product)
                     <p>{eachProduct.division}</p>
                     <p>${eachProduct.price}</p>
                     <button value={eachProduct.id} onClick={() => {
-                        
+                        deleteProduct(eachProduct.id);
+                        fetchProducts();
                     }}>Delete Product</button>
                     <button value={eachProduct.id} onClick={() => {
                         // setButtonValue(event.target.value)
-                        editProduct({id: eachProduct.id, playerName: eachProduct.playerName, jerseyNumber: eachProduct.jerseyNumber, teamName: eachProduct.teamName, division: eachProduct.divison, price: eachProduct.price, image: eachProduct.image});
+                        setFormToggle(true);
+                        setFormType("edit");
+                        setCurrentProduct({id: eachProduct.id, playerName: eachProduct.playerName, jerseyNumber: eachProduct.jerseyNumber, teamName: eachProduct.teamName, division: eachProduct.division, price: eachProduct.price, image: eachProduct.image})
+                        // editProduct({id: eachProduct.id, playerName: eachProduct.playerName, jerseyNumber: eachProduct.jerseyNumber, teamName: eachProduct.teamName, division: eachProduct.division, price: eachProduct.price, image: eachProduct.image});
                         console.log("currentProduct");
                         console.log(currentProduct);
                             //     let singleProduct = await axios.get(`http://localhost:3000/api/products/${buttonValue}`)
