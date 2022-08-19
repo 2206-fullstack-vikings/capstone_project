@@ -85,7 +85,10 @@ usersRouter.post("/login", async (req, res, next) => {
         process.env.JWT_SECRET,
         { expiresIn: "1h" }
       );
-
+        const cart= await checkForCart(user.id)
+        if(!cart){
+           await createCart(user.id)
+        }
       res.send({ token, message: "you're logged in!", user });
     } else {
       next({
