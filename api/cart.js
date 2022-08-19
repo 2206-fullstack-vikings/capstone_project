@@ -19,7 +19,7 @@ cartRouter.post("/:productId", async (req, res, next) => {
     
     const product =  await getProductById({id});
    const{playerName, price,image}=product
-   const cartItem ={image, playerName, price}
+   const cartItem ={id, image, playerName, price}
    
     
     const {cart} = req.session;
@@ -34,4 +34,14 @@ cartRouter.post("/:productId", async (req, res, next) => {
     res.send(cart)
 })
 
+cartRouter.delete('/:cartIndex', (req, res, next) =>{
+    const idx = req.params.cartIndex;
+   
+    
+    const {cart}= req.session
+    const {items}= cart;
+     items.splice(idx,1)
+    console.log(items)
+res.send(items)
+})
 module.exports = cartRouter

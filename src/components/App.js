@@ -27,7 +27,7 @@ const App = () => {
   const [name, setName]=useState("");
   const [location, setLocation]=useState("")
   const [confirmPassword, setConfirmPassword]=useState("");
-  const [shoppingCart, setShoppingCart]= useState([]);
+  
 
 
 
@@ -70,8 +70,8 @@ const App = () => {
     <Title/>
     
       <Routes>
-      <Route path="/" element ={<HomePage allProducts={allProducts} testState={testState} setAllProducts={setAllProducts} shoppingCart={shoppingCart} 
-            setShoppingCart={setShoppingCart} />}/>
+      <Route path="/" element ={<HomePage allProducts={allProducts} testState={testState} setAllProducts={setAllProducts} 
+             />}/>
       <Route path="/admin" element={<Admin testState={testState} currentUser={currentUser} allProducts={allProducts} setAllProducts={setAllProducts}/>}/>
       <Route path="/login" element={<Login userToken={userToken}
             setUserToken={setUserToken}
@@ -88,8 +88,8 @@ const App = () => {
             confirmPassword={confirmPassword}
             setConfirmPassword={setConfirmPassword}
             /> }/>
-      <Route path="/:id" element={<SingleProductView allProducts={allProducts} shoppingCart={shoppingCart} setShoppingCart={setShoppingCart} />}/>
-      <Route path="/orderform" element={<OrderForm shoppingCart={shoppingCart} setShoppingCart={setShoppingCart} />}/>
+      <Route path="/:id" element={<SingleProductView allProducts={allProducts}  />}/>
+      <Route path="/orderform" element={<OrderForm  />}/>
 
       </Routes>
       
