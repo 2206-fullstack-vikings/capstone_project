@@ -11,7 +11,17 @@
     height:2vw;
 }
 
-
+.admin_product_gradient {
+     border:1px black solid;
+     font-weight:bold;
+    flex-grow: 1;
+    display: flex;
+    color:black;
+    flex-direction: column;
+    flex-basis: auto;
+    background-image: linear-gradient(to bottom, white,white, white,yellow);
+    align-items: center;  
+}
 
 .admin_product{
     border:1px black solid;
@@ -24,34 +34,73 @@
     align-items: center;  
 }
 
-.image-container {
+.image_container {
+    background-color: white;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom:2vw;
+    margin-bottom: 2vw;
+    border-bottom: 1px black solid;
+}
+
+/* .image-containerPY {
     background-color: white;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     border-bottom: 1px black solid;
+}  */
+
+
+.button-container {
+    background-color: white;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px black solid;
 }
+
+.button-containerPY {
+    background-color: rgb(85, 6, 112);
+    margin-top:2vw;
+    width: 100%;
+    height:9vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px black solid;
+}
+
 .admin_image {
     margin: 0 auto;
     height: 200px; 
     width: 200px;
+    /* border-bottom: 1px black solid; */
+    margin-top: 1.5vw;
 }
 
-.buttonPYT{
-    background-color: yellow;
+button.buttonPYT{
+    background-color: white;
+    font-weight:bold;
+    color:rgb(85, 6, 112);
+    border-left: 4px, solid, rgb(85, 6, 112);
+        border-right: 4px, solid, rgb(85, 6, 112);
+
+    width: 80%;
+    height:2vw;
+    margin-top:2vw;
+}
+
+button.buttonPYB{
+    background-color: white;
     font-weight:bold;
     color:rgb(85, 6, 112);
     width: 80%;
-      margin-top:1.5vw;
-    margin-bottom:.5vw;
-}
-
-.buttonPYB{
-    background-color: rgb(85, 6, 112);
-    color:yellow;
-    width: 80%;
-    margin-top:.5vw;
+    height:2vw;
     margin-bottom:2vw;
 }
 

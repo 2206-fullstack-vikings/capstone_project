@@ -21,20 +21,20 @@ const [buttonValue, setButtonValue] = useState("");
 
 function getTeamColors(team) {
     if ( team === "Minnesota Vikings") {
-        return {background: "whitePS", text: "purple", buttonT: "buttonPYT", buttonB: "buttonPYB"}
+        return {background: "admin_product_gradient", text: "purple", buttonT: "buttonPYT", buttonB: "buttonPYB",  container: "button-containerPY" }
     } 
     
     // if ( team === "Detroit Lions") {
     //     return [{background: "white"}, {text: "lightblue"}, {buttonText: "lightblue"}, {buttonColor: "gray"}]
     // } 
     else if ( team === "Green Bay Packers") {
-        return {background: "white", text: "green", buttonT: "buttonGYT", buttonB: "buttonGYB" }
+        return {background: "admin_product", text: "green", buttonT: "buttonGYT", buttonB: "buttonGYB", container: "button-container" }
     } 
     // if ( team === "Chicago Bears") {
     //     return [{background: "gold"}, {text: "white"}, {button: "yellow"}, {buttonColor: "black"}]
     // } 
     else {
-         return {background: "white", text: "buttonGrayGB", buttonT: "buttonBGT", buttonB: "buttonBGB"}
+         return {background: "admin_product", text: "buttonGrayGB", buttonT: "buttonBGT", buttonB: "buttonBGB",  container: "button-container" }
     }
 }
 
@@ -97,7 +97,7 @@ async function deleteProduct(productId) {
                     // let buttonColor = "";
                     // let backgroundColor = "";
                     // let textColor = "";
-                    return <div key={idx} className="admin_product">
+                    return <div key={idx} className={teamColors.background}>
                         <div className="image_container">
                             <img src={eachProduct.image} alt="NFL Property" className="admin_image" />
                         </div>
@@ -106,16 +106,20 @@ async function deleteProduct(productId) {
                     <p>{eachProduct.teamName}</p>
                     <p>{eachProduct.division}</p>
                     <p>${eachProduct.price}</p>
-                    <button value={eachProduct.id} onClick={() => {
+                 {/* <div className={teamColors.container}> */}
+                          <button value={eachProduct.id} onClick={() => {
                         deleteProduct(eachProduct.id);
                         fetchProducts();
                     }} className={teamColors.buttonT}>Delete Product</button>
+                    <br />
                     <button value={eachProduct.id} onClick={() => {
                         setFormToggle(true);
                         setFormType("edit");
                         setCurrentProduct({id: eachProduct.id, playerName: eachProduct.playerName, jerseyNumber: eachProduct.jerseyNumber, teamName: eachProduct.teamName, division: eachProduct.division, price: eachProduct.price, image: eachProduct.image})
                     }} className={teamColors.buttonB}>Edit Product</button>
-                </div>
+                    </div>
+                  
+                // </div>
                 })}
             </div> : 
             <h1>You need to be an admin to view</h1>
