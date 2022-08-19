@@ -18,12 +18,15 @@ const productsRouter = require('./products');
 apiRouter.use('/products', productsRouter);
 
 // place your routers here
-// ROUTER: /api/products
+// ROUTER: /api/users
 const usersRouter = require('./users');
 apiRouter.use('/users', usersRouter);
-
+//ROUTER: /api/cart
 const cartRouter = require('./cart');
 apiRouter.use('/cart', cartRouter);
+
+const orderRouter= require('./order');
+apiRouter.use('/order', orderRouter)
 
 
 module.exports = apiRouter;
