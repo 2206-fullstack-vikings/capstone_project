@@ -5,10 +5,14 @@ const {getUser}= "./usersModel.js"
 async function createCart(id){
    
     try {
+       
        const {rows:[cart]}= await client.query(`
        INSERT INTO "userCarts"(userid)
-       VALUES($1, $2)
+       VALUES($1);
+       
        `[id])
+       console.log("getting this far")
+       return cart;
     } catch (error) {
         console.log(error)
     }
@@ -19,7 +23,7 @@ async function checkForCart(id){
         const {rows:[cart]}= await client.query(`
         SELECT *
         FROM "userCarts"
-        WHERE userid=$1
+        WHERE userid=$1;
         `[id])
     } catch (error) {
         console.log(error)
