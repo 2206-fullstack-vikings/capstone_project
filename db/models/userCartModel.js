@@ -10,7 +10,7 @@ async function createCart(id){
        INSERT INTO "userCarts"(userid)
        VALUES($1);
        
-       `[id])
+       `,[id])
        console.log("getting this far")
        return cart;
     } catch (error) {
@@ -24,10 +24,29 @@ async function checkForCart(id){
         SELECT *
         FROM "userCarts"
         WHERE userid=$1;
-        `[id])
+        `,[id])
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+async function getCartId(userId){
+    try {
+        const {row:[cartId]}= await client.query(`
+        SELECT id
+        FROM "userCarts"
+        WHERE userid = $1;
+        `,[userId])
+
+        return cartId;
     } catch (error) {
         console.log(error)
     }
 }
 
 module.exports={createCart,checkForCart}
+
+
+
+
+
