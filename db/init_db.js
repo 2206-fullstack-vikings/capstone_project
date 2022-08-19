@@ -57,8 +57,8 @@ async function createTables() {
 
     CREATE TABLE "userCarts"(
       id SERIAL PRIMARY KEY,
-      userid INTEGER REFERENCES users(id),
-      active BOOLEAN DEFAULT false
+      userid INTEGER REFERENCES users(id)
+     
     );
 
     CREATE TABLE "cartItems"(

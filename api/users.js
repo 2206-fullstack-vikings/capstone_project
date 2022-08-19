@@ -5,6 +5,7 @@ const jwt = require("jsonwebtoken");
 const { SECRET } = process.env;
 const bcrypt = require("bcrypt");
 const { getUser, createUser, getUsers } = require("../db/models/usersModel");
+const{checkForCart, createCart}= require('../db/models/userCartModel')
 
 usersRouter.use(express.json());
 //GET api/users
@@ -25,6 +26,7 @@ usersRouter.post("/register", async (req, res, next) => {
   const { name, username, password, email } = req.body;
 
   try {
+    //line below not currently being used!!!!!!!
     const hashedPassword = await bcrypt.hash(password, 10);
     const _user = await getUser({ username, password });
 
@@ -45,10 +47,13 @@ usersRouter.post("/register", async (req, res, next) => {
 
     const user = await createUser({ name, username, password, email, admin:false });
 
+    const cart= await createCart(user.id)
+
     const token = jwt.sign(
       { id: user.id, username: user.username },
       process.env.JWT_SECRET,
       { expiresIn: "1h" }
+
     );
     res.send({
       message: "thank you for signing up",

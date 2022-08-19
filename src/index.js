@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 
 import { App } from './components';
 // css stylesheets can be created for each component
@@ -8,5 +8,14 @@ import './style/index.css';
 
 
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// ReactDOM.render(<App />, document.getElementById('root'));
 
+
+const appElement = document.getElementById("root")
+const root =ReactDOM.createRoot(appElement)
+root.render(
+    <React.StrictMode>
+<App/>
+</React.StrictMode>
+
+)
