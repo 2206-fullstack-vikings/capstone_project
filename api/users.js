@@ -23,7 +23,7 @@ usersRouter.get("/", async (req, res, next) => {
 
 // POST /api/users/register
 usersRouter.post("/register", async (req, res, next) => {
-  const { name, username, password, email } = req.body;
+  const { name, username, password, location, email } = req.body;
 
   try {
     //line below not currently being used!!!!!!!
@@ -45,7 +45,7 @@ usersRouter.post("/register", async (req, res, next) => {
       });
     }
 
-    const user = await createUser({ name, username, password, email, admin:false });
+    const user = await createUser({ name, username, password, email,location, admin:false });
 
     const cart= await createCart(user.id)
     

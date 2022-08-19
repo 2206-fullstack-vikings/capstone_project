@@ -87,6 +87,8 @@ const App = () => {
             setCurrentUser={setCurrentUser}
             confirmPassword={confirmPassword}
             setConfirmPassword={setConfirmPassword}
+            location={location}
+            setLocation={setLocation}
             /> }/>
       <Route path="/:id" element={<SingleProductView allProducts={allProducts}  />}/>
       <Route path="/orderform" element={<OrderForm  currentUser={currentUser} />}/>
