@@ -14,7 +14,6 @@ const Products = (props)=>{
             const response= await axios.post(`http://localhost:3000/api/cart/${event}`)
             const cartItems = response.data.items;
             
-            
         } catch (error) {
             console.error(error)
         }
