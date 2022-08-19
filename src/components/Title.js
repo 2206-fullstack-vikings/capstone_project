@@ -11,7 +11,7 @@ const Title =()=>{
         <header className="header_container">
         <div className="title_container">
             <div id="logo"></div>
-            <h1 >WE NEED TO COME UP WITH CLEVER TITLE FOR APP</h1>
+            <h1 >JERSEYZ OUTLET</h1>
         </div>
         <div className="link_bar">
         <Link className="links" to='/'>HOME</Link>
