@@ -4,12 +4,7 @@ import axios from "axios";
 
 const OrderForm = ({currentUser}) => {
   const [shoppingCart, setShoppingCart] = useState([]);
-  const [orderName, setOrderName]= useState("");
-  const [orderAddress, setOrderAddress]= useState("");
-  const [orderCity, setOrderCity]= useState("");
-  const [orderState, setOrderState]= useState("");
-  const [orderZip, setOrderZip]= useState("");
-
+  
 
 
 
