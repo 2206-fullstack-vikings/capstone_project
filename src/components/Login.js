@@ -18,6 +18,8 @@ const Login = (props) => {
     setCurrentUser,
     confirmPassword,
     setConfirmPassword,
+    location,
+    setLocation
   } = props;
 
   
@@ -53,6 +55,7 @@ const Login = (props) => {
           username: userName,
           password: userPassword,
           email: email,
+          location:location,
          
         }
       );
@@ -146,6 +149,12 @@ const Login = (props) => {
           type="text"
           required
           onChange={(event) => setEmail(event.target.value)}
+        />
+        <br />
+        <input
+          type="text"
+          required
+          onChange={(event) => setLocation(event.target.value)}
         />
         <br />
         

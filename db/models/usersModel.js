@@ -52,13 +52,13 @@ async function getUser({ username, password }) {
 
 
 
-async function createUser ({name, username, password, email, admin}) {
+async function createUser ({name, username, password, email,location, admin}) {
   const hashedPassword = await bcrypt.hash(password,10)
   const {rows: [ newUser ]} = await client.query(`
-      INSERT INTO users(name, username, "hashedPassword", email, admin)
-      VALUES($1, $2, $3, $4, $5)
+      INSERT INTO users(name, username, "hashedPassword", email,location, admin)
+      VALUES($1, $2, $3, $4, $5, $6)
       RETURNING *;
-  `, [name, username, hashedPassword, email, admin])
+  `, [name, username, hashedPassword, email,location, admin])
   
   return newUser;
 }
