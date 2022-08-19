@@ -41,7 +41,7 @@ cartRouter.delete('/:cartIndex', (req, res, next) =>{
     const {cart}= req.session
     const {items}= cart;
      items.splice(idx,1)
-    console.log(items)
+    
 res.send(items)
 })
 module.exports = cartRouter

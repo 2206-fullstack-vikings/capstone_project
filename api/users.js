@@ -48,6 +48,7 @@ usersRouter.post("/register", async (req, res, next) => {
     const user = await createUser({ name, username, password, email, admin:false });
 
     const cart= await createCart(user.id)
+    
 
     const token = jwt.sign(
       { id: user.id, username: user.username },
