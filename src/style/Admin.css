@@ -11,18 +11,6 @@
     height:2vw;
 }
 
-.admin_product_gradient {
-     border:1px black solid;
-     font-weight:bold;
-    flex-grow: 1;
-    display: flex;
-    color:black;
-    flex-direction: column;
-    flex-basis: auto;
-    background-image: linear-gradient(to bottom, white,white, white,yellow);
-    align-items: center;  
-}
-
 .admin_product{
     border:1px black solid;
     flex-grow: 1;
@@ -41,7 +29,7 @@
     justify-content: center;
     align-items: center;
     padding-bottom:2vw;
-    margin-bottom: 2vw;
+    margin-bottom: 1vw;
     border-bottom: 1px black solid;
 }
 
@@ -53,6 +41,134 @@
     align-items: center;
     border-bottom: 1px black solid;
 }  */
+
+
+/* /////////////////////// Gradient Backgrounds ////////////////////////// */
+.gradientYellow {
+     border:1px black solid;
+     font-weight:bold;
+    flex-grow: 1;
+    display: flex;
+    color:black;
+    flex-direction: column;
+    flex-basis: auto;
+    background-image: linear-gradient(to bottom, white,white,white, rgb(250, 250, 205),yellow);
+    align-items: center;  
+}
+
+.gradientGold {
+     border:1px black solid;
+     font-weight:bold;
+    flex-grow: 1;
+    display: flex;
+    color:black;
+    flex-direction: column;
+    flex-basis: auto;
+    background-image: linear-gradient(to bottom, white,white, white,rgb(248, 248, 181), gold);
+    align-items: center;  
+}
+
+.gradientGray {
+     border:1px black solid;
+     font-weight:bold;
+    flex-grow: 1;
+    display: flex;
+    color:black;
+    flex-direction: column;
+    flex-basis: auto;
+    background-image: linear-gradient(to bottom, white,white, white,rgb(238, 238, 238), rgb(190, 190, 190));
+    align-items: center;  
+}
+
+.gradientBarelyGray {
+     border:1px black solid;
+     font-weight:bold;
+    flex-grow: 1;
+    display: flex;
+    color:black;
+    flex-direction: column;
+    flex-basis: auto;
+    background-image: linear-gradient(to bottom, white,white, white,white, rgb(228, 223, 223));
+    align-items: center;  
+}
+
+.gradientOrangeDark {
+     border:1px black solid;
+     font-weight:bold;
+    flex-grow: 1;
+    display: flex;
+    color:black;
+    flex-direction: column;
+    flex-basis: auto;
+    background-image: linear-gradient(to bottom, white,white, white,rgb(247, 193, 174),rgb(211, 63, 30));
+    align-items: center;  
+}
+
+.gradientOrange {
+     border:1px black solid;
+     font-weight:bold;
+    flex-grow: 1;
+    display: flex;
+    color:black;
+    flex-direction: column;
+    flex-basis: auto;
+    background-image: linear-gradient(to bottom, white,white, white,rgb(250, 225, 179),orange);
+    align-items: center;  
+}
+
+.gradientRed {
+     border:1px black solid;
+     font-weight:bold;
+    flex-grow: 1;
+    display: flex;
+    color:black;
+    flex-direction: column;
+    flex-basis: auto;
+    background-image: linear-gradient(to bottom, white,white, white,rgb(238, 195, 195),red);
+    align-items: center;  
+}
+
+.gradientLimeGreen {
+     border:1px black solid;
+     font-weight:bold;
+    flex-grow: 1;
+    display: flex;
+    color:black;
+    flex-direction: column;
+    flex-basis: auto;
+    background-image: linear-gradient(to bottom, white,white, white,rgb(224, 237, 214),rgb(122, 193, 66));
+    align-items: center;  
+}
+
+.gradientPewter {
+     border:1px black solid;
+     font-weight:bold;
+    flex-grow: 1;
+    display: flex;
+    color:black;
+    flex-direction: column;
+    flex-basis: auto;
+    background-image: linear-gradient(to bottom, white,white, white,rgb(180, 173, 165),rgb(52, 48, 43));
+    align-items: center;  
+}
+
+.gradientBlack {
+     border:1px black solid;
+     font-weight:bold;
+    flex-grow: 1;
+    display: flex;
+    color:black;
+    flex-direction: column;
+    flex-basis: auto;
+    background-image: linear-gradient(to bottom, white,white, white,rgb(220, 219, 219),rgb(78, 74, 74));
+    align-items: center;  
+}
+
+
+
+
+
+
 
 
 .button-container {
@@ -83,40 +199,430 @@
     margin-top: 1.5vw;
 }
 
+/* /////////////////////// Buttons ////////////////////////// */
+
+/* ////// Vikings ///// */
 .buttonPYT{
     background-color: white;
     font-weight:bold;
     color:rgb(85, 6, 112);
     /* border-left: 4px, solid, rgb(85, 6, 112); */
-    border-left: 4px, solid, rgb(85, 6, 112);
+    border-left: .4vw solid rgb(85, 6, 112);
+    border-bottom: .35vw solid rgb(85, 6, 112);
+    border-right: .2vw solid rgb(85, 6, 112);
+    border-top: .2vw solid rgb(85, 6, 112);
+    padding-top:.25vw;
+    padding-bottom:.4vw;
     width: 80%;
-    height:2vw;
-    margin-top:2vw;
+    height:2.5vw;
+    margin-top:2.5vw;
 }
 
-button.buttonPYB{
+.buttonPYB{
     background-color: white;
     font-weight:bold;
-    color:rgb(85, 6, 112);
+     border-left: .4vw solid rgb(85, 6, 112);
+    border-bottom: .35vw solid rgb(85, 6, 112);
+    border-right: .2vw solid rgb(85, 6, 112);
+    border-top: .2vw solid rgb(85, 6, 112);
+    padding-top:.25vw;
+    padding-bottom:.4vw;
     width: 80%;
-    height:2vw;
+    height:2.5vw;
     margin-bottom:2vw;
 }
 
+/* ////// Packers ///// */
+
 .buttonGYT{
-    background-color: yellow;
+   background-color: white;
     font-weight:bold;
-    color:rgb(6, 94, 6);
+     border-left: .4vw solid rgb(6, 94, 6);
+    border-bottom: .35vw solid rgb(6, 94, 6);
+    border-right: .2vw solid rgb(6, 94, 6);
+    border-top: .2vw solid rgb(6, 94, 6);
+    padding-top:.25vw;
+    padding-bottom:.4vw;
     width: 80%;
-    margin-top:1.5vw;
-    margin-bottom:.5vw;
+    height:2.5vw;
+    margin-top:2.5vw;
 }
 
 .buttonGYB{
-    background-color: rgb(6, 94, 6);
-    color:yellow;
+   background-color: white;
+    font-weight:bold;
+     border-left: .4vw solid rgb(6, 94, 6);
+    border-bottom: .35vw solid rgb(6, 94, 6);
+    border-right: .2vw solid rgb(6, 94, 6);
+    border-top: .2vw solid rgb(6, 94, 6);
+    padding-top:.25vw;
+    padding-bottom:.4vw;
     width: 80%;
-    margin-top:.5vw;
+    height:2.5vw;
+    margin-bottom:2vw;
+}
+
+/* ////// Jaguars ///// */
+
+.buttonTealT{
+   background-color: white;
+    font-weight:bold;
+     border-left: .4vw solid teal;
+    border-bottom: .35vw solid teal;
+    border-right: .2vw solid teal;
+    border-top: .2vw solid teal;
+    padding-top:.25vw;
+    padding-bottom:.4vw;
+    width: 80%;
+    height:2.5vw;
+    margin-top:2.5vw;
+}
+
+.buttonTealB{
+   background-color: white;
+    font-weight:bold;
+     border-left: .4vw solid teal;
+    border-bottom: .35vw solid teal;
+    border-right: .2vw solid teal;
+    border-top: .2vw solid teal;
+    padding-top:.25vw;
+    padding-bottom:.4vw;
+    width: 80%;
+    height:2.5vw;
+    margin-bottom:2vw;
+}
+
+
+/* ////// Lions ///// */
+
+.buttonLBGT{
+   background-color: white;
+    font-weight:bold;
+     border-left: .4vw solid rgb(31, 98, 185);
+    border-bottom: .35vw solid rgb(31, 98, 185);
+    border-right: .2vw solid rgb(31, 98, 185);
+    border-top: .2vw solid rgb(31, 98, 185);
+    padding-top:.25vw;
+    padding-bottom:.4vw;
+    width: 80%;
+    height:2.5vw;
+    margin-top:2.5vw;
+}
+
+.buttonLBGB{
+   background-color: white;
+    font-weight:bold;
+     border-left: .4vw solid rgb(31, 98, 185);
+    border-bottom: .35vw solid rgb(31, 98, 185);
+    border-right: .2vw solid rgb(31, 98, 185);
+    border-top: .2vw solid rgb(31, 98, 185);
+    padding-top:.25vw;
+    padding-bottom:.4vw;
+    width: 80%;
+    height:2.5vw;
+    margin-bottom:2vw;
+}
+
+/* ////// Giants ///// */
+
+.buttonDarkBlueT{
+   background-color: white;
+    font-weight:bold;
+    border-left: .4vw solid rgb(0, 34, 68);
+    border-bottom: .35vw solid rgb(0, 34, 68);
+    border-right: .2vw solid rgb(0, 34, 68);
+    border-top: .2vw solid rgb(0, 34, 68);
+    padding-top:.25vw;
+    padding-bottom:.4vw;
+    width: 80%;
+    height:2.5vw;
+    margin-top:2.5vw;
+}
+
+.buttonDarkBlueB{
+   background-color: white;
+    font-weight:bold;
+     border-left: .4vw solid rgb(0, 34, 68);
+    border-bottom: .35vw solid rgb(0, 34, 68);
+    border-right: .2vw solid rgb(0, 34, 68);
+    border-top: .2vw solid rgb(0, 34, 68);
+    padding-top:.25vw;
+    padding-bottom:.4vw;
+    width: 80%;
+    height:2.5vw;
+    margin-bottom:2vw;
+}
+
+
+/* ////// Bears ///// */
+
+.buttonNavyBlueT{
+   background-color: white;
+    font-weight:bold;
+     border-left: .4vw solid rgb(7, 2, 91);
+    border-bottom: .35vw solid rgb(7, 2, 91);
+    border-right: .2vw solid rgb(7, 2, 91);
+    border-top: .2vw solid rgb(7, 2, 91);
+    padding-top:.25vw;
+    padding-bottom:.4vw;
+    width: 80%;
+    height:2.5vw;
+    margin-top:2.5vw;
+}
+
+.buttonNavyBlueB{
+   background-color: white;
+    font-weight:bold;
+     border-left: .4vw solid rgb(7, 2, 91);
+    border-bottom: .35vw solid rgb(7, 2, 91);
+    border-right: .2vw solid rgb(7, 2, 91);
+    border-top: .2vw solid rgb(7, 2, 91);
+    padding-top:.25vw;
+    padding-bottom:.4vw;
+    width: 80%;
+    height:2.5vw;
+    margin-bottom:2vw;
+}
+
+
+/* ////// Seahawks ///// */
+
+.buttonDarkAquaT{
+   background-color: white;
+    font-weight:bold;
+     border-left: .4vw solid rgb(0, 42, 92);
+    border-bottom: .35vw solid rgb(0, 42, 92);
+    border-right: .2vw solid rgb(0, 42, 92);
+    border-top: .2vw solid rgb(0, 42, 92);
+    padding-top:.25vw;
+    padding-bottom:.4vw;
+    width: 80%;
+    height:2.5vw;
+    margin-top:2.5vw;
+}
+
+.buttonDarkAquaB{
+   background-color: white;
+    font-weight:bold;
+     border-left: .4vw solid rgb(0, 42, 92);
+    border-bottom: .35vw solid rgb(0, 42, 92);
+    border-right: .2vw solid rgb(0, 42, 92);
+    border-top: .2vw solid rgb(0, 42, 92);
+    padding-top:.25vw;
+    padding-bottom:.4vw;
+    width: 80%;
+    height:2.5vw;
+    margin-bottom:2vw;
+}
+
+/* ////// Dolphins ///// */
+
+.buttonAquaT{
+   background-color: white;
+    font-weight:bold;
+     border-left: .4vw solid rgb(0, 142, 151);
+    border-bottom: .35vw solid rgb(0, 142, 151);
+    border-right: .2vw solid rgb(0, 142, 151);
+    border-top: .2vw solid rgb(0, 142, 151);
+    padding-top:.25vw;
+    padding-bottom:.4vw;
+    width: 80%;
+    height:2.5vw;
+    margin-top:2.5vw;
+}
+
+.buttonAquaB{
+   background-color: white;
+    font-weight:bold;
+     border-left: .4vw solid rgb(0, 142, 151);
+    border-bottom: .35vw solid rgb(0, 142, 151);
+    border-right: .2vw solid rgb(0, 142, 151);
+    border-top: .2vw solid rgb(0, 142, 151);
+    padding-top:.25vw;
+    padding-bottom:.4vw;
+    width: 80%;
+    height:2.5vw;
+    margin-bottom:2vw;
+}
+
+/* ////// Cardinals ///// */
+
+.buttonCardinalRedT{
+   background-color: white;
+    font-weight:bold;
+     border-left: .4vw solid rgb(114, 5, 5);
+    border-bottom: .35vw solid rgb(114, 5, 5);
+    border-right: .2vw solid rgb(114, 5, 5);
+    border-top: .2vw solid rgb(114, 5, 5);
+    padding-top:.25vw;
+    padding-bottom:.4vw;
+    width: 80%;
+    height:2.5vw;
+    margin-top:2.5vw;
+}
+
+.buttonCardinalRedB{
+   background-color: white;
+    font-weight:bold;
+     border-left: .4vw solid rgb(114, 5, 5);
+    border-bottom: .35vw solid rgb(114, 5, 5);
+    border-right: .2vw solid rgb(114, 5, 5);
+    border-top: .2vw solid rgb(114, 5, 5);
+    padding-top:.25vw;
+    padding-bottom:.4vw;
+    width: 80%;
+    height:2.5vw;
+    margin-bottom:2vw;
+}
+
+/* ////// Buccaneers ///// */
+
+.buttonBucsRedT{
+   background-color: white;
+    font-weight:bold;
+     border-left: .4vw solid rgb(213, 10, 10);
+    border-bottom: .35vw solid rgb(213, 10, 10);
+    border-right: .2vw solid rgb(213, 10, 10);
+    border-top: .2vw solid rgb(213, 10, 10);
+    padding-top:.25vw;
+    padding-bottom:.4vw;
+    width: 80%;
+    height:2.5vw;
+    margin-top:2.5vw;
+}
+
+.buttonBucsRedB{
+   background-color: white;
+    font-weight:bold;
+     border-left: .4vw solid rgb(213, 10, 10);
+    border-bottom: .35vw solid rgb(213, 10, 10);
+    border-right: .2vw solid rgb(213, 10, 10);
+    border-top: .2vw solid rgb(213, 10, 10);
+    padding-top:.25vw;
+    padding-bottom:.4vw;
+    width: 80%;
+    height:2.5vw;
+    margin-bottom:2vw;
+}
+
+/* ////// Rams ///// */
+
+.buttonRoyalBlueT{
+   background-color: white;
+    font-weight:bold;
+     border-left: .4vw solid rgb(3, 8, 150);
+    border-bottom: .35vw solid rgb(3, 8, 150);
+    border-right: .2vw solid rgb(3, 8, 150);
+    border-top: .2vw solid rgb(3, 8, 150);
+    padding-top:.25vw;
+    padding-bottom:.4vw;
+    width: 80%;
+    height:2.5vw;
+    margin-top:2.5vw;
+}
+
+.buttonRoyalBlueB{
+   background-color: white;
+    font-weight:bold;
+     border-left: .4vw solid rgb(3, 8, 150);
+    border-bottom: .35vw solid rgb(3, 8, 150);
+    border-right: .2vw solid rgb(3, 8, 150);
+    border-top: .2vw solid rgb(3, 8, 150);
+    padding-top:.25vw;
+    padding-bottom:.4vw;
+    width: 80%;
+    height:2.5vw;
+    margin-bottom:2vw;
+}
+
+/* ////// Panthers ///// */
+
+.buttonPantherBlueT{
+   background-color: white;
+    font-weight:bold;
+     border-left: .4vw solid rgb(0, 133, 202);
+    border-bottom: .35vw solid rgb(0, 133, 202);
+    border-right: .2vw solid rgb(0, 133, 202);
+    border-top: .2vw solid rgb(0, 133, 202);
+    padding-top:.25vw;
+    padding-bottom:.4vw;
+    width: 80%;
+    height:2.5vw;
+    margin-top:2.5vw;
+}
+
+.buttonPantherBlueB{
+   background-color: white;
+    font-weight:bold;
+     border-left: .4vw solid rgb(0, 133, 202);
+    border-bottom: .35vw solid rgb(0, 133, 202);
+    border-right: .2vw solid rgb(0, 133, 202);
+    border-top: .2vw solid rgb(0, 133, 202);
+    padding-top:.25vw;
+    padding-bottom:.4vw;
+    width: 80%;
+    height:2.5vw;
+    margin-bottom:2vw;
+}
+
+
+/* ////// 49ers ///// */
+
+.buttonScarletRedT{
+   background-color: white;
+    font-weight:bold;
+     border-left: .4vw solid rgb(193, 22, 22);
+    border-bottom: .35vw solid rgb(193, 22, 22);
+    border-right: .2vw solid rgb(193, 22, 22);
+    border-top: .2vw solid rgb(193, 22, 22);
+    padding-top:.25vw;
+    padding-bottom:.4vw;
+    width: 80%;
+    height:2.5vw;
+    margin-top:2.5vw;
+}
+
+.buttonScarletRedB{
+   background-color: white;
+    font-weight:bold;
+     border-left: .4vw solid rgb(193, 22, 22);
+    border-bottom: .35vw solid rgb(193, 22, 22);
+    border-right: .2vw solid rgb(193, 22, 22);
+    border-top: .2vw solid rgb(193, 22, 22);
+    padding-top:.25vw;
+    padding-bottom:.4vw;
+    width: 80%;
+    height:2.5vw;
+    margin-bottom:2vw;
+}
+
+/* ////// Saints, Falcons, Raiders, Steelers, Bengals ///// */
+
+.buttonBlackT{
+   background-color: white;
+    font-weight:bold;
+     border-left: .4vw solid black;
+    border-bottom: .35vw solid black;
+    border-right: .2vw solid black;
+    border-top: .2vw solid black;
+    padding-top:.25vw;
+    padding-bottom:.4vw;
+    width: 80%;
+    height:2.5vw;
+    margin-top:2.5vw;
+}
+
+.buttonBlackB{
+   background-color: white;
+    font-weight:bold;
+     border-left: .4vw solid black;
+    border-bottom: .35vw solid black;
+    border-right: .2vw solid black;
+    border-top: .2vw solid black;
+    padding-top:.25vw;
+    padding-bottom:.4vw;
+    width: 80%;
+    height:2.5vw;
     margin-bottom:2vw;
 }
 

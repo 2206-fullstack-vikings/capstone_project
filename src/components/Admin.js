@@ -21,20 +21,65 @@ const [buttonValue, setButtonValue] = useState("");
 
 function getTeamColors(team) {
     if ( team === "Minnesota Vikings") {
-        return {background: "admin_product_gradient", text: "purple", buttonT: "buttonPYT", buttonB: "buttonPYB",  container: "button-containerPY" }
+        return {background: "gradientYellow", buttonT: "buttonPYT", buttonB: "buttonPYB" }
     } 
     
-    // if ( team === "Detroit Lions") {
-    //     return [{background: "white"}, {text: "lightblue"}, {buttonText: "lightblue"}, {buttonColor: "gray"}]
-    // } 
-    else if ( team === "Green Bay Packers") {
-        return {background: "admin_product", text: "green", buttonT: "buttonGYT", buttonB: "buttonGYB", container: "button-container" }
+    else if ( team === "Detroit Lions") {
+        return {background: "gradientGray", buttonT: "buttonLBGT", buttonB: "buttonLBGB" }
     } 
-    // if ( team === "Chicago Bears") {
-    //     return [{background: "gold"}, {text: "white"}, {button: "yellow"}, {buttonColor: "black"}]
-    // } 
-    else {
-         return {background: "admin_product", text: "buttonGrayGB", buttonT: "buttonBGT", buttonB: "buttonBGB",  container: "button-container" }
+    else if ( team === "Green Bay Packers") {
+        return {background: "gradientYellow", buttonT: "buttonGYT", buttonB: "buttonGYB" }
+    } 
+    else if ( team === "Chicago Bears") {
+        return {background: "gradientOrangeDark", buttonT: "buttonNavyBlueT", buttonB: "buttonNavyBlueB" }
+    } else if ( team === "Arizona Cardinals") {
+        return {background: "gradientBlack", buttonT: "buttonCardinalRedT", buttonB: "buttonCardinalRedB" }
+    } else if ( team === "Indianapolis Colts") {
+        return {background: "gradientBarelyGray", buttonT: "buttonRoyalBlueT", buttonB: "buttonRoyalBlueB" }
+    } else if ( team === "Los Angeles Rams") {
+        return {background: "gradientGold", buttonT: "buttonRoyalBlueT", buttonB: "buttonRoyalBlueB" }
+    } else if ( team === "San Francisco 49ers") {
+        return {background: "gradientGold", buttonT: "buttonScarletRedT", buttonB: "buttonScarletRedB" }
+    } else if ( team === "Seattle Seahawks") {
+        return {background: "gradientLimeGreen", buttonT: "buttonDarkAquaT", buttonB: "buttonDarkAquaB" }
+    } else if ( team === "Buffalo Bills") {
+        return {background: "gradientRed", buttonT: "buttonRoyalBlueT", buttonB: "buttonRoyalBlueB" }
+    } else if ( team === "Miami Dolphins") {
+        return {background: "gradientOrange", buttonT: "buttonAquaT", buttonB: "buttonAquaB" }
+    } else if ( team === "New York Jets") {
+        return {background: "gradientGray", buttonT: "buttonGYT", buttonB: "buttonGYB" }
+    } else if ( team === "New England Patriots") {
+        return {background: "gradientRed", buttonT: "buttonNavyBlueT", buttonB: "buttonNavyBlueB" }
+    } else if ( team === "New Orleans Saints") {
+        return {background: "gradientGold", buttonT: "buttonBlackT", buttonB: "buttonBlackB" }
+    } else if ( team === "Pittsburgh Steelers") {
+        return {background: "gradientGold", buttonT: "buttonBlackT", buttonB: "buttonBlackB" }
+    }  else if ( team === "Carolina Panthers") {
+        return {background: "gradientBlack", buttonT: "buttonPantherBlueT", buttonB: "buttonPantherBlueB" }
+    } 
+    
+    
+    
+    
+    else if ( team === "Atlanta Falcons") {
+        return {background: "gradientRed", buttonT: "buttonBlackT", buttonB: "buttonBlackB" }
+    } 
+    
+      else if ( team === "New York Giants") {
+        return {background: "gradientRed", buttonT: "buttonRoyalBlueT", buttonB: "buttonRoyalBlueB" }
+    }  
+    else if ( team === "Las Vegas Raiders") {
+        return {background: "gradientGray", buttonT: "buttonBlackT", buttonB: "buttonBlackB" }
+    }  else if ( team === "Cincinnati Bengals") {
+        return {background: "gradientOrangeDark", buttonT: "buttonBlackT", buttonB: "buttonBlackB" }
+    } else if ( team === "Tampa Bay Buccaneers") {
+        return {background: "gradientPewter", buttonT: "buttonBucsRedT", buttonB: "buttonBucsRedB" }
+    } else if ( team === "Dallas Cowboys") {
+        return {background: "gradientGray", buttonT: "buttonDarkBlueT", buttonB: "buttonDarkBlueB" }
+    } else if ( team === "Jacksonville Jaguars") {
+        return {background: "gradientGold", buttonT: "buttonTealT", buttonB: "buttonTealB" }
+    } else {
+         return {background: "admin_product", buttonT: "buttonBGT", buttonB: "buttonBGB" }
     }
 }
 

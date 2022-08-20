@@ -235,7 +235,7 @@ const products = [
 
   {
     playerName: "George Kittle",
-    teamName: "San Fransicsco 49ers",
+    teamName: "San Francisco 49ers",
     division: "NFC West",
     jerseyNumber: 85,
     price: 200,
@@ -244,7 +244,7 @@ const products = [
   },
   {
     playerName: "Trey Lance",
-    teamName: "San Fransicsco 49ers",
+    teamName: "San Francisco 49ers",
     division: "NFC West",
     jerseyNumber: 5,
     price: 100,
@@ -253,7 +253,7 @@ const products = [
   },
   {
     playerName: "Nick Bosa",
-    teamName: "San Fransicsco 49ers",
+    teamName: "San Francisco 49ers",
     division: "NFC West",
     jerseyNumber: 97,
     price: 200,
@@ -262,7 +262,7 @@ const products = [
   },
   {
     playerName: "Deebo Samuel",
-    teamName: "San Fransicsco 49ers",
+    teamName: "San Francisco 49ers",
     division: "NFC West",
     jerseyNumber: 19,
     price: 90,
@@ -938,7 +938,7 @@ const products = [
   },
   {
     playerName: "TJ Watt",
-    teamName: "Pittsburg Steelers",
+    teamName: "Pittsburgh Steelers",
     division: "AFC North",
     jerseyNumber: 99,
     price: 1,
@@ -947,7 +947,7 @@ const products = [
   },
   {
     playerName: "Najee Harris",
-    teamName: "Pittsburg Steelers",
+    teamName: "Pittsburgh Steelers",
     division: "AFC North",
     jerseyNumber: 22,
     price: 1,
@@ -956,7 +956,7 @@ const products = [
   },
   {
     playerName: "Chase Claypool",
-    teamName: "Pittsburg Steelers",
+    teamName: "Pittsburgh Steelers",
     division: "AFC North",
     jerseyNumber: 11,
     price: 1,
@@ -965,7 +965,7 @@ const products = [
   },
   {
     playerName: "Minkah Fitzpatrick",
-    teamName: "Pittsburg Steelers",
+    teamName: "Pittsburgh Steelers",
     division: "AFC North",
     jerseyNumber: 39,
     price: 10,
@@ -974,7 +974,7 @@ const products = [
   },
   {
     playerName: "Ja'Marr Chase",
-    teamName: "Cincinatti Bengals",
+    teamName: "Cincinnati Bengals",
     division: "AFC North",
     jerseyNumber: 1,
     price: 10,
@@ -983,7 +983,7 @@ const products = [
   },
   {
     playerName: "Joe Burrow",
-    teamName: "Cincinatti Bengals",
+    teamName: "Cincinnati Bengals",
     division: "AFC North",
     jerseyNumber: 9,
     price: 10,
@@ -992,7 +992,7 @@ const products = [
   },
   {
     playerName: "Joe Mixon",
-    teamName: "Cincinatti Bengals",
+    teamName: "Cincinnati Bengals",
     division: "AFC North",
     jerseyNumber: 28,
     price: 10,
@@ -1001,7 +1001,7 @@ const products = [
   },
   {
     playerName: "Tee Higgins",
-    teamName: "Cincinatti Bengals",
+    teamName: "Cincinnati Bengals",
     division: "AFC North",
     jerseyNumber: 85,
     price: 10,
