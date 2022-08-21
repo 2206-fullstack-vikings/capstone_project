@@ -23,6 +23,7 @@ const { users } = require("./usersData");
 async function dropTables() {
   try {
     await client.query(`
+      DROP TABLE IF EXISTS "cartItems";
       DROP TABLE IF EXISTS orders;
       DROP TABLE IF EXISTS "userCarts";
       DROP TABLE IF EXISTS products;
