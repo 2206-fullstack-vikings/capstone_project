@@ -23,6 +23,7 @@ const { users } = require("./usersData");
 async function dropTables() {
   try {
     await client.query(`
+      DROP TABLE IF EXISTS "cartItems";
       DROP TABLE IF EXISTS orders;
       DROP TABLE IF EXISTS "userCarts";
       DROP TABLE IF EXISTS products;
@@ -96,12 +97,13 @@ async function buildTables() {
 
 async function populateInitialData() {
   try {
+    console.log('stop 1')
    const allProducts = await Promise.all(products.map(insertProduct));
-
+console.log('stop 2')
   //  const allusers = await Promise.all(users.map(createUser));
    const allusers = await Promise.all(users.map(createUser));
   //  console.log('this is all users', allusers);
-    
+    console.log(allusers)
    
 
    
