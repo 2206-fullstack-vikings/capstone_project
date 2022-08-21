@@ -55,18 +55,7 @@ const OrderForm = ({currentUser}) => {
               <img className="cart_image" src={cartItem.image} />
               <span>{cartItem.playerName}</span>
               <span>${cartItem.price}</span>
-              <select name="1">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                <option>6</option>
-                <option>7</option>
-                <option>8</option>
-                <option>9</option>
-                <option>10</option>
-              </select>
+              <span>1</span>
               <button onClick={() => removeCartItem(idx)}>
                 Remove from Cart
               </button>
