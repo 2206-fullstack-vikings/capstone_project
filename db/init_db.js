@@ -97,12 +97,13 @@ async function buildTables() {
 
 async function populateInitialData() {
   try {
+    console.log('stop 1')
    const allProducts = await Promise.all(products.map(insertProduct));
-
+console.log('stop 2')
   //  const allusers = await Promise.all(users.map(createUser));
    const allusers = await Promise.all(users.map(createUser));
   //  console.log('this is all users', allusers);
-    
+    console.log(allusers)
    
 
    
