@@ -22,7 +22,7 @@ const [teamFilter, setTeamFilter] = useState("All");
 const [priceFilter, setPriceFilter] = useState(false);
 
 
-   const fetchProducts = async ()=>{
+const fetchProducts = async ()=>{
         try {
             const response = await axios.get("http://localhost:3000/api/products")
             const result = response.data
@@ -35,18 +35,20 @@ const [priceFilter, setPriceFilter] = useState(false);
         }
     }
 
-// useEffect(()=>{
-//     if ( teamFilter === "All" ) {
-//         fetchProducts() 
-//         setHoldAllProducts(allProducts);
-//     } 
-// })    
+async function deleteProduct(productId) {
+    try {
+        await axios.delete(`http://localhost:3000/api/products/${productId}`)
+    } catch(error) {
+        console.log(error)
+    }
+}
 
 useEffect(()=>{
     console.log("teamFilterUseEffect");
     console.log(teamFilter);
     if ( teamFilter === "All" ) {
         fetchProducts();
+        setHoldAllProducts([]);
     } else 
     
     if ( teamFilter !== "All" && teamFilter !== "NFC North" && teamFilter !== "NFC East" && teamFilter !== "NFC South" && teamFilter !== "NFC West" && teamFilter !== "AFC North" && teamFilter !== "AFC East" && teamFilter !== "AFC South" && teamFilter !== "AFC West" ) {
@@ -56,37 +58,28 @@ useEffect(()=>{
         console.log("teams")
         console.log(teamFilter)
 
-        // let teamHolder = allProducts.filter((item)=>{item.teamName === teamFilter})
         let teamHolder = [];
-        for ( let i=0; i< holdAllProducts.length; i++) {
-            if (holdAllProducts[i].teamName === teamFilter) {teamHolder.push(holdAllProducts[i])}
-        }
-        setAllProducts(teamHolder)
+            for ( let i=0; i< allProducts.length; i++) {
+                if (allProducts[i].teamName === teamFilter) {teamHolder.push(allProducts[i])}
+            }
+        setHoldAllProducts(teamHolder)
         console.log("teamHolder");
         console.log(teamHolder)
     } else if ( teamFilter === "NFC North" || teamFilter === "NFC East" || teamFilter === "NFC South" || teamFilter === "NFC West" || teamFilter === "AFC North" || teamFilter === "AFC East" || teamFilter === "AFC South" || teamFilter === "AFC West" ) {  
 
             let divisionHolder = [];
-        for ( let i=0; i< holdAllProducts.length; i++) {
-            if (holdAllProducts[i].division === teamFilter) {divisionHolder.push(holdAllProducts[i])}
+        for ( let i=0; i< allProducts.length; i++) {
+            if (allProducts[i].division === teamFilter) {divisionHolder.push(allProducts[i])}
         }
-        setAllProducts(divisionHolder)
+        setHoldAllProducts(divisionHolder)
         console.log("divisionHolder");
         console.log(divisionHolder)
         console.log("teamFilter");
                 console.log(teamFilter)
-
     } else {
         console.log( "filter failed")
     }
-    // let newProductList = allProducts.filter((item)=>{
-    //     console.log("check");
-    //     console.log(item.team);
-    //     console.log(team)
-    //     item.team === teamFilter});
-    // setAllProducts(newProductList);
-    //     console.log("allProducts");
-    // console.log(allProducts);
+
 },[teamFilter])
 
 function getTeamFilter() {
@@ -164,26 +157,109 @@ function getTeamColors(team) {
     }
 }
 
-async function deleteProduct(productId) {
-    try {
-        await axios.delete(`http://localhost:3000/api/products/${productId}`)
-    } catch(error) {
-        console.log(error)
+
+function filterByPrice() {
+    console.log("priceFilter")
+    console.log(priceFilter)
+    if ( teamFilter === "All" && priceFilter === "MtoL") {
+            let productArray = [...allProducts]
+            console.log(productArray)
+
+            let productsSortMtoL = [allProducts[0]];
+            // productsSortMtoL.push(allProducts[0])
+            for (let i=1; i<productArray.length; i++) {
+                // let pointer1 =
+                let previousIndex = i - 1;
+                    if ( allProducts[i].price <= allProducts[previousIndex+1].price) {
+                        productsSortMtoL.push(allProducts[i])
+                                            console.log(allProducts[i].price)
+                                            console.log(allProducts[previousIndex].price)
+                                            
+
+
+                    } else {
+                        productsSortMtoL.unshift(allProducts[i])
+                                            console.log(allProducts[i].price)
+                                            console.log(allProducts[previousIndex].price)
+                    }
+                   
+                  
+
+                    // console.log(productsSortMtoL)
+                    console.log(productsSortMtoL.length)
+                    console.log(allProducts.length)
+                }
+                console.log("productsSortMtoL");
+                console.log(productsSortMtoL);
+                  console.log("loop#3")
+                   console.log("loop#1");
+                    productsSortMtoL[0]
+                                        console.log("loop#2")
+                                        productsSortMtoL[1]
+                    productsSortMtoL[2]
+                    console.log("loop#4")
+                    productsSortMtoL[3]
+                    console.log("loop#5")
+                    productsSortMtoL[4]
+            setHoldAllProducts(productsSortMtoL);
+    } else if ( teamFilter === "All" && priceFilter === "LtoM"){
+
+    } else if ( teamFilter !== "All" && priceFilter === "MtoL"){
+        window.alert("hit l to m")
+    let productArray = [...holdAllProducts]
+            console.log("holdAllProducts")
+            console.log(holdAllProducts)
+
+            let productsSortMtoL = [];
+            productsSortMtoL.push(holdAllProducts[0]);
+            console.log("holdAllProducts[0]")
+            console.log(holdAllProducts.length)
+               console.log("productsSortMtoL")
+            console.log(productsSortMtoL)
+            for (let i=0; i + 1 < holdAllProducts.length; i++) {
+                let pointer = productsSortMtoL.length - 1
+                    if ( productsSortMtoL[pointer].price <= holdAllProducts[i + 1].price) {
+                         console.log("productsSortMtoL[0]")
+                        console.log(productsSortMtoL[0])
+                        productsSortMtoL.push(holdAllProducts[i + 1])
+                                            console.log(holdAllProducts[i].price)                                            
+                    } else {
+
+                        // productsSortMtoL.unshift(holdAllProducts[i + 1])
+                        //                     console.log(holdAllProducts[i].price)
+                    }
+                   
+                  
+
+                    // console.log(productsSortMtoL)
+                    // console.log(productsSortMtoL.length)
+                    console.log("productsSortMtoL")
+                    console.log(productsSortMtoL)
+                    console.log("holdAllProducts")
+                    console.log(holdAllProducts)
+                }
+                console.log("productsSortMtoL");
+                console.log(productsSortMtoL);
+                  console.log("loop#3")
+                   console.log("loop#1");
+                    productsSortMtoL[0]
+                                        console.log("loop#2")
+                                        productsSortMtoL[1]
+                    productsSortMtoL[2]
+                    console.log("loop#4")
+                    productsSortMtoL[3]
+                    console.log("loop#5")
+                    productsSortMtoL[4]
+            setHoldAllProducts(productsSortMtoL);
     }
 }
 
-//    const fetchProducts = async ()=>{
-//         try {
-//             const response = await axios.get("http://localhost:3000/api/products")
-//             const result = response.data
-//             setAllProducts(result);
-//                         console.log("result Edit Product line 20 /////////////////////");
+function resetFilters() {
+setTeamFilter("All")
+setPriceFilter([]);
+fetchProducts();
+}
 
-//             console.log(result);
-//         } catch (error) {
-//             console.error(error)
-//         }
-//     };
 
     return(
         <div >
@@ -253,31 +329,24 @@ async function deleteProduct(productId) {
                                 <option>AFC South</option>
                                 <option>AFC West</option>
                             </select>
-                      
 
                                 </div>
                             
                             <button onClick={()=>{
-                                if ( !teamFilter ) {
-                                    setTeamFilter()
-                                } else {
-
-                                }
-                            }} className="button_new">Filter By Team</button>
-                        
-                            {/* <button onClick={()=>{
-                                if ( !teamFilter ) {
-                                    setTeamFilter()
-                                } else {
-
-                                }
-                            }} className="button_new">Filter By Team</button> */}
-                            <button className="button_new">Filter By Price: Most to Least </button>
-                            <button className="button_new">Filter By Price: Least to Most </button>
+                             resetFilters()
+                            }} className="button_new">Reset Filters</button>
+                            <button onClick={()=>{
+                                    setPriceFilter("MtoL")
+                             filterByPrice()
+                            }} className="button_new">Filter By Price: Most to Least </button>
+                            <button onClick={()=>{
+                                    setPriceFilter("LtoM")
+                             filterByPrice()
+                            }} className="button_new">Filter By Price: Least to Most </button>
                     </div>
                 </div>    
          
-                {allProducts.map((eachProduct,idx)=>{
+                {/* {allProducts.map((eachProduct,idx)=>{
                     let teamColors = getTeamColors(eachProduct.teamName);
              
                     return <div key={idx} className={teamColors.background}>
@@ -302,10 +371,66 @@ async function deleteProduct(productId) {
                         }} className={teamColors.buttonB}>Edit Product</button>
                     </div>
                   
-                })}
+                })} */}
             </div> : 
             <h1>You need to be an admin to view</h1>
             }   
+            {
+                currentUser.admin && !formToggle && teamFilter === "All" ?
+                <div className="admin_main">{allProducts.map((eachProduct,idx)=>{
+                    let teamColors = getTeamColors(eachProduct.teamName);
+             
+                    return <div key={idx} className={teamColors.background}>
+                        <div className="image_container">
+                            <img src={eachProduct.image} alt="NFL Property" className="admin_image" />
+                        </div>
+                            <p>{eachProduct.playerName}</p>
+                            <p>#{eachProduct.jerseyNumber}</p>
+                            <p>{eachProduct.teamName}</p>
+                            <p>{eachProduct.division}</p>
+                            <p>${eachProduct.price}</p>
+           
+                        <button value={eachProduct.id} onClick={() => {
+                            deleteProduct(eachProduct.id);
+                            fetchProducts();
+                        }} className={teamColors.buttonT}>Delete Product</button>
+                        <br />
+                        <button value={eachProduct.id} onClick={() => {
+                            setFormToggle(true);
+                            setFormType("edit");
+                            setCurrentProduct({id: eachProduct.id, playerName: eachProduct.playerName, jerseyNumber: eachProduct.jerseyNumber, teamName: eachProduct.teamName, division: eachProduct.division, price: eachProduct.price, image: eachProduct.image})
+                        }} className={teamColors.buttonB}>Edit Product</button>
+                    </div>
+                })}</div>: null
+            }
+            {
+                currentUser.admin && !formToggle && teamFilter !== "All" ?
+                <div className="admin_main">{holdAllProducts.map((eachProduct,idx)=>{
+                    let teamColors = getTeamColors(eachProduct.teamName);
+             
+                    return <div key={idx} className={teamColors.background}>
+                        <div className="image_container">
+                            <img src={eachProduct.image} alt="NFL Property" className="admin_image" />
+                        </div>
+                            <p>{eachProduct.playerName}</p>
+                            <p>#{eachProduct.jerseyNumber}</p>
+                            <p>{eachProduct.teamName}</p>
+                            <p>{eachProduct.division}</p>
+                            <p>${eachProduct.price}</p>
+           
+                        <button value={eachProduct.id} onClick={() => {
+                            deleteProduct(eachProduct.id);
+                            fetchProducts();
+                        }} className={teamColors.buttonT}>Delete Product</button>
+                        <br />
+                        <button value={eachProduct.id} onClick={() => {
+                            setFormToggle(true);
+                            setFormType("edit");
+                            setCurrentProduct({id: eachProduct.id, playerName: eachProduct.playerName, jerseyNumber: eachProduct.jerseyNumber, teamName: eachProduct.teamName, division: eachProduct.division, price: eachProduct.price, image: eachProduct.image})
+                        }} className={teamColors.buttonB}>Edit Product</button>
+                    </div>
+                })}</div>: null
+            }
         </div>
     )
 }
