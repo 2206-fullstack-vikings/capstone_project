@@ -1,6 +1,6 @@
 import axios from "axios";
 import React from "react";
-
+import "../style/Login.css";
 
 const Login = (props) => {
   const {
@@ -88,75 +88,76 @@ const Login = (props) => {
         </>
       ) : (
         <form className="login" onSubmit={logInUser}>
-          <h3> Please log in to continue</h3>
+          <h3>Login</h3>
           <label>Username</label>
-          <br />
+
           <input
             type="text"
             required
             onChange={(event) => setUserName(event.target.value)}
           ></input>
-          <br />
+
           <label>Password</label>
-          <br />
+ 
           <input
             type="password"
             required
             onChange={(event) => setUserPassword(event.target.value)}
           ></input>
-          <br />
+
           <button typeof="submit">Log In</button>
         </form>
      )}
      {userToken ? null:
       <form className="register" onSubmit={registerNewUser}>
-        <h3>Please register to have access to site</h3>
+        <h3>Register</h3>
         <label>Name</label>
-        <br />
+        
         <input
           type="text"
           required
           onChange={(event) => setName(event.target.value)}
         />
-        <br />
+        
         <label>Username</label>
-        <br />
+        
         <input
           type="text"
           required
           onChange={(event) => setUserName(event.target.value)}
         />
-        <br />
+     
         <label>Password</label>
-        <br />
+      
         <input
           type="password"
           required
           onChange={(event) => setUserPassword(event.target.value)}
         />
-        <br />
+      
         <label> Confirm Password</label>
-        <br />
+      
         <input
           type="password"
           required
           onChange={(event) => setConfirmPassword(event.target.value)}
         />
-        <br />
+     
         <label>Email</label>
-        <br />
+        
         <input
           type="text"
           required
           onChange={(event) => setEmail(event.target.value)}
         />
-        <br />
+        
+        <label>City, State</label>
         <input
           type="text"
           required
           onChange={(event) => setLocation(event.target.value)}
         />
-        <br />
+     
         
 
         <button typeof="submit">Register Account</button>
