@@ -22,7 +22,13 @@ const OrderForm = ({currentUser}) => {
 
 
   const submitOrder = async (event) =>{
-
+    event.preventDefault();
+    if (!shoppingCart.length){
+       alert("Please add items to cart to continue");
+    } else{ alert(`Thanks for the order ${currentUser.name}! Your order will ship out to ${currentUser.location} shortly` )}
+   
+    setShoppingCart([]);
+    
 
 
   }
@@ -69,7 +75,7 @@ const OrderForm = ({currentUser}) => {
         <h1>No items currently in cart</h1>
       )}
     </div>
-    {currentUser.name ?
+    {currentUser.name  ?
     
       <div className="order_information">
             <form className="submit_form" onSubmit={submitOrder}>
@@ -88,15 +94,3 @@ export default OrderForm;
 
 
 
-// KEEPING JUST IN CASE I BREAK SOMETHING -DUSTIN B.
-//     let tempCart = [];
-
-//     let placeholder = shoppingCart;
-
-//     placeholder = placeholder.map((cartItem, idx) => {
-//       if (parseInt(idx) != parseInt(index)) {
-//         tempCart.push(cartItem);
-//       }
-//     });
-
-//     setShoppingCart(tempCart);
