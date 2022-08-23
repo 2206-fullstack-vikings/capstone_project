@@ -7,19 +7,12 @@ import EditProduct from "./EditProduct";
 const Admin = (props)=>{
 const {setCurrentUser, currentUser, allProducts, setAllProducts} = props;
 
-// const [playerName, setPlayerName]= useState("");
-// const [teamName, setTeamName]= useState("");
-// const [division, setDivision]= useState("");
-// const [jerseyNumber, setJerseyNumber]= useState("");
-// const [price, setPrice]= useState("");
-// const [image, setImage]= useState("");
 const [formToggle, setFormToggle] = useState(false);
 const [formType, setFormType] = useState("");
 const [currentProduct, setCurrentProduct] = useState("");
-// const [buttonValue, setButtonValue] = useState("");
 const [holdAllProducts, setHoldAllProducts] = useState([]);
 const [teamFilter, setTeamFilter] = useState("All");
-const [priceFilter, setPriceFilter] = useState(false);
+const [priceFilter, setPriceFilter] = useState("None");
 
 
 const fetchProducts = async ()=>{
@@ -27,9 +20,6 @@ const fetchProducts = async ()=>{
             const response = await axios.get("http://localhost:3000/api/products")
             const result = response.data
             setAllProducts(result);
-                        console.log("result Edit Product line 20 /////////////////////");
-
-            console.log(result);
         } catch (error) {
             console.error(error)
         }
@@ -43,49 +33,87 @@ async function deleteProduct(productId) {
     }
 }
 
-useEffect(()=>{
-    console.log("teamFilterUseEffect");
-    console.log(teamFilter);
-    if ( teamFilter === "All" ) {
-        fetchProducts();
-        setHoldAllProducts([]);
-    } else 
-    
-    if ( teamFilter !== "All" && teamFilter !== "NFC North" && teamFilter !== "NFC East" && teamFilter !== "NFC South" && teamFilter !== "NFC West" && teamFilter !== "AFC North" && teamFilter !== "AFC East" && teamFilter !== "AFC South" && teamFilter !== "AFC West" ) {
-        // fetchProducts()
-        console.log("holdAllProducts");
-        console.log(holdAllProducts)
-        console.log("teams")
-        console.log(teamFilter)
+    function sortPriceMtoL(a,b){
+            if(a.price > b.price){
+                return -1
+            } 
+            if(a.price < b.price){
+                return 1
+            }
+            return 0
+        }
 
+    function sortPriceLtoM(a,b){
+            if(a.price < b.price){
+                return -1
+            } 
+            if(a.price > b.price){
+                return 1
+            }
+            return 0
+        }
+
+useEffect(()=>{
+    if (priceFilter !== "LtoM" && priceFilter !== "MtoL") {
+        fetchProducts()
+    }
+    
+    if ( teamFilter === "All" && priceFilter === "LtoM") {
+        let productsSortLtoMAll = allProducts.sort(sortPriceLtoM);
+        let firstItemALM = productsSortLtoMAll[0];
+        let lastItemALM = productsSortLtoMAll[productsSortLtoMAll.length-1];
+        if (firstItemALM.price < lastItemALM.price) {
+            productsSortLtoMAll.reverse()
+        }
+        setAllProducts(productsSortLtoMAll);
+    }  else if ( teamFilter === "All" && priceFilter === "MtoL") {
+        let productsSortMtoLAll = allProducts.sort(sortPriceMtoL);
+        let firstItemAML = productsSortMtoLAll[0];
+        let lastItemAML = productsSortMtoLAll[productsSortMtoLAll.length-1];
+        if (firstItemAML.price > lastItemAML.price) {
+            productsSortMtoLAll.reverse()
+        }
+        setAllProducts(productsSortMtoLAll);
+        console.log("all m to l trig")
+    } else if ( teamFilter !== "All" && teamFilter !== "NFC North" && teamFilter !== "NFC East" && teamFilter !== "NFC South" && teamFilter !== "NFC West" && teamFilter !== "AFC North" && teamFilter !== "AFC East" && teamFilter !== "AFC South" && teamFilter !== "AFC West") {
+   
         let teamHolder = [];
             for ( let i=0; i< allProducts.length; i++) {
                 if (allProducts[i].teamName === teamFilter) {teamHolder.push(allProducts[i])}
             }
-        setHoldAllProducts(teamHolder)
-        console.log("teamHolder");
-        console.log(teamHolder)
-    } else if ( teamFilter === "NFC North" || teamFilter === "NFC East" || teamFilter === "NFC South" || teamFilter === "NFC West" || teamFilter === "AFC North" || teamFilter === "AFC East" || teamFilter === "AFC South" || teamFilter === "AFC West" ) {  
+
+                if (priceFilter === "LtoM") {
+                    let teamSortLtoMNotAll = teamHolder.sort(sortPriceLtoM);
+                    setHoldAllProducts(teamSortLtoMNotAll);
+                } else if (priceFilter === "MtoL") {
+                    let teamSortLtoMNotAll = teamHolder.sort(sortPriceMtoL);
+                    setHoldAllProducts(teamSortLtoMNotAll);
+                } else {
+                    setHoldAllProducts(teamHolder)
+                }
+    } 
+    else if ( teamFilter === "NFC North" || teamFilter === "NFC East" || teamFilter === "NFC South" || teamFilter === "NFC West" || teamFilter === "AFC North" || teamFilter === "AFC East" || teamFilter === "AFC South" || teamFilter === "AFC West" ) {  
 
             let divisionHolder = [];
         for ( let i=0; i< allProducts.length; i++) {
             if (allProducts[i].division === teamFilter) {divisionHolder.push(allProducts[i])}
         }
-        setHoldAllProducts(divisionHolder)
-        console.log("divisionHolder");
-        console.log(divisionHolder)
-        console.log("teamFilter");
-                console.log(teamFilter)
+
+            if (priceFilter === "LtoM") {
+                let divisonSortLtoMNotAll = divisionHolder.sort(sortPriceLtoM);
+                setHoldAllProducts(divisonSortLtoMNotAll);
+            } else if (priceFilter === "MtoL") {
+                let divisonSortLtoMNotAll = divisionHolder.sort(sortPriceMtoL);
+                setHoldAllProducts(divisonSortLtoMNotAll);
+            } else {
+                setHoldAllProducts(divisionHolder)
+            }
+        
     } else {
-        console.log( "filter failed")
+        console.log( "filter failed");
     }
 
-},[teamFilter])
-
-function getTeamFilter() {
-    console.log("this is the current ");
-    console.log(teamFilter)
-}
+},[teamFilter,priceFilter])
 
 function getTeamColors(team) {
     if ( team === "Minnesota Vikings") {
@@ -121,7 +149,7 @@ function getTeamColors(team) {
     }  else if ( team === "Carolina Panthers") {
         return {background: "gradientBlack", buttonT: "buttonPantherBlueT", buttonB: "buttonPantherBlueB" }
     } else if ( team === "Atlanta Falcons") {
-        return {background: "gradientRed", buttonT: "buttonBlackT", buttonB: "buttonBlackB" }
+        return {background: "gradientDarkRed", buttonT: "buttonBlackT", buttonB: "buttonBlackB" }
     } else if ( team === "New York Giants") {
         return {background: "gradientRed", buttonT: "buttonRoyalBlueT", buttonB: "buttonRoyalBlueB" }
     }  else if ( team === "Las Vegas Raiders") {
@@ -157,110 +185,64 @@ function getTeamColors(team) {
     }
 }
 
-
-function filterByPrice() {
-    console.log("priceFilter")
-    console.log(priceFilter)
-    if ( teamFilter === "All" && priceFilter === "MtoL") {
-            let productArray = [...allProducts]
-            console.log(productArray)
-
-            let productsSortMtoL = [allProducts[0]];
-            // productsSortMtoL.push(allProducts[0])
-            for (let i=1; i<productArray.length; i++) {
-                // let pointer1 =
-                let previousIndex = i - 1;
-                    if ( allProducts[i].price <= allProducts[previousIndex+1].price) {
-                        productsSortMtoL.push(allProducts[i])
-                                            console.log(allProducts[i].price)
-                                            console.log(allProducts[previousIndex].price)
-                                            
-
-
-                    } else {
-                        productsSortMtoL.unshift(allProducts[i])
-                                            console.log(allProducts[i].price)
-                                            console.log(allProducts[previousIndex].price)
-                    }
-                   
-                  
-
-                    // console.log(productsSortMtoL)
-                    console.log(productsSortMtoL.length)
-                    console.log(allProducts.length)
-                }
-                console.log("productsSortMtoL");
-                console.log(productsSortMtoL);
-                  console.log("loop#3")
-                   console.log("loop#1");
-                    productsSortMtoL[0]
-                                        console.log("loop#2")
-                                        productsSortMtoL[1]
-                    productsSortMtoL[2]
-                    console.log("loop#4")
-                    productsSortMtoL[3]
-                    console.log("loop#5")
-                    productsSortMtoL[4]
-            setHoldAllProducts(productsSortMtoL);
-    } else if ( teamFilter === "All" && priceFilter === "LtoM"){
-
-    } else if ( teamFilter !== "All" && priceFilter === "MtoL"){
-        window.alert("hit l to m")
-    let productArray = [...holdAllProducts]
-            console.log("holdAllProducts")
-            console.log(holdAllProducts)
-
-            let productsSortMtoL = [];
-            productsSortMtoL.push(holdAllProducts[0]);
-            console.log("holdAllProducts[0]")
-            console.log(holdAllProducts.length)
-               console.log("productsSortMtoL")
-            console.log(productsSortMtoL)
-            for (let i=0; i + 1 < holdAllProducts.length; i++) {
-                let pointer = productsSortMtoL.length - 1
-                    if ( productsSortMtoL[pointer].price <= holdAllProducts[i + 1].price) {
-                         console.log("productsSortMtoL[0]")
-                        console.log(productsSortMtoL[0])
-                        productsSortMtoL.push(holdAllProducts[i + 1])
-                                            console.log(holdAllProducts[i].price)                                            
-                    } else {
-
-                        // productsSortMtoL.unshift(holdAllProducts[i + 1])
-                        //                     console.log(holdAllProducts[i].price)
-                    }
-                   
-                  
-
-                    // console.log(productsSortMtoL)
-                    // console.log(productsSortMtoL.length)
-                    console.log("productsSortMtoL")
-                    console.log(productsSortMtoL)
-                    console.log("holdAllProducts")
-                    console.log(holdAllProducts)
-                }
-                console.log("productsSortMtoL");
-                console.log(productsSortMtoL);
-                  console.log("loop#3")
-                   console.log("loop#1");
-                    productsSortMtoL[0]
-                                        console.log("loop#2")
-                                        productsSortMtoL[1]
-                    productsSortMtoL[2]
-                    console.log("loop#4")
-                    productsSortMtoL[3]
-                    console.log("loop#5")
-                    productsSortMtoL[4]
-            setHoldAllProducts(productsSortMtoL);
+function getButtonMtoL() {
+    if ( priceFilter === "MtoL") {
+        return <button className="button_new_selected" onClick={filterByPriceMtoL}>
+            Most to Least Expensive
+        </button>
+    } else {
+        return <button className="button_new" onClick={filterByPriceMtoL}>
+            Most to Least Expensive
+        </button>
     }
 }
 
-function resetFilters() {
-setTeamFilter("All")
-setPriceFilter([]);
-fetchProducts();
+function getButtonLtoM() {
+    if ( priceFilter === "LtoM") {
+        return <button className="button_new_selected" onClick={filterByPriceLtoM}>
+            Least to Most Expensive
+        </button>
+    } else {
+        return <button className="button_new" onClick={filterByPriceLtoM}>
+            Least to Most Expensive
+        </button>
+    }
+}
+
+function filterByPriceLtoM() {
+     if (priceFilter === "LtoM"){
+        return
+    }  
+        let productsSortLtoM = allProducts.sort(sortPriceLtoM);
+        let firstItemAML = productsSortLtoM[0];
+        let lastItemAML = productsSortLtoM[productsSortLtoM.length-1];
+        if (firstItemAML.price > lastItemAML.price) {
+            productsSortLtoM.reverse()
+        }
+    setPriceFilter("LtoM");
+    console.log("this is new price filter");
+        console.log(priceFilter);
+
 }
 
 
+function filterByPriceMtoL() {
+     if (priceFilter === "MtoL"){
+        return
+    }
+
+    let productsSortLtoMAll = allProducts.sort(sortPriceLtoM);
+    let firstItemALM = productsSortLtoMAll[0];
+    let lastItemALM = productsSortLtoMAll[productsSortLtoMAll.length-1];
+        if (firstItemALM.price < lastItemALM.price) {
+            productsSortLtoMAll.reverse()
+        }
+        setAllProducts(productsSortLtoMAll);
+
+    setPriceFilter("MtoL")
+        console.log("this is new price filter");
+        console.log(priceFilter);
+}
     return(
         <div >
             {
@@ -276,15 +258,10 @@ fetchProducts();
                                 setCurrentProduct({id: "", playerName: "", jerseyNumber: "", teamName: "", division: "", price: "", image: ""})
                         }} className="button_new">Add New Product</button>
                         
-                            <div>
+                        <div>
                             <select
                                 onChange={(event)=>{
-                                    console.log("event.target.value");
-                                    console.log(event.target.value);
                                     setTeamFilter(event.target.value);
-                                    console.log("newteamFilter")
-                                    console.log(teamFilter)
-                                    getTeamFilter();
                                 }}
                                 className="button_new">
                                 <option>All</option>
@@ -329,20 +306,10 @@ fetchProducts();
                                 <option>AFC South</option>
                                 <option>AFC West</option>
                             </select>
-
-                                </div>
-                            
-                            <button onClick={()=>{
-                             resetFilters()
-                            }} className="button_new">Reset Filters</button>
-                            <button onClick={()=>{
-                                    setPriceFilter("MtoL")
-                             filterByPrice()
-                            }} className="button_new">Filter By Price: Most to Least </button>
-                            <button onClick={()=>{
-                                    setPriceFilter("LtoM")
-                             filterByPrice()
-                            }} className="button_new">Filter By Price: Least to Most </button>
+                        </div>
+                        
+                            {getButtonMtoL()}
+                            {getButtonLtoM()}
                     </div>
                 </div>    
          

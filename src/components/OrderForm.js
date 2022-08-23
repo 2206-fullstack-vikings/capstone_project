@@ -72,12 +72,12 @@ const OrderForm = ({currentUser}) => {
     {currentUser.name ?
     
       <div className="order_information">
-            <form onSubmit={submitOrder}>
+            <form className="submit_form" onSubmit={submitOrder}>
              <h4>{currentUser.name}, please submit order below!!!</h4>
-              <button typeof="submit">SUBMIT ORDER</button>
+              <button className="order_btn" typeof="submit">SUBMIT ORDER</button>
             </form>
         </div>
-    :<h1>Please Login or Register account to submit order</h1>
+    :<h3>Please Login or Register account to submit order</h3>
   }
     
   </>
