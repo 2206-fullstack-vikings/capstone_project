@@ -6,8 +6,12 @@ const Title = () => {
   return (
     <header className="header_container">
       <div className="title_container">
-        <div id="logo"></div>
-        <h1>JERSEYZ OUTLET</h1>
+        <div className="logoHeadline">
+          <img id="logo" />
+          <div className="titleDiv">
+            <h1 className="siteTitle">TRUTHY JERSEYZ OUTLET</h1>
+          </div>
+        </div>
       </div>
       <div className="link_bar">
         <Link className="links" to="/">

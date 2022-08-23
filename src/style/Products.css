@@ -1053,7 +1053,11 @@ image {
     
 }
 
-button:hover{
-    background-color: black;
-    color:white
+.admin_main button:hover{
+    background-color: #000000;
+    color: white;
+}
+.admin_main button:active {
+    background-color: #000000;
+    transform: translateY(2px);
 }
