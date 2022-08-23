@@ -41,10 +41,10 @@ const EditProduct = ({ formToggle, setFormToggle, formType, currentProduct, setC
     
 
     return (
-        <div>
+        <div className="login_page">
             {
                 formType === "edit" ? <div className="formContainer">
-                    <form className='editProductForm'>placeholder
+                    <form className='className="login'>placeholder
                         <h3>Edit Product</h3>
                         <label>Player Name</label>
                         <br />
@@ -126,7 +126,7 @@ const EditProduct = ({ formToggle, setFormToggle, formType, currentProduct, setC
             }
             {
                 formType === "new" ? <div>
-                     <form className='edit_product'>placeholder
+                     <form className='className="login'>placeholder
                         <h3>Make New Product</h3>
                         <label>Player Name</label>
                         <br />

@@ -81,7 +81,8 @@ const Login = (props) => {
 
   return (
     <div className="login_page">
-      {userToken ? (
+      <div className="register">
+         {userToken ? (
         <>
         <h2>Welcome back {currentUser.name}! Have fun shopping!!</h2>
         <button onClick={signOutUser}>Sign Out</button>
@@ -135,7 +136,7 @@ const Login = (props) => {
           onChange={(event) => setUserPassword(event.target.value)}
         />
       
-        <label> Confirm Password</label>
+        <label>Confirm Password</label>
       
         <input
           type="password"
@@ -163,6 +164,8 @@ const Login = (props) => {
         <button typeof="submit">Register Account</button>
       </form>
 }
+      </div>
+     
     </div>
   );
 };

@@ -50,3 +50,66 @@ h3 {
 .order_btn {
     margin: 10px 0 50px 0;
 }
+
+/* /////////////////////////////////////////// */
+
+.login_page {
+    padding: 30px 30px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    
+}
+.register, .login{
+    /* border: 1px red solid; */
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    width: 400px;
+    /* margin: 0 auto; */
+    display: flex;
+    flex-direction: column;
+    min-height: 200px;
+    border: lightgray solid 1px;
+    border-radius: 10px;
+}
+.register > *, .login > *{
+    margin: 0 auto;
+    
+    
+}
+/* .register {
+    margin-bottom: 20px;
+}
+.login {
+    margin-top: 50px;
+    margin-bottom: 20px;
+} */
+.register input, .login input {
+    margin: 5px auto;
+}
+.register button, .login button {
+    margin: 20px auto;
+    margin-bottom: 30px;
+}
+.register h3, .login h3 {
+    margin: 30px auto;
+}
+
+@media screen and (min-width: 1000px) {
+    .login_page {
+        flex-direction: row;
+        align-items: none;
+    }
+    .login {
+        margin: 0;
+    }
+  }
+  @media screen and (max-width: 1000px) {
+    .login_page {
+        align-items: center;
+    }
+    
+  }
+  .login {
+      height: 260px;
+      margin-bottom: 30px;
+  }
