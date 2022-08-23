@@ -7,92 +7,113 @@ import EditProduct from "./EditProduct";
 const Admin = (props)=>{
 const {setCurrentUser, currentUser, allProducts, setAllProducts} = props;
 
-// const [playerName, setPlayerName]= useState("");
-// const [teamName, setTeamName]= useState("");
-// const [division, setDivision]= useState("");
-// const [jerseyNumber, setJerseyNumber]= useState("");
-// const [price, setPrice]= useState("");
-// const [image, setImage]= useState("");
 const [formToggle, setFormToggle] = useState(false);
 const [formType, setFormType] = useState("");
 const [currentProduct, setCurrentProduct] = useState("");
-// const [buttonValue, setButtonValue] = useState("");
 const [holdAllProducts, setHoldAllProducts] = useState([]);
 const [teamFilter, setTeamFilter] = useState("All");
-const [priceFilter, setPriceFilter] = useState(false);
+const [priceFilter, setPriceFilter] = useState("None");
 
 
-   const fetchProducts = async ()=>{
+const fetchProducts = async ()=>{
         try {
             const response = await axios.get("http://localhost:3000/api/products")
             const result = response.data
             setAllProducts(result);
-                        console.log("result Edit Product line 20 /////////////////////");
-
-            console.log(result);
         } catch (error) {
             console.error(error)
         }
     }
 
-// useEffect(()=>{
-//     if ( teamFilter === "All" ) {
-//         fetchProducts() 
-//         setHoldAllProducts(allProducts);
-//     } 
-// })    
+async function deleteProduct(productId) {
+    try {
+        await axios.delete(`http://localhost:3000/api/products/${productId}`)
+    } catch(error) {
+        console.log(error)
+    }
+}
+
+    function sortPriceMtoL(a,b){
+            if(a.price > b.price){
+                return -1
+            } 
+            if(a.price < b.price){
+                return 1
+            }
+            return 0
+        }
+
+    function sortPriceLtoM(a,b){
+            if(a.price < b.price){
+                return -1
+            } 
+            if(a.price > b.price){
+                return 1
+            }
+            return 0
+        }
 
 useEffect(()=>{
-    console.log("teamFilterUseEffect");
-    console.log(teamFilter);
-    if ( teamFilter === "All" ) {
-        fetchProducts();
-    } else 
+    if (priceFilter !== "LtoM" && priceFilter !== "MtoL") {
+        fetchProducts()
+    }
     
-    if ( teamFilter !== "All" && teamFilter !== "NFC North" && teamFilter !== "NFC East" && teamFilter !== "NFC South" && teamFilter !== "NFC West" && teamFilter !== "AFC North" && teamFilter !== "AFC East" && teamFilter !== "AFC South" && teamFilter !== "AFC West" ) {
-        // fetchProducts()
-        console.log("holdAllProducts");
-        console.log(holdAllProducts)
-        console.log("teams")
-        console.log(teamFilter)
-
-        // let teamHolder = allProducts.filter((item)=>{item.teamName === teamFilter})
-        let teamHolder = [];
-        for ( let i=0; i< holdAllProducts.length; i++) {
-            if (holdAllProducts[i].teamName === teamFilter) {teamHolder.push(holdAllProducts[i])}
+    if ( teamFilter === "All" && priceFilter === "LtoM") {
+        let productsSortLtoMAll = allProducts.sort(sortPriceLtoM);
+        let firstItemALM = productsSortLtoMAll[0];
+        let lastItemALM = productsSortLtoMAll[productsSortLtoMAll.length-1];
+        if (firstItemALM.price < lastItemALM.price) {
+            productsSortLtoMAll.reverse()
         }
-        setAllProducts(teamHolder)
-        console.log("teamHolder");
-        console.log(teamHolder)
-    } else if ( teamFilter === "NFC North" || teamFilter === "NFC East" || teamFilter === "NFC South" || teamFilter === "NFC West" || teamFilter === "AFC North" || teamFilter === "AFC East" || teamFilter === "AFC South" || teamFilter === "AFC West" ) {  
+        setAllProducts(productsSortLtoMAll);
+    }  else if ( teamFilter === "All" && priceFilter === "MtoL") {
+        let productsSortMtoLAll = allProducts.sort(sortPriceMtoL);
+        let firstItemAML = productsSortMtoLAll[0];
+        let lastItemAML = productsSortMtoLAll[productsSortMtoLAll.length-1];
+        if (firstItemAML.price > lastItemAML.price) {
+            productsSortMtoLAll.reverse()
+        }
+        setAllProducts(productsSortMtoLAll);
+        console.log("all m to l trig")
+    } else if ( teamFilter !== "All" && teamFilter !== "NFC North" && teamFilter !== "NFC East" && teamFilter !== "NFC South" && teamFilter !== "NFC West" && teamFilter !== "AFC North" && teamFilter !== "AFC East" && teamFilter !== "AFC South" && teamFilter !== "AFC West") {
+   
+        let teamHolder = [];
+            for ( let i=0; i< allProducts.length; i++) {
+                if (allProducts[i].teamName === teamFilter) {teamHolder.push(allProducts[i])}
+            }
+
+                if (priceFilter === "LtoM") {
+                    let teamSortLtoMNotAll = teamHolder.sort(sortPriceLtoM);
+                    setHoldAllProducts(teamSortLtoMNotAll);
+                } else if (priceFilter === "MtoL") {
+                    let teamSortLtoMNotAll = teamHolder.sort(sortPriceMtoL);
+                    setHoldAllProducts(teamSortLtoMNotAll);
+                } else {
+                    setHoldAllProducts(teamHolder)
+                }
+    } 
+    else if ( teamFilter === "NFC North" || teamFilter === "NFC East" || teamFilter === "NFC South" || teamFilter === "NFC West" || teamFilter === "AFC North" || teamFilter === "AFC East" || teamFilter === "AFC South" || teamFilter === "AFC West" ) {  
 
             let divisionHolder = [];
-        for ( let i=0; i< holdAllProducts.length; i++) {
-            if (holdAllProducts[i].division === teamFilter) {divisionHolder.push(holdAllProducts[i])}
+        for ( let i=0; i< allProducts.length; i++) {
+            if (allProducts[i].division === teamFilter) {divisionHolder.push(allProducts[i])}
         }
-        setAllProducts(divisionHolder)
-        console.log("divisionHolder");
-        console.log(divisionHolder)
-        console.log("teamFilter");
-                console.log(teamFilter)
 
+            if (priceFilter === "LtoM") {
+                let divisonSortLtoMNotAll = divisionHolder.sort(sortPriceLtoM);
+                setHoldAllProducts(divisonSortLtoMNotAll);
+            } else if (priceFilter === "MtoL") {
+                let divisonSortLtoMNotAll = divisionHolder.sort(sortPriceMtoL);
+                setHoldAllProducts(divisonSortLtoMNotAll);
+            } else {
+                setHoldAllProducts(divisionHolder)
+            }
+        
     } else {
-        console.log( "filter failed")
+        console.log( "filter failed");
     }
-    // let newProductList = allProducts.filter((item)=>{
-    //     console.log("check");
-    //     console.log(item.team);
-    //     console.log(team)
-    //     item.team === teamFilter});
-    // setAllProducts(newProductList);
-    //     console.log("allProducts");
-    // console.log(allProducts);
-},[teamFilter])
 
-function getTeamFilter() {
-    console.log("this is the current ");
-    console.log(teamFilter)
-}
+},[teamFilter,priceFilter])
 
 function getTeamColors(team) {
     if ( team === "Minnesota Vikings") {
@@ -128,7 +149,7 @@ function getTeamColors(team) {
     }  else if ( team === "Carolina Panthers") {
         return {background: "gradientBlack", buttonT: "buttonPantherBlueT", buttonB: "buttonPantherBlueB" }
     } else if ( team === "Atlanta Falcons") {
-        return {background: "gradientRed", buttonT: "buttonBlackT", buttonB: "buttonBlackB" }
+        return {background: "gradientDarkRed", buttonT: "buttonBlackT", buttonB: "buttonBlackB" }
     } else if ( team === "New York Giants") {
         return {background: "gradientRed", buttonT: "buttonRoyalBlueT", buttonB: "buttonRoyalBlueB" }
     }  else if ( team === "Las Vegas Raiders") {
@@ -164,27 +185,64 @@ function getTeamColors(team) {
     }
 }
 
-async function deleteProduct(productId) {
-    try {
-        await axios.delete(`http://localhost:3000/api/products/${productId}`)
-    } catch(error) {
-        console.log(error)
+function getButtonMtoL() {
+    if ( priceFilter === "MtoL") {
+        return <button className="button_new_selected" onClick={filterByPriceMtoL}>
+            Most to Least Expensive
+        </button>
+    } else {
+        return <button className="button_new" onClick={filterByPriceMtoL}>
+            Most to Least Expensive
+        </button>
     }
 }
 
-//    const fetchProducts = async ()=>{
-//         try {
-//             const response = await axios.get("http://localhost:3000/api/products")
-//             const result = response.data
-//             setAllProducts(result);
-//                         console.log("result Edit Product line 20 /////////////////////");
+function getButtonLtoM() {
+    if ( priceFilter === "LtoM") {
+        return <button className="button_new_selected" onClick={filterByPriceLtoM}>
+            Least to Most Expensive
+        </button>
+    } else {
+        return <button className="button_new" onClick={filterByPriceLtoM}>
+            Least to Most Expensive
+        </button>
+    }
+}
 
-//             console.log(result);
-//         } catch (error) {
-//             console.error(error)
-//         }
-//     };
+function filterByPriceLtoM() {
+     if (priceFilter === "LtoM"){
+        return
+    }  
+        let productsSortLtoM = allProducts.sort(sortPriceLtoM);
+        let firstItemAML = productsSortLtoM[0];
+        let lastItemAML = productsSortLtoM[productsSortLtoM.length-1];
+        if (firstItemAML.price > lastItemAML.price) {
+            productsSortLtoM.reverse()
+        }
+    setPriceFilter("LtoM");
+    console.log("this is new price filter");
+        console.log(priceFilter);
 
+}
+
+
+function filterByPriceMtoL() {
+     if (priceFilter === "MtoL"){
+        return
+    }
+
+    let productsSortLtoMAll = allProducts.sort(sortPriceLtoM);
+    let firstItemALM = productsSortLtoMAll[0];
+    let lastItemALM = productsSortLtoMAll[productsSortLtoMAll.length-1];
+        if (firstItemALM.price < lastItemALM.price) {
+            productsSortLtoMAll.reverse()
+        }
+        setAllProducts(productsSortLtoMAll);
+
+    setPriceFilter("MtoL")
+        console.log("this is new price filter");
+        console.log(priceFilter);
+}
     return(
         <div >
             {
@@ -200,15 +258,10 @@ async function deleteProduct(productId) {
                                 setCurrentProduct({id: "", playerName: "", jerseyNumber: "", teamName: "", division: "", price: "", image: ""})
                         }} className="button_new">Add New Product</button>
                         
-                            <div>
+                        <div>
                             <select
                                 onChange={(event)=>{
-                                    console.log("event.target.value");
-                                    console.log(event.target.value);
                                     setTeamFilter(event.target.value);
-                                    console.log("newteamFilter")
-                                    console.log(teamFilter)
-                                    getTeamFilter();
                                 }}
                                 className="button_new">
                                 <option>All</option>
@@ -253,31 +306,14 @@ async function deleteProduct(productId) {
                                 <option>AFC South</option>
                                 <option>AFC West</option>
                             </select>
-                      
-
-                                </div>
-                            
-                            <button onClick={()=>{
-                                if ( !teamFilter ) {
-                                    setTeamFilter()
-                                } else {
-
-                                }
-                            }} className="button_new">Filter By Team</button>
+                        </div>
                         
-                            {/* <button onClick={()=>{
-                                if ( !teamFilter ) {
-                                    setTeamFilter()
-                                } else {
-
-                                }
-                            }} className="button_new">Filter By Team</button> */}
-                            <button className="button_new">Filter By Price: Most to Least </button>
-                            <button className="button_new">Filter By Price: Least to Most </button>
+                            {getButtonMtoL()}
+                            {getButtonLtoM()}
                     </div>
                 </div>    
          
-                {allProducts.map((eachProduct,idx)=>{
+                {/* {allProducts.map((eachProduct,idx)=>{
                     let teamColors = getTeamColors(eachProduct.teamName);
              
                     return <div key={idx} className={teamColors.background}>
@@ -302,10 +338,66 @@ async function deleteProduct(productId) {
                         }} className={teamColors.buttonB}>Edit Product</button>
                     </div>
                   
-                })}
+                })} */}
             </div> : 
             <h1>You need to be an admin to view</h1>
             }   
+            {
+                currentUser.admin && !formToggle && teamFilter === "All" ?
+                <div className="admin_main">{allProducts.map((eachProduct,idx)=>{
+                    let teamColors = getTeamColors(eachProduct.teamName);
+             
+                    return <div key={idx} className={teamColors.background}>
+                        <div className="image_container">
+                            <img src={eachProduct.image} alt="NFL Property" className="admin_image" />
+                        </div>
+                            <p>{eachProduct.playerName}</p>
+                            <p>#{eachProduct.jerseyNumber}</p>
+                            <p>{eachProduct.teamName}</p>
+                            <p>{eachProduct.division}</p>
+                            <p>${eachProduct.price}</p>
+           
+                        <button value={eachProduct.id} onClick={() => {
+                            deleteProduct(eachProduct.id);
+                            fetchProducts();
+                        }} className={teamColors.buttonT}>Delete Product</button>
+                        <br />
+                        <button value={eachProduct.id} onClick={() => {
+                            setFormToggle(true);
+                            setFormType("edit");
+                            setCurrentProduct({id: eachProduct.id, playerName: eachProduct.playerName, jerseyNumber: eachProduct.jerseyNumber, teamName: eachProduct.teamName, division: eachProduct.division, price: eachProduct.price, image: eachProduct.image})
+                        }} className={teamColors.buttonB}>Edit Product</button>
+                    </div>
+                })}</div>: null
+            }
+            {
+                currentUser.admin && !formToggle && teamFilter !== "All" ?
+                <div className="admin_main">{holdAllProducts.map((eachProduct,idx)=>{
+                    let teamColors = getTeamColors(eachProduct.teamName);
+             
+                    return <div key={idx} className={teamColors.background}>
+                        <div className="image_container">
+                            <img src={eachProduct.image} alt="NFL Property" className="admin_image" />
+                        </div>
+                            <p>{eachProduct.playerName}</p>
+                            <p>#{eachProduct.jerseyNumber}</p>
+                            <p>{eachProduct.teamName}</p>
+                            <p>{eachProduct.division}</p>
+                            <p>${eachProduct.price}</p>
+           
+                        <button value={eachProduct.id} onClick={() => {
+                            deleteProduct(eachProduct.id);
+                            fetchProducts();
+                        }} className={teamColors.buttonT}>Delete Product</button>
+                        <br />
+                        <button value={eachProduct.id} onClick={() => {
+                            setFormToggle(true);
+                            setFormType("edit");
+                            setCurrentProduct({id: eachProduct.id, playerName: eachProduct.playerName, jerseyNumber: eachProduct.jerseyNumber, teamName: eachProduct.teamName, division: eachProduct.division, price: eachProduct.price, image: eachProduct.image})
+                        }} className={teamColors.buttonB}>Edit Product</button>
+                    </div>
+                })}</div>: null
+            }
         </div>
     )
 }

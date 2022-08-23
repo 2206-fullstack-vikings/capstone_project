@@ -19,7 +19,7 @@
     color:black;
     flex-direction: column;
     flex-basis: auto;
-    background-image: linear-gradient(to bottom, white,white,white, rgb(195, 226, 250),rgb(68, 149,210));
+    background-image: linear-gradient(to bottom, white,white,white, rgb(216, 235, 250),rgb(68, 149,210));
     align-items: center;  
 }
 
@@ -32,7 +32,7 @@
     color:black;
     flex-direction: column;
     flex-basis: auto;
-    background-image: linear-gradient(to bottom, white,white,white, rgb(177, 189, 203),rgb(0, 35, 76));
+    background-image: linear-gradient(to bottom, white,white,white, rgb(215, 223, 232),rgb(0, 35, 76));
     align-items: center;  
 }
 
@@ -45,7 +45,7 @@
     color:black;
     flex-direction: column;
     flex-basis: auto;
-    background-image: linear-gradient(to bottom, white,white, white,rgb(248, 248, 181), gold);
+    background-image: linear-gradient(to bottom, white,white, white,rgb(251, 251, 211), gold);
     align-items: center;  
 }
 
@@ -57,7 +57,7 @@
     color:black;
     flex-direction: column;
     flex-basis: auto;
-    background-image: linear-gradient(to bottom, white,white, white,rgb(248, 248, 181), rgb(238,173,30));
+    background-image: linear-gradient(to bottom, white,white, white,rgb(252, 252, 218), rgb(238,173,30));
     align-items: center;  
 }
 
@@ -69,7 +69,7 @@
     color:black;
     flex-direction: column;
     flex-basis: auto;
-    background-image: linear-gradient(to bottom, white,white, white,rgb(234, 219, 184), rgb(187, 147, 52));
+    background-image: linear-gradient(to bottom, white,white, white,rgb(244, 234, 209), rgb(187, 147, 52));
     align-items: center;  
 }
 
@@ -81,7 +81,7 @@
     color:black;
     flex-direction: column;
     flex-basis: auto;
-    background-image: linear-gradient(to bottom, white,white, white,rgb(248, 240, 181), rgb(255, 191, 0));
+    background-image: linear-gradient(to bottom, white,white, white,rgb(248, 240, 183), rgb(255, 191, 0));
     align-items: center;  
 }
 
@@ -117,7 +117,7 @@
     color:black;
     flex-direction: column;
     flex-basis: auto;
-    background-image: linear-gradient(to bottom, white,white, white,rgb(247, 193, 174),rgb(211, 63, 30));
+    background-image: linear-gradient(to bottom, white,white, white,rgb(241, 210, 198),rgb(211, 63, 30));
     align-items: center;  
 }
 
@@ -129,7 +129,7 @@
     color:black;
     flex-direction: column;
     flex-basis: auto;
-    background-image: linear-gradient(to bottom, white,white, white,rgb(223, 177, 161),rgb(255, 60, 0));
+    background-image: linear-gradient(to bottom, white,white, white,rgb(239, 210, 200),rgb(255, 60, 0));
     align-items: center;  
 }
 
@@ -153,7 +153,7 @@
     color:black;
     flex-direction: column;
     flex-basis: auto;
-    background-image: linear-gradient(to bottom, white,white, white,rgb(238, 195, 195),red);
+    background-image: linear-gradient(to bottom, white,white, white,rgb(241, 213, 213),red);
     align-items: center;  
 }
 
@@ -165,7 +165,19 @@
     color:black;
     flex-direction: column;
     flex-basis: auto;
-    background-image: linear-gradient(to bottom, white,white, white,rgb(243, 189, 189),rgb(163, 13, 45));
+    background-image: linear-gradient(to bottom, white,white, white,rgb(243, 215, 215),rgb(163, 13, 45));
+    align-items: center;  
+}
+
+.gradientDarkRed {
+     border:1px black solid;
+     font-weight:bold;
+    flex-grow: 1;
+    display: flex;
+    color:black;
+    flex-direction: column;
+    flex-basis: auto;
+    background-image: linear-gradient(to bottom, white,white, white,rgb(245, 201, 201),rgb(193, 22, 22));
     align-items: center;  
 }
 
@@ -189,7 +201,7 @@
     color:black;
     flex-direction: column;
     flex-basis: auto;
-    background-image: linear-gradient(to bottom, white,white, white,rgb(180, 173, 165),rgb(52, 48, 43));
+    background-image: linear-gradient(to bottom, white,white, white,rgb(207, 201, 194),rgb(52, 48, 43));
     align-items: center;  
 }
 
@@ -909,6 +921,19 @@
     height: 35px;
     width:200px;
     background-color: white;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 15px;
+    margin-bottom:1vw;
+
+}
+
+.button_new_selected {
+    font-weight:bold;
+    height: 35px;
+    width:200px;
+    background-color: black;
+    color:white;
     margin-left: 40px;
     margin-right: 40px;
     margin-top: 15px;
