@@ -1,24 +1,12 @@
-const {
-  client,
-  // declare your model imports here
-  // for example, User
-} = require('./');
+const { client } = require("./");
 
-const {insertProduct, getAllProducts} = require('./models/productsModel')
-const {createUser}= require('./models/usersModel')
+const { insertProduct, getAllProducts } = require("./models/productsModel");
+const { createUser } = require("./models/usersModel");
 
 console.log(insertProduct);
 const { products } = require("./productsData");
 
 const { users } = require("./usersData");
-
-// console.log("productsData /////////////////////////");
-// console.log(products);
-
-
-
-
-
 
 async function dropTables() {
   try {
@@ -28,9 +16,9 @@ async function dropTables() {
       DROP TABLE IF EXISTS "userCarts";
       DROP TABLE IF EXISTS products;
       DROP TABLE IF EXISTS users;
-    `)
-  } catch(error) {
-    console.log(error)
+    `);
+  } catch (error) {
+    console.log(error);
   }
 }
 
@@ -72,24 +60,21 @@ async function createTables() {
       CONSTRAINT id_constraint UNIQUE("cartId", "userId", "productId", "purchasePrice")
      
     );
-  `)
-  } catch(error) {
-    console.log(error)
+  `);
+  } catch (error) {
+    console.log(error);
   }
 }
-
 
 async function buildTables() {
   try {
     client.connect();
-    // drop tables in correct order
-    dropTables();
-    console.log("TablesDropped")
-    // build tables in correct order
-    createTables();
-        console.log("TablesCreated")
 
-   
+    dropTables();
+    console.log("TablesDropped");
+
+    createTables();
+    console.log("TablesCreated");
   } catch (error) {
     throw error;
   }
@@ -97,16 +82,9 @@ async function buildTables() {
 
 async function populateInitialData() {
   try {
-    console.log('stop 1')
-   const allProducts = await Promise.all(products.map(insertProduct));
-console.log('stop 2')
-  //  const allusers = await Promise.all(users.map(createUser));
-   const allusers = await Promise.all(users.map(createUser));
-  //  console.log('this is all users', allusers);
-    console.log(allusers)
-   
+    const allProducts = await Promise.all(products.map(insertProduct));
 
-   
+    const allusers = await Promise.all(users.map(createUser));
   } catch (error) {
     throw error;
   }

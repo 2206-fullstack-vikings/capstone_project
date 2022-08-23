@@ -1052,3 +1052,8 @@ image {
     width: 100%;
     
 }
+
+button:hover{
+    background-color: black;
+    color:white
+}
