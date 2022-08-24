@@ -27,7 +27,7 @@ const Products = (props) => {
 
   const fetchProducts = async () => {
     try {
-      const response = await axios.get(`${baseURL}/api/products`);
+      const response = await axios.get(`/api/products`);
       const result = response.data;
       setAllProducts(result);
     } catch (error) {
