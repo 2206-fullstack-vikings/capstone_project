@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "../style/Products.css";
 import axios from "axios";
 
+
 const Products = (props) => {
   const { allProducts, setAllProducts, setShoppingCart } = props;
   const { division, id, image, jerseyNumber, playerName, price, teamName } =
@@ -16,7 +17,7 @@ const Products = (props) => {
   const addToCart = async (event) => {
     try {
       const response = await axios.post(
-        `http://localhost:3000/api/cart/${event}`
+        `/api/cart/${event}`
       );
       const cartItems = response.data.items;
     } catch (error) {
@@ -26,7 +27,7 @@ const Products = (props) => {
 
   const fetchProducts = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/products");
+      const response = await axios.get(`/api/products`);
       const result = response.data;
       setAllProducts(result);
     } catch (error) {

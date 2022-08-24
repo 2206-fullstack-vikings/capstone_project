@@ -8,7 +8,7 @@ const OrderForm = ({ currentUser }) => {
   const removeCartItem = async (index) => {
     try {
       const response = await axios.delete(
-        `http://localhost:3000/api/cart/${index}`
+        `/api/cart/${index}`
       );
 
       setShoppingCart(response.data);
@@ -33,7 +33,7 @@ const OrderForm = ({ currentUser }) => {
   useEffect(() => {
     const fetchCart = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/api/cart");
+        const response = await axios.get("/api/cart");
 
         const cart = response.data.items;
         setShoppingCart(cart);

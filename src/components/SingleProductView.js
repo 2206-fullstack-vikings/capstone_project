@@ -24,7 +24,7 @@ const SingleProductView = (props) => {
   const addToCart = async (event) => {
     try {
       const response = await axios.post(
-        `http://localhost:3000/api/cart/${event}`
+        `/api/cart/${event}`
       );
       const cartItems = response.data.items;
     } catch (error) {
