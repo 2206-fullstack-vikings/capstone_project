@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../style/Products.css";
 import axios from "axios";
+import {baseURL} from ('./baseURL')
 
 const Products = (props) => {
   const { allProducts, setAllProducts, setShoppingCart } = props;
@@ -26,7 +27,7 @@ const Products = (props) => {
 
   const fetchProducts = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/products");
+      const response = await axios.get(`${baseURL}/api/products`);
       const result = response.data;
       setAllProducts(result);
     } catch (error) {
