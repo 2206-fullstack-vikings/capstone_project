@@ -26,7 +26,7 @@ const Login = (props) => {
     event.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/users/login",
+        "/api/users/login",
         {
           username: userName,
           password: userPassword,
@@ -47,7 +47,7 @@ const Login = (props) => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/users/register",
+        "/api/users/register",
         {
           name: name,
           username: userName,

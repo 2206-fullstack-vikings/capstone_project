@@ -26,7 +26,7 @@ const EditProduct = ({
 
   const fetchProducts = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/products");
+      const response = await axios.get("/api/products");
       const result = response.data;
       setAllProducts(result);
       console.log("result Edit Product line 20 /////////////////////");
@@ -39,7 +39,7 @@ const EditProduct = ({
 
   async function addProduct(object) {
     try {
-      const response = await axios.post("http://localhost:3000/api/products", {
+      const response = await axios.post("/api/products", {
         newProduct: object,
       });
     } catch (error) {

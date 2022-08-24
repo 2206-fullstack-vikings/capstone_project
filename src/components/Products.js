@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../style/Products.css";
 import axios from "axios";
-import {baseURL} from ('./baseURL')
+
 
 const Products = (props) => {
   const { allProducts, setAllProducts, setShoppingCart } = props;
@@ -17,7 +17,7 @@ const Products = (props) => {
   const addToCart = async (event) => {
     try {
       const response = await axios.post(
-        `http://localhost:3000/api/cart/${event}`
+        `/api/cart/${event}`
       );
       const cartItems = response.data.items;
     } catch (error) {
