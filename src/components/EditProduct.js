@@ -52,7 +52,7 @@ const EditProduct = ({
       {formType === "edit" ? (
         <div className="formContainer">
           <form className='className="login'>
-            placeholder
+            
             <h3>Edit Product</h3>
             <label>Player Name</label>
             <br />
@@ -123,7 +123,7 @@ const EditProduct = ({
                 console.log("This is the currrent product below");
                 console.log(modifiedProduct);
                 const modProduct = await axios.patch(
-                  `http://localhost:3000/api/products/${currentProduct.id}`,
+                  `/api/products/${currentProduct.id}`,
                   {
                     product: modifiedProduct,
                   }
