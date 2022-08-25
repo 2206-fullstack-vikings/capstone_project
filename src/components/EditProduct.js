@@ -50,65 +50,55 @@ const EditProduct = ({
   return (
     <div className="login_page">
       {formType === "edit" ? (
-        <div className="formContainer">
-          <form className='className="login'>
-            
+        <div className= "admin_form_page">
+          <form className='editProductForm'>
             <h3>Edit Product</h3>
             <label>Player Name</label>
-            <br />
             <input
               type="text"
               value={playerNameForm}
               onChange={(event) => setPlayerNameForm(event.target.value)}
             ></input>
-            <br />
             <label>Team Name</label>
-            <br />
             <input
               type="text"
               value={teamNameForm}
               required
               onChange={(event) => setTeamNameForm(event.target.value)}
             ></input>
-            <br />
             <label>Divison</label>
-            <br />
             <input
               type="text"
               value={divisionForm}
               required
               onChange={(event) => setDivisionForm(event.target.value)}
             ></input>
-            <br />
             <label>Jersey Number</label>
-            <br />
             <input
               type="text"
               value={jerseyNumberForm}
               required
               onChange={(event) => setJerseyNumberForm(event.target.value)}
             ></input>
-            <br />
             <label>Price</label>
-            <br />
             <input
               type="text"
               value={priceForm}
               required
               onChange={(event) => setPriceForm(event.target.value)}
             ></input>
-            <br />
             <label>Image</label>
-            <br />
-            <input
+            <textarea
               type="text"
               value={imageForm}
+              rows="5"
+              cols="40"
               required
               onChange={(event) => setImageForm(event.target.value)}
-            ></input>
-            <br />
+            ></textarea>
             <button
               typeof="submit"
+              className="buttonFormSubmit"
               onClick={async (event) => {
                 event.preventDefault();
                 let modifiedProduct = {
@@ -136,12 +126,15 @@ const EditProduct = ({
               Edit Current Product
             </button>
           </form>
+           <div className="backButtonDiv">
+              <button className="buttonBackButton" onClick={()=> setFormToggle(false)} >Back To Admin Page</button>
+          </div>
         </div>
+        
       ) : null}
       {formType === "new" ? (
-        <div>
-          <form className='className="login'>
-            placeholder
+        <div className="admin_form_page">
+          <form className='editProductForm'>
             <h3>Make New Product</h3>
             <label>Player Name</label>
             <br />
@@ -150,54 +143,46 @@ const EditProduct = ({
               value={playerNameForm}
               onChange={(event) => setPlayerNameForm(event.target.value)}
             ></input>
-            <br />
             <label>Team Name</label>
-            <br />
             <input
               type="text"
               value={teamNameForm}
               required
               onChange={(event) => setTeamNameForm(event.target.value)}
             ></input>
-            <br />
             <label>Divison</label>
-            <br />
             <input
               type="text"
               value={divisionForm}
               required
               onChange={(event) => setDivisionForm(event.target.value)}
             ></input>
-            <br />
             <label>Jersey Number</label>
-            <br />
             <input
               type="text"
               value={jerseyNumberForm}
               required
               onChange={(event) => setJerseyNumberForm(event.target.value)}
             ></input>
-            <br />
             <label>Price</label>
-            <br />
             <input
               type="text"
               value={priceForm}
               required
               onChange={(event) => setPriceForm(event.target.value)}
             ></input>
-            <br />
             <label>Image</label>
-            <br />
-            <input
+            <textarea
               type="text"
+              rows="5"
+              cols="40"
               value={imageForm}
               required
               onChange={(event) => setImageForm(event.target.value)}
-            ></input>
-            <br />
+            ></textarea>
             <button
               typeof="submit"
+              className="buttonFormSubmit"
               onClick={() => {
                 event.preventDefault();
                 let modifiedProduct = {
@@ -216,8 +201,12 @@ const EditProduct = ({
               Make New Product
             </button>
           </form>
+            <div className="backButtonDiv">
+              <button className="buttonBackButton" onClick={()=> setFormToggle(false) }>Back To Admin Page</button>
+            </div>
         </div>
       ) : null}
+    
     </div>
   );
 };

@@ -400,6 +400,9 @@ const Admin = (props) => {
   }
   return (
     <div>
+      {
+        !currentUser.admin ? <h1>You need to be an admin to view</h1> : null
+      }
       {formToggle ? (
         <EditProduct
           formToggle={formToggle}
@@ -492,7 +495,7 @@ const Admin = (props) => {
           </div>
         </div>
       ) : (
-        <h1>You need to be an admin to view</h1>
+        null
       )}
       {currentUser.admin && !formToggle && teamFilter === "All" ? (
         <div className="admin_main">

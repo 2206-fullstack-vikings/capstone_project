@@ -885,20 +885,56 @@
 
 /* /////////////////////////////////////////////////////// */
 
-
-
+.admin_form_page {
+    padding: 30px 30px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;  
+}
 
 .formContainer {
     display:flex;
     flex-direction: row;
     align-items: center;
-    width:100%;
+    width:80%;
+    /* background-color: blue; */
 }
+
 
 .editProductForm {
     height: 80%;
     width:80%;
-    background-color: lightgray;
+      /* border: 1px red solid; */
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    width: 400px;
+    height:auto;
+    /* margin: 0 auto; */
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    border: lightgray solid 1px;
+    border-radius: 10px;
+   
+}
+
+.editProductForm > input {
+    margin-bottom: 20px;
+}
+
+
+.editProductForm > label {
+    margin-bottom: 10px;
+}
+
+
+.editProductForm > textarea {
+     margin-bottom: 30px;
+     margin-right: 100px;
+     margin-left:100px;
+
 }
 
 
@@ -984,9 +1020,20 @@
     border-bottom: 1px black solid;
 }  */
 
+.buttonFormSubmit {
+    margin-bottom:70px;
+    
+}
 
+.backButtonDiv {
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+}
 
-
+.buttonBackButton {
+    margin-bottom:100px;
+}
 
 .button-container {
     background-color: white;
