@@ -17,14 +17,12 @@
 ## Features
 
 ## Shopping Cart
-### User is able to select and add items to cart for purchase.  Cart has added feature of maintaining and remembering items so users can come
-back at a later time and still view items.  Works also with guest users.
+### User is able to select and add items to cart for purchase.  Cart has added feature of maintaining and remembering items so users can come back at a later time and still view items.  Works also with guest users.
 
 ![](https://user-images.githubusercontent.com/106874888/186735421-0174d742-df5d-48f3-a3ca-f9e7af549c34.gif)
 
 ## Admin Dashboard
-### Gives users with admin rights the ability to add, edit, and delete products from application.  Also has an admin verification to prevent
-non-admins from changing products.  
+### Gives users with admin rights the ability to add, edit, and delete products from application.  Also has an admin verification to prevent non-admins from changing products.  
 
 ## Code Preview
 ```
@@ -49,6 +47,7 @@ non-admins from changing products.
                 <p>{eachProduct.division}</p>
                 <p>${eachProduct.price}</p>
 ```
+### The code above is from our Admin component that checks for admin status, our edit toggle, and filter to display products for admin users.
 
 ## Installation 
 ### To install and add on to the application and make it your own 
